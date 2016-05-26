@@ -76,12 +76,6 @@
                     <span class="label"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
-              <ul class="botones-compartir">
-                <li><a class="boton-compartir--twitter" href="http://twitter.com/home?status=<?php the_title(); ?>+<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="boton-compartir--facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&title=<?php the_title(); ?>"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="boton-compartir--google" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a></li>
-                <li><a class="boton-compartir--email boton-compartir--icon-last" href="mailto:"><i class="fa fa-envelope"></i></a></li>
-              </ul>
             </div>
             <div class="small-12 medium-6 columns proyecto-cuerpo">
               <?php the_content(); ?>

@@ -6,7 +6,7 @@
 * 	
 * 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
-*  	@package MemoryPress
+*  	@package CaritasPress
 */
 
 require_once('includes/init.php'); 													// Cargamos el soporte básico
@@ -16,7 +16,7 @@ require_once('includes/init.php'); 													// Cargamos el soporte básico
 * @since 1.0
 *********************************************************************************************************/
 require_once('includes/funciones/func_dashboard.php'); 			// Personalizaciones del dashboard
-require_once('includes/funciones/func_sidebars.php'); 			// Registro de zonas para widgets
+// require_once('includes/funciones/func_sidebars.php'); 			// Registro de zonas para widgets
 require_once('includes/funciones/func_extractos.php');			// Extractos de articulos
 require_once('includes/funciones/func_opengraph.php');			// Soporte pata OpenGraph
 // require_once('includes/funciones/func_categorias.php');	// Funciones para las categorias TODO: reparar!

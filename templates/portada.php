@@ -3,41 +3,45 @@
 <?php get_header(); ?>
 
 <!-- CARRUSEL -->
-   
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
-  <div class="carrusel portada-carrusel -carrusel-un-item">
-    <?php 
-    $noticias_args = array(
-      'post_type' => 'post',
-      'category_name' => 'portada',
-      'posts_per_page'=> 3,
-    );
-    $carrusel_args = array(
-      'post_type' => 'carrusel'
-    );
-    $carrusel_item = new WP_Query($carrusel_args);
-    $noticias_item = new WP_Query($noticias_args);
-    if( $noticias_item->have_posts() ) { ?>
-      <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
-        <div class="carrusel-item">
-          <?php the_post_thumbnail(); ?>
-          <div class="carrusel-seccion">
-            <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-            <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>">
-                <?php _e('Llegir','podemospress'); ?>
-              </a>
-          </div>
-        </div>
-      <?php endwhile; ?>
-    <?php } elseif( $carrusel_item->have_posts() ) { ?>
-      <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
-        <div>
-          <?php the_post_thumbnail(); ?>
-        </div>
-      <?php endwhile; ?>
-    <?php } ?>
+
+<div class="row sin-margen--abajo">
+  <div class="small-12 columns">  
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
+      <div class="carrusel portada-carrusel -carrusel-un-item">
+        <?php 
+        $noticias_args = array(
+          'post_type' => 'post',
+          'category_name' => 'portada',
+          'posts_per_page'=> 3,
+        );
+        $carrusel_args = array(
+          'post_type' => 'carrusel'
+        );
+        $carrusel_item = new WP_Query($carrusel_args);
+        $noticias_item = new WP_Query($noticias_args);
+        if( $noticias_item->have_posts() ) { ?>
+          <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
+            <div class="carrusel-item">
+              <?php the_post_thumbnail(); ?>
+              <div class="carrusel-seccion">
+                <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
+                <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>">
+                    <?php _e('Llegir','podemospress'); ?>
+                  </a>
+              </div>
+            </div>
+          <?php endwhile; ?>
+        <?php } elseif( $carrusel_item->have_posts() ) { ?>
+          <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
+            <div>
+              <?php the_post_thumbnail(); ?>
+            </div>
+          <?php endwhile; ?>
+        <?php } ?>
+      </div>
+    <?php endif; ?> 
   </div>
-<?php endif; ?>
+</div> 
 
 <!-- COLABORA -->
 

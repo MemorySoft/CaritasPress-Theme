@@ -6,7 +6,7 @@
 *   
 *   Autor: Hector Asencio @MemorySoft
 *   Versión: 1.0
-*   @package PodemosPress
+*   @package CaritasPress
 *
 */  
 

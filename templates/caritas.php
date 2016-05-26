@@ -7,19 +7,23 @@
 <div class="row sin-margen--abajo texto-centrado">
   <div class="small-12 columns">
     <h2 class="titulo">Càritas Diocesana de Menorca</h2>
-    <p class="texto-destacado">Càritas Diocesana és l’organisme oficial de l’Església Catòlica de Menorca, cridat a expressar l’Amor gratuït de Déu pels més pobres. És una entitat creada per a promoure, orientar i coordinar l’acció caritativa i social de tota l’Església.</p>
   </div>
 </div>
 
 <!-- CARRUSEL DE MEMORIAS -->
 
-<div class="row">
+<div class="row sin-margen--abajo">
   <div class="large-12 columns">
     <div class="-carrusel-un-item">
-      <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
-      <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
-      <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
+      <div><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/caritas_memoria_2014_1.png" alt="1.632 persones ateses de les quals el 57% van ser dones i el 43% van ser homes"></a></div>
+      <div><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/caritas_memoria_2014_2.png" alt="De les persones ateses 225 van ser persones soles, 5% parelles sense fills, 41% parelles amb fills, 26% families monoparenterals i 6%altres tipus de families"></a></div>
     </div>
+  </div>
+</div>
+
+<div class="row sin-margen--abajo texto-centrado">
+  <div class="small-12 columns">
+    <p class="texto-destacado">Càritas Diocesana és l’organisme oficial de l’Església Catòlica de Menorca, cridat a expressar l’Amor gratuït de Déu pels més pobres. És una entitat creada per a promoure, orientar i coordinar l’acció caritativa i social de tota l’Església.</p>
   </div>
 </div>
 

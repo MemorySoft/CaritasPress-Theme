@@ -10,7 +10,6 @@
 *
 */ 
 
-// POST TYPE
 function caritaspress_crear_faqs() {
   register_post_type( 'faq',
     array(

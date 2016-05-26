@@ -32,14 +32,10 @@ $(document).ready(function() {
     itemsDesktopSmall : [400,1]
   });
 
-  // Nombre del autor
-  var autorNombre = $('.autor-contenedor .autor-nombre h3').text();
-  $('.js-autor-nombre').text(autorNombre);
-
-  // Alterna los escaparates
-  $('.escaparate:nth-child(odd)').addClass('girado');
-  $('.girado .escaparate-texto').addClass('medium-push-6');
-  $('.girado .escaparate-imagen').addClass('medium-pull-6');
+  // Filtros del buscador
+  // $('-filtro').click(function() {
+  //   $('.-formulario-navegacion').show();
+  // });
 
 });
 

@@ -4,23 +4,23 @@
 
   <div class="row texto-centrado">
     <div class="small-3 columns">
-      <a href="">
-        <img src="<?php bloginfo('template_directory'); ?>/images/logo_mestral.png" alt="Enllaç a Mestral Menorca">
+      <a href="http://mestralmenorca.org" target="_blank" title="Visita la web de Mestral">
+        <img src="<?php bloginfo('template_directory'); ?>/images/logo_mestral.png" alt="Logotip de Mestral Menorca">
       </a>
     </div>
     <div class="small-3 columns">
-      <a href="">
-        <img src="<?php bloginfo('template_directory'); ?>/images/logo_caritas_es.png" alt="Enllaç a Caritas Española">
+      <a href="http://caritas.es" target="_blank" title="Visita la web de Cáritas Española">
+        <img src="<?php bloginfo('template_directory'); ?>/images/logo_caritas_es.png" alt="Logotip de Cáritas Española">
       </a>
     </div>
     <div class="small-3 columns">
-      <a href="">
-        <img src="<?php bloginfo('template_directory'); ?>/images/logo_caritas_int.png" alt="Enllaç a Caritas Internationalis">
+      <a href="http://www.caritas.org/es/" target="_blank" title="Visita la web de Caritas Internationalis">
+        <img src="<?php bloginfo('template_directory'); ?>/images/logo_caritas_int.png" alt="Logotip de Caritas Internationalis">
       </a>
     </div>
     <div class="small-3 columns">
-      <a href="">
-        <img src="<?php bloginfo('template_directory'); ?>/images/logo_bisbe_menorca.png" alt="Enllaç al Bisbat de Menorca">
+      <a href="http://www.bisbatdemenorca.com/" target="_blank" title="Visita la web del Bisbat de Menorca">
+        <img src="<?php bloginfo('template_directory'); ?>/images/logo_bisbe_menorca.png" alt="Logotip del Bisbat de Menorca">
       </a>
     </div>
   </div>
@@ -31,7 +31,7 @@
         <div class="small-12 columns texto-centrado">
           <h1>
             Col·labora amb Càritas 
-            <small><a href="colabora.html" class="small button invertido">Fes-te col·laborador</a></small>
+            <small><a href="col·labora" class="small button invertido">Fes-te col·laborador</a></small>
           </h1>
           <hr>
         </div>
@@ -82,13 +82,13 @@
           <h5>Segueix-nos</h5>
           <div class="redes-sociales--horizontal">
             <a class="redes-sociales-item" href="">
-              <img src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="">
+              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="Icono de YouTube">
             </a>
-            <a class="redes-sociales-item" href="">
-              <img src="<?php bloginfo('template_directory'); ?>/images/icono_facebook.png" alt="">
+            <a class="redes-sociales-item" href="https://www.facebook.com/cdmenorca">
+              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_facebook.png" alt="Icono de Facebook">
             </a>
-            <a class="redes-sociales-item" href="">
-              <img src="<?php bloginfo('template_directory'); ?>/images/icono_twitter.png" alt="">
+            <a class="redes-sociales-item" href="https://twitter.com/caritasmenorca?lang=es">
+              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_twitter.png" alt="Icono de Twitter">
             </a>
           </div>
         </div>
@@ -98,7 +98,7 @@
     <div class="franja--estrecha fondo-gris--medio sin-margen--abajo">
       <div class="row sin-margen--abajo">
         <div class="small-12 large-1 columns">
-          <a href="contacte.html" class="small button bordeado--blanco">Contacte</a>
+          <a href="contacte" class="small button bordeado--blanco">Contacte</a>
         </div>
         <div class="small-12 large-8 columns">
           <?php caritaspress_menu_inferior(); ?> 
@@ -117,9 +117,8 @@
           <span aria-hidden="true">&times;</span>
         </div>
         <h2>Empreses amb cor</h2>
-        <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, eos architecto quod. Consequuntur voluptates accusantium a voluptas nostrum similique dolorem harum libero incidunt. Eveniet doloribus distinctio dicta error nostrum quis consequatur sit maiores maxime iste adipisci cupiditate itaque, excepturi voluptatem et nihil! Praesentium aliquid fuga dicta totam aliquam, nisi laborum eligendi molestias facilis, accusamus debitis veritatis.</p>
-        <p><a href="colabora.html" class="button">Ofereix la teva empresa</a></p>
+        <p class="texto-destacado--peque"></p>
+        <p><a href="col·labora" class="button">Ofereix la teva empresa</a></p>
       </div>
     </div>
   </div>

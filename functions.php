@@ -38,14 +38,14 @@ require_once('includes/entradas/post_proyecto.php');
 require_once('includes/entradas/post_video.php');				
 require_once('includes/entradas/post_audio.php');
 require_once('includes/entradas/post_memoria.php');
-require_once('includes/entradas/post_revista.php');
+require_once('includes/entradas/post_publicacion.php');
 require_once('includes/entradas/post_carrusel.php');
 
 /**
 * WIDGETS
 * @since 1.0
 *********************************************************************************************************/
-require_once('includes/widgets/wid_bloque.php');						// Genera un callout al 100% del ancho
-require_once('includes/widgets/wid_autores.php');						// Genera una lista de los autores del blog
-require_once('includes/widgets/wid_categorias.php');				// Genera una lista de posts de una categoria
+// require_once('includes/widgets/wid_bloque.php');						// Genera un callout al 100% del ancho
+// require_once('includes/widgets/wid_autores.php');						// Genera una lista de los autores del blog
+// require_once('includes/widgets/wid_categorias.php');				// Genera una lista de posts de una categoria
 ?>

@@ -1,5 +1,5 @@
 <?php /* Template Name: Contacto */ ?>
-<?php include('includes/opciones/_variables.php'); ?>
+<?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
 <div class="contenedor">

@@ -11,14 +11,6 @@
 * 
 */
 
-/*
-*	COLORES
-*	-------
-* Primario			#D51834
-* Secundario		#333333
-* Fondo					#F2F2F2
- */
-
 /*	GENERALES
 		Estilos relativos al elementos HTML
 		que han sidfo reajustados
@@ -488,6 +480,10 @@ button.close-button:hover {
   } 
 }
 
+.page-template-caritas .elemento-multicolumna-imagen {
+  max-width: 280px; 
+}
+
 /* ARTICULOS */
 .articulo {
 	margin-bottom: 2rem;
@@ -497,7 +493,7 @@ button.close-button:hover {
 .articulo-titulo {
 	text-transform: unset;
 }
-.articulo-imagen {
+/*.articulo-imagen {
 	position: relative;
   width: 100%;
   height: 240px;
@@ -515,21 +511,24 @@ button.close-button:hover {
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
-}
-.articulo-imagen img.wp-post-image {
+}*/
+img.wp-post-image {
 	width: 100%;
+  max-width: 480px;
   height: auto;
 }
 .articulo-extracto {
 	color: #333;
 }
 .articulo-seccion {
-  display: block;
+  display: inline;
   vertical-align: top; 
+  float: left;
 }
 .articulo-seccion--vertical {
 	display: block;
 	text-align: center;
+  width: 100%;
 }
 .articulo-seccion:first-child {
   padding-right: 2rem; 
@@ -759,6 +758,23 @@ button.close-button:hover {
 	color: #666;
 	border-left: 4px solid #D51834;
 	padding-left: 1rem;
+  display: block;
+  overflow: hidden;
+}
+.post-metadatos--categoria span {
+  float: left;
+  margin-right: 1rem;
+}
+.post-metadatos--categoria ul {
+  list-style-type: none;
+  margin: 0;
+  display: inline;
+  float: left;
+}
+.post-metadatos--categoria ul li {
+  display: inline;
+  float: left;
+  margin-right: .5rem;
 }
 .post-metadatos--fecha,
 .post-metadatos--autor {

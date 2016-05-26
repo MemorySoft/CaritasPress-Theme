@@ -5,7 +5,7 @@
 <div class="row">
   <div class="small-12 columns texto-centrado">
       <?php if ( is_category() ) { ?>
-        <h2 class="pagina-titulo">Categoría: <?php single_cat_title(); ?></h2>
+        <h2 class="pagina-titulo">Categoria: <?php single_cat_title(); ?></h2>
       <?php } elseif ( is_tag() ) { ?>
         <h2 class="pagina-titulo">Etiqueta: <?php single_tag_title(); ?></h2>
       <?php } elseif ( is_day() ) { ?>
@@ -15,52 +15,87 @@
       <?php } elseif ( is_year() ) { ?>
         <h2 class="pagina-titulo"><?php the_time('Y'); ?></h2>
       <?php } elseif ( is_author() ) { ?>
-        <h2 class="pagina-titulo">Artículos de <?php get_the_author();?></h2>
+        <h2 class="pagina-titulo">Articles de <?php get_the_author();?></h2>
       <?php } elseif ( isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-        <h2 class="pagina-titulo">Archivo de <?php bloginfo( 'name' ); ?></h2>
+        <h2 class="pagina-titulo">Artxiu de <?php bloginfo( 'name' ); ?></h2>
         </div>
       </div>  
       <?php } else { ?>
         <h2 class="pagina-titulo">Actualitat i noticies de Càritas Menorca</h2>
+      <?php } ?>
   </div>
 </div>  
 
 <!-- FILTROS -->
 
 <div class="row">
-  <form class="navegacion-noticias" id="formularioNavegacion" action="">
-    <div class="small-12 medium-3 columns">
-      <select name="formulario-navegacion--categorias" id="formularioNavegaciónCategorias">
-        
-        <option value="Categoria 1">CATEGORIES</option>
-        <option value="Categoria 2">Categoria 2</option>
-        <option value="Categoria 3">Categoria 3</option>
-        <option value="Categoria 4">Categoria 4</option>
-        <option value="Categoria 5">Categoria 5</option>
-      </select>
-    </div>
-    <div class="small-12 medium-3 columns">
-      <select name="formulario-navegacion--categorias" id="formularioNavegaciónCategorias">
-        
-        <option value="Etiqueta 1">ETIQUETES</option>
-        <option value="Etiqueta 2">Etiqueta 2</option>
-        <option value="Etiqueta 3">Etiqueta 3</option>
-        <option value="Etiqueta 4">Etiqueta 4</option>
-        <option value="Etiqueta 5">Etiqueta 5</option>
-      </select>
-    </div>    
-    <div class="small-12 medium-6 columns">
-      <div class="input-group">
-        <input class="input-group-field" type="text" placeholder="CERCAR">
-        <div class="input-group-button">
-          <button class="button"><i class="fa fa-search"></i></button>
+  <div class="small-12 medium-6 columns">
+    <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <label>Cercar</label>
+        <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
+        <div class="input-group">
+          <input class="input-group-field" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
+          <div class="input-group-button">
+            <input class="button" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
+          </div>
         </div>
-      </div>
+    </form>
+    <a href="javascript:void(0)" class="button small secondary hide-for-medium -filtro">Filtra el contingut</a>
+  </div>
+  <div class="formulario-navegacion">
+  <form class="navegacion-noticias show-for-medium" id="formularioNavegacion" action="">
+    <div class="small-12 medium-3 columns">
+      <label>Categories</label>
+      <?php 
+      $args = array(
+        'show_option_none' => 'Sel·lecciona una categoria',
+      ); ?>
+      <?php wp_dropdown_categories('show_option_none=Sel·lecciona una categoria'); ?>
+      <script type="text/javascript">
+        <!--
+        var dropdown = document.getElementById("cat");
+        function onCatChange() {
+          if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+            location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+          }
+        }
+        dropdown.onchange = onCatChange;
+        -->
+      </script>
     </div>
-  </form>
+    <div class="small-12 medium-3 columns end">
+      <label>Etiquetes</label>
+      <?php 
+      $args = array(
+        'taxonomy' => 'post_tag',
+        'show_option_none' => 'Sel·lecciona una etiqueta',
+      ); ?>
+      <?php wp_dropdown_categories( $args ); ?>
+      <script type="text/javascript">
+        <!--
+        var dropdown = document.getElementById("cat");
+        function onCatChange() {
+          if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+            location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+          }
+        }
+        dropdown.onchange = onCatChange;
+        -->
+      </script>
+    </div> 
+  </form> 
+  </div>  
 </div>
 
-<?php } ?>
+<div class="row">
+  <div class="small-12 columns">
+    <?php if ( is_search() ) { ?>
+      <h4 class="texto-centrado">
+        <?php printf( __( 'Resultats de la cerca: %s', 'shape' ), get_search_query()  ); ?>  
+      </h4>
+    <?php } ?>
+  </div>
+</div>
 
 <!-- NOTICIAS -->
 
@@ -87,7 +122,7 @@
 
 <!-- PAGINADOR -->
 
-<?php if (previous_posts_link() != '' && next_posts_link() != '' ) { ?>
+<?php if (previous_posts_link() != '' || next_posts_link() != '' ) { ?>
   <div class="row">
     <div class="small-12 columns">
       <hr>

@@ -1,5 +1,5 @@
 <?php /* Template Name: Colabora */ ?>
-<?php include('includes/opciones/_variables.php'); ?>
+<?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | INTRO -->
@@ -7,7 +7,7 @@
 <div class="row texto-centrado sin-margen--abajo">
   <div class="small-12 columns">
     <h2 class="titulo">Col·labora</h2>
-    <p class="texto-destacado">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ducimus eos iste, ut maxime, inventore quasi eligendi exercitationem deleniti unde, omnis suscipit eaque expedita magnam!</p>
+    <!-- <p class="texto-destacado">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ducimus eos iste, ut maxime, inventore quasi eligendi exercitationem deleniti unde, omnis suscipit eaque expedita magnam!</p> -->
   </div>
 </div>
 
@@ -17,31 +17,31 @@
   <div class="columns colaboracion-elemento">
     <h3>Fes un <br>donatiu</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_donatius__rojo.png" alt="Donatius">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="#formularioDonativos" class="button">Vull fer un donatiu</a>
   </div>
   <div class="columns colaboracion-elemento">
     <h3>Fes-te soci<br>de Càritas</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_socis__rojo.png" alt="Socis">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioSocios">Vull fer-me soci</a>
   </div>
   <div class="columns colaboracion-elemento">
     <h3>Fes-te <br>voluntari</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_voluntaris__rojo.png" alt="Voluntaris">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioVoluntarios">Vull ser voluntari</a>
   </div>
   <div class="columns colaboracion-elemento">
     <h3>Empresa <br>amb cor</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_empreses__rojo.png" alt="Empreses">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioEmpresas">Vull posar-hi cor</a>
   </div>
   <div class="columns colaboracion-elemento">
     <h3>Fes un <br>llegat</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats__rojo.png" alt="Llegats">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioLegados">Vull llegar</a>
   </div>
 </div>
@@ -79,13 +79,16 @@
 <div class="franja fondo-gris--claro sin-margen--abajo texto-centrado" id="formularioDonativos"> 
   <div class="row sin-margen--abajo">
     <h2 class="titulo">FES UN DONATIU A CÀRITAS MENORCA</h2>
-    <p class="texto-destacado">El __% dels ingresos de Càritas Menorca prové de donacions de persones particulars, gent com tu que vol ajudar als demes. Ajudar es facil i costa molt poc, de fet costa nomes el que tu vulguis&hellip;</p>
+    <p class="texto-destacado">La majoria dels ingresos de Càritas Menorca prové de donacions de persones particulars, gent com tu que vol ajudar als demes. Ajudar es facil i costa molt poc, de fet costa nomes el que tu vulguis&hellip;</p>
   </div>
 </div>
 <div class="franja fondo-rojo texto-centrado"> 
   <div class="row sin-margen--abajo">
     <div class="small-12 medium-6 medium-centered columns">
-      <form class="donativos-formulario" action="">
+      <h4 class="titulo">Estem treballant per posar en marxa un nou sistema de donatius online. Gràcies per el teu interés!</h4>
+      <p class="textodestacado">De moment, pots fer els donatius emprant el nostre imprès de donatius i presentant-lo en la teva entitat financera.</p>
+      <a href="#" class="button bordeado">DESCARREGA L'IMPRÈS</a>
+      <!-- <form class="donativos-formulario" action="">
         <h4>1&dash; Quantitat que vols aportar</h4>
         <fieldset class="donativos-selector">
           <div class="input-group">
@@ -111,7 +114,7 @@
         <fieldset class="donativos-boton">
           <button type="submit" class="large button bordeado">Fer donatiu</button>
         </fieldset>
-      </form>
+      </form> -->
     </div>
   </div>
 </div>
@@ -132,7 +135,7 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES-TE SOCI</h2>
-        <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p>
+        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>
@@ -290,7 +293,7 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES-TE VOLUNTARI</h2>
-        <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p>
+        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>
@@ -379,7 +382,7 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>POSA-HI COR A LA TEVA EMPRESA</h2>
-        <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p>
+        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
         <a href="#" class="small button bordeado--blanco">Descarrega l'informació fiscal</a>
       </div>
     </div>
@@ -440,7 +443,7 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES UN LLEGAT</h2>
-        <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p>
+        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>

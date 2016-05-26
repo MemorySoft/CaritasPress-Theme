@@ -1,46 +1,34 @@
-<?php /* Template Name: Proyectos */ ?>
+<?php /* Template Name: Acció Social */ ?>
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
-<!-- CONTENIDO | INTRO -->
-    
-<div class="row sin-margen--abajo texto-centrado">
-  <div class="small-12 columns">
-    <h2 class="titulo">Els nostres projectes</h2>
-    <!-- <p class="texto-destacado">Es l’estructura administrativa, tècnica i professional que permet desenvolupar programes i serveis específics d’assistència, promoció, formació i sensibilització a les 17 parroquies de Menorca.</p> -->
-  </div>
-</div>
-
-<!-- CONTENIDO | FILTROS -->
+<!-- TITULO -->
 
 <div class="row">
-  <div class="small-12 columns">
-    <p class="texto-centrado">Tria un dels teme seguents per filtrar les categories</p>
-    <div class="filtros-categorias">
-      <div class="menu-centrado">
-        <ul class="menu vertical medium-horizontal">
-          <li><a class="label" href="projectes">Tot</a></li>
-          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>animacio-del-voluntariat">Animació del Voluntariat</a></li>
-          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>accio-social">Acció Social</a></li>
-          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>ocupacio-i-insercio-laboral">Ocupació i Inserció Laboral</a></li>
-          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>sensibilitzacio-i-cooperacio">Sensibilització i Cooperació</a></li>
-        </ul>
-      </div>
-    </div>
+  <div class="small-12 columns texto-centrado">
+    <h2 class="pagina-titulo">Programa d'Acció Social</h2>
+    <p class="texto-destacado">El programa d’Ocupació està format per diversos serveis i projectes que pretenen la reinserció socio-laboral de totes aquelles persones que, per qualsevol circumstància, tenen limitat l’accés al món laboral, degut a la manca d’hàbits i coneixements, trobant-se en situació de risc greu de caure en la marginació o exclusió social.</p>
+    <hr>
   </div>
-</div>
+</div>  
 
-<!-- PROYECTOS -->
+<!-- NOTICIAS -->
 
-<div class="row small-up-1 medium-up-2 large-up-3">     
+<div class="row small-up-1 medium-up-2 large-up-3">   
   <?php 
   $args = array(
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'programa',
+        'field' => 'slug',
+        'terms' => array( 'accio-social' )
+      ),
+    ),
     'post_type' => 'proyecto',
-    'posts_per_page' => 100,
   );
-  $proyectos_item = new WP_Query($args);
-  if( $proyectos_item->have_posts() ) { ?>
-    <?php  while ( $proyectos_item->have_posts() ) : $proyectos_item->the_post(); ?>
+  $social_item = new WP_Query($args);
+  if( $social_item->have_posts() ) { ?>
+    <?php  while ( $social_item->have_posts() ) : $social_item->the_post(); ?>
       <div class="column" id="post-<?php the_ID(); ?>">
         <div class="articulo stack-for-small texto centrado">
           <div class="articulo-seccion articulo-seccion--vertical">
@@ -76,12 +64,6 @@
                     <span class="label"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
-              <ul class="botones-compartir">
-                <li><a class="boton-compartir--twitter" href="http://twitter.com/home?status=<?php the_title(); ?>+<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="boton-compartir--facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&title=<?php the_title(); ?>"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="boton-compartir--google" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a></li>
-                <li><a class="boton-compartir--email boton-compartir--icon-last" href="mailto:"><i class="fa fa-envelope"></i></a></li>
-              </ul>
             </div>
             <div class="small-12 medium-6 columns proyecto-cuerpo">
               <?php the_content(); ?>
@@ -93,5 +75,19 @@
     <?php endwhile; ?>
   <?php } ?>
 </div>
+
+<!-- PAGINADOR -->
+
+<?php if (previous_posts_link() != '' || next_posts_link() != '' ) { ?>
+  <div class="row">
+    <div class="small-12 columns">
+      <hr>
+      <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+        <li class="pagination-prev"><?php next_posts_link( 'Noticies recents' ); ?></li>
+        <li class="pagination-next"><?php previous_posts_link( 'Noticies antigues' ); ?></li>
+      </ul>
+    </div>
+  </div>
+<?php } ?>
 
 <?php get_footer(); ?>

@@ -14,7 +14,7 @@
           <div class="row post">
             <?php edit_post_link('Editar', ''); ?>
             <div class="small-12 columns">
-              <h2 class="titulo post-titulo">Lorem ipsum dolor sit amet, consectetur adipisicing</h2>
+              <h2 class="titulo post-titulo"><?php the_title(); ?></h2>
             </div>
             <div class="small-12 medium-4 columns post-lateral">
               <?php the_post_thumbnail(); ?>  
@@ -26,12 +26,6 @@
                 </div>
                 <div class="post-metadatos--etiqueta"></div>
               </div>
-              <ul class="botones-compartir">
-                <li><a class="boton-compartir--twitter" href="http://twitter.com/home?status=<?php the_title(); ?>+<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="boton-compartir--facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&title=<?php the_title(); ?>"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="boton-compartir--google" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a></li>
-                <li><a class="boton-compartir--email boton-compartir--icon-last" href="mailto:"><i class="fa fa-envelope"></i></a></li>
-              </ul>
             </div>
             <div class="small-12 medium-8 columns post-cuerpo">
               <?php the_content(); ?>

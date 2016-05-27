@@ -106,13 +106,15 @@
         <div class="articulo stack-for-small texto centrado">
           <div class="articulo-seccion articulo-seccion--vertical">
             <div class="articulo-imagen">
-              <?php the_post_thumbnail(); ?>
+              <a href="<?php echo the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
+                <?php the_post_thumbnail(); ?>
+              </a>
             </div>
           </div>
           <div class="articulo-seccion articulo-seccion--vertical">
             <h4 class="articulo-titulo"><?php the_title(); ?></h4>
             <p class="articulo-extracto"><?php echo the_excerpt(); ?></p>
-            <a href="<?php echo the_permalink(); ?>" class="button">Llegir més</a>
+            <a href="<?php echo the_permalink(); ?>" class="button" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>"><?php _e('Llegir mès','caritaspress' ); ?></a>
           </div>
         </div>
       </div>

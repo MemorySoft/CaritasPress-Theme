@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" itemscope itemtype="http://schema.org/Article" <?php language_attributes(); ?>>
 <head>
+  <title><?php wp_title(''); ?></title>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -56,6 +57,7 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- BANNER GLOBAL -->
+
   <?php 
     if ($banner_ver == 1) {
     ?>
@@ -79,30 +81,31 @@
   
   <!-- NAVEGACIÓN -->
 
-  
-      <div class="row top-bar">
-        <div class="small-12 columns">
-          <div class="top-bar-title">
-            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-              <span class="menu-icon dark" data-toggle></span>
-            </span>
-            <?php if ( get_theme_mod( 'caritaspress_logo' ) ) : ?>
-  				    <div class='site-logo'>
-  				      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-  				      	<img src='<?php echo esc_url( get_theme_mod( 'caritaspress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-  				      </a>
-  				    </div>
-  					<?php else : ?>
-  		    		<strong>
-  		    			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-  		    				<?php bloginfo( 'name' ); ?>
-  		    			</a>
-  		    		</strong>
-  					<?php endif; ?>
-          </div>
-          <div class="top-bar-right">
-            <?php caritaspress_menu_principal(); ?> 
-          </div>
-        </div>
+  <div class="row top-bar">
+    <div class="small-12 columns">
+      <div class="top-bar-title">
+        <?php if ( get_theme_mod( 'caritaspress_logo' ) ) : ?>
+			    <div class='site-logo'>
+			      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+			      	<img src='<?php echo esc_url( get_theme_mod( 'caritaspress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+			      </a>
+			    </div>
+				<?php else : ?>
+	    		<strong>
+	    			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+	    				<?php bloginfo( 'name' ); ?>
+	    			</a>
+	    		</strong>
+				<?php endif; ?>
       </div>
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <span class="menu-disparador">
+          MENU
+        </span>
+      </span>
+      <div class="top-bar-right">
+        <?php caritaspress_menu_principal(); ?> 
+      </div>
+    </div>
+  </div>
     

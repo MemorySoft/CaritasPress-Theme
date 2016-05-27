@@ -32,10 +32,10 @@ $(document).ready(function() {
     itemsDesktopSmall : [400,1]
   });
 
-  // Filtros del buscador
-  // $('-filtro').click(function() {
-  //   $('.-formulario-navegacion').show();
-  // });
+  // MENU
+  $('.menu-disparador').click(function() {
+    $('.top-bar-menu').toggle('fast');
+  });
 
 });
 

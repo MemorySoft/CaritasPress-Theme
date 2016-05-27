@@ -24,7 +24,7 @@ function caritaspress_setup() {
 			'theme_location' 		=> 'menu-principal',
 			'container'       	=> 'nav',
 			'container_class'		=> 'top-bar-menu',
-			'menu_class' 				=> 'menu',
+			'menu_class' 				=> 'menu menu-principal menu-responsive',
 			'menu_id'         	=> 'menu-primario',
 			'depth'							=> '0',
 			'fallback_cb' 			=> false

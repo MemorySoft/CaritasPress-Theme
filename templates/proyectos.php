@@ -58,13 +58,6 @@
           <div class="row proyecto">
             <div class="small-12 columns">
               <h2 class="titulo proyecto-titulo">
-                <?php if ( get_theme_mod( 'caritaspress_logo' ) ) : ?>
-                  <div class='site-logo'>
-                    <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-                      <img src='<?php echo esc_url( get_theme_mod( 'caritaspress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-                    </a>
-                  </div>
-                <?php endif; ?>
                 <?php the_title(); ?>
               </h2>
             </div>

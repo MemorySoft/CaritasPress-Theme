@@ -76,19 +76,19 @@
         </div>
         <div class="small-12 large-4 columns">
           <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-uno') ) : ?>
-            <h5><?php echo $footer_uno_titulo ?></h5>
+            <h5>Materials de difusió</h5>
             <?php caritaspress_menu_footer_uno(); ?> 
           <?php endif; ?>
           <h5>Segueix-nos</h5>
           <div class="redes-sociales--horizontal">
-            <a class="redes-sociales-item" href="">
-              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="Icono de YouTube">
+            <a class="redes-sociales-item" href="" target="_blank">
+              <img src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="Icono de YouTube">
             </a>
-            <a class="redes-sociales-item" href="https://www.facebook.com/cdmenorca">
-              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_facebook.png" alt="Icono de Facebook">
+            <a class="redes-sociales-item" href="https://www.facebook.com/cdmenorca" target="_blank">
+              <img src="<?php bloginfo('template_directory'); ?>/images/icono_facebook.png" alt="Icono de Facebook">
             </a>
-            <a class="redes-sociales-item" href="https://twitter.com/caritasmenorca?lang=es">
-              <img target="_blank" src="<?php bloginfo('template_directory'); ?>/images/icono_twitter.png" alt="Icono de Twitter">
+            <a class="redes-sociales-item" href="https://twitter.com/caritasmenorca?lang=es" target="_blank">
+              <img src="<?php bloginfo('template_directory'); ?>/images/icono_twitter.png" alt="Icono de Twitter">
             </a>
           </div>
         </div>

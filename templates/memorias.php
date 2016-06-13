@@ -6,7 +6,7 @@
     
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h3 class="titulo">Memories anuals</h3>
+    <h3 class="titulo">Memòries anuals</h3>
   </div>
 
   <?php 
@@ -18,13 +18,13 @@
     if( $wp_query->have_posts() ) { ?>
       <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
         <?php $enlace = get_post_meta( get_the_id(), 'memoria_enlace', true ); ?>
-        <div class="small-12 medium-4 columns end">
+        <div class="small-6 medium-3 columns end">
           <div class="tarjeta">
             <div class="tarjeta-contenido tarjeta-imagen">
               <?php the_post_thumbnail(); ?>
             </div>
             <div class="tarjeta-accion">
-              <span class="tarjeta-titulo"><?php the_title(); ?></span>
+              <span class="tarjeta-titulo fondo-rojo"><?php the_title(); ?></span>
               <a href="<?php echo $enlace ?>" target="_blank" title="<?php _e('Descarrega','caritaspress'); ?> <?php the_title(); ?>"><i class="fa fa-download"></i></a>
             </div>
           </div>

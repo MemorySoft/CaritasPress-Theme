@@ -31,7 +31,7 @@
     <?php  while ( $laboral_item->have_posts() ) : $laboral_item->the_post(); ?>
       <div class="column" id="post-<?php the_ID(); ?>">
         <div class="articulo stack-for-small texto centrado">
-          <div class="articulo-seccion articulo-seccion--vertical">
+          <div class="articulo-seccion articulo-seccion--vertical espacio">
             <div class="articulo-imagen">
               <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" data-open="modal-<?php the_ID(); ?>"><?php the_post_thumbnail(); ?></a>
             </div>
@@ -61,7 +61,7 @@
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
                   foreach ( $terms as $term ) { ?>
-                    <span class="label"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
             </div>
@@ -75,6 +75,7 @@
     <?php endwhile; ?>
   <?php } ?>
 </div>
+<hr>
 
 <!-- PAGINADOR -->
 
@@ -88,6 +89,6 @@
       </ul>
     </div>
   </div>
+ 
 <?php } ?>
-
 <?php get_footer(); ?>

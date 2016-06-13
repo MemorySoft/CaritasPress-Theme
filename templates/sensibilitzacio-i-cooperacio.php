@@ -36,7 +36,7 @@
               <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" data-open="modal-<?php the_ID(); ?>"><?php the_post_thumbnail(); ?></a>
             </div>
           </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
+          <div class="articulo-seccion articulo-seccion--vertical espacio">
             <h4 class="articulo-titulo"><?php the_title(); ?></h4>
             <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" class="button" data-open="modal-<?php the_ID(); ?>"><?php _e('Llegir','caritaspress'); ?></a>
           </div>
@@ -61,7 +61,7 @@
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
                   foreach ( $terms as $term ) { ?>
-                    <span class="label"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
             </div>
@@ -75,7 +75,7 @@
     <?php endwhile; ?>
   <?php } ?>
 </div>
-
+<hr>
 <!-- PAGINADOR -->
 
 <?php if (previous_posts_link() != '' || next_posts_link() != '' ) { ?>

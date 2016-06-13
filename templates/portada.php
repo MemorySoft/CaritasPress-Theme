@@ -25,8 +25,8 @@
               <?php the_post_thumbnail(); ?>
               <div class="carrusel-seccion">
                 <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-                <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>">
-                    <?php _e('Llegir','podemospress'); ?>
+                <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
+                    <?php _e('Llegir','caritaspress'); ?>
                   </a>
               </div>
             </div>
@@ -51,31 +51,31 @@
   </div>
   <div class="row small-up-1 medium-up-5 sin-margen--abajo texto-centrado">
     <div class="columns">
-      <a href="col·labora">
+      <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_donatius.png" alt="Donatius">
         <h5>Vull fer un <br>donatiu</h5>
       </a>
     </div>
     <div class="columns">
-      <a href="col·labora">
+      <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_socis.png" alt="Socis">
         <h5>Vull fer-me <br>soci</h5>
       </a>
     </div>
     <div class="columns">
-      <a href="col·labora">
+      <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_voluntaris.png" alt="Voluntaris">
         <h5>Vull fer-me <br>voluntari</h5>
       </a>
     </div>
     <div class="columns">
-      <a href="col·labora">
+      <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_empreses.png" alt="Empreses">
         <h5>Empresa <br>amb cor</h5>
       </a>
     </div>
     <div class="columns">
-      <a href="col·labora">
+      <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats.png" alt="Llegats">
         <h5>Fes un <br>llegat</h5>
       </a>
@@ -109,7 +109,7 @@
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-            <img src="<?php bloginfo('template_directory'); ?>/images/programas/social.jpg" alt="Persona desplaçada treballant al Taller Mestral">
+	    <img src="<?php bloginfo('template_directory'); ?>/images/programas/ocupacio.jpg" alt="Imatge de dos mans agafan-se">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
@@ -122,7 +122,7 @@
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-            <img src="<?php bloginfo('template_directory'); ?>/images/programas/ocupacio.jpg" alt="Imatge de dos mans agafan-se">
+            <img src="<?php bloginfo('template_directory'); ?>/images/programas/social.jpg" alt="Persona desplaçada treballant al Taller Mestral">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
@@ -159,7 +159,7 @@
       <img src="<?php bloginfo('template_directory'); ?>/images/logo_mestral_grande.png" alt="Logotipo del proyecto Taller Mestral">
       <h2 class="small-12 titulo">Taller Mestral</h2>
       <p class="texto-destacado">
-          Projecte de Càrites Menorca per a la inserció socio-laboral de persones en risc d'exclusió social, mitjançant la reutilització de residus voluminosos.
+          Projecte de Càritas Menorca per a la inserció socio-laboral de persones en risc d'exclusió social, mitjançant la reutilització de residus voluminosos.
       </p>
       <a href="http://www.mestralmenorca.org/" target="_blank" class="large button" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php _e('Visita la web de Mestral','caritaspress'); ?></a>
     </div>
@@ -210,12 +210,7 @@
       <img src="<?php bloginfo('template_directory'); ?>/images/logo_empreses.jpg" alt="<?php esc_attr__('Logotip de Empreses amb Cor','podemospress'); ?>">
       <h2 class="small-12 titulo">Empreses amb cor</h2>
       <p class="texto-destacado">Les empreses responsables són un dels agents més importants per al desenvolupament sostenible de la nostra societat i per a la seva cohesió social..</p>
-
-      <!-- Esto está comentado hasta que tengamos el contenido para la ventana modal 
       <a href="javascript:void(0)" class="large button" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?></a> 
-      -->
-      
-      <a href="col·labora" class="large button" ><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?></a>
     </div>
   </div>
 </div>

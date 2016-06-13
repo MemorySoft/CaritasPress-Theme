@@ -34,11 +34,11 @@
   <div class="small-12 medium-6 columns">
     <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <!--<label>Cercar</label> -->
-        <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
+        <label class="screen-reader-text" for="s"><?php _x( 'Cercar:', 'label' ); ?></label>
         <div class="input-group">
           <input class="input-group-field" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
           <div class="input-group-button">
-            <input class="button" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
+            <input class="button" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Cercar', 'submit button' ); ?>" />
           </div>
         </div>
     </form>

@@ -31,7 +31,7 @@
         <div class="small-12 columns texto-centrado">
           <h1>
             Col·labora amb Càritas 
-            <small><a href="col·labora" class="small button invertido">Fes-te col·laborador</a></small>
+            <small><a href="colabora" class="small button invertido">Fes-te col·laborador</a></small>
           </h1>
           <hr>
         </div>
@@ -81,7 +81,7 @@
           <?php endif; ?>
           <h5>Segueix-nos</h5>
           <div class="redes-sociales--horizontal">
-            <a class="redes-sociales-item" href="" target="_blank">
+            <a class="redes-sociales-item" href="https://www.youtube.com/channel/UCzcLy0ubLrH_QOmelsHbqcQ" target="_blank">
               <img src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="Icono de YouTube">
             </a>
             <a class="redes-sociales-item" href="https://www.facebook.com/cdmenorca" target="_blank">
@@ -117,8 +117,25 @@
           <span aria-hidden="true">&times;</span>
         </div>
         <h2>Empreses amb cor</h2>
-        <p class="texto-destacado--peque"></p>
-        <p><a href="col·labora" class="button">Ofereix la teva empresa</a></p>
+        <p class="texto-destacado--peque">Des de Càritas Diocesana de Menorca estem implantant un nou programa de col·laboració amb tots aquells agents econòmics i socials, l'activitat i filosofia dels quals, coincideixen amb els valors que des de Càritas promovem: la solidaritat, la justícia, el respecte a la dignitat i la igualtat.</p>
+        <p>Les empreses y entitats del nostre entorn són un dels agents més importants per al desenvolupament sostenible de la nostra societat i per a la seva cohesió social. La Responsabilitat Social Corporativa (RSE) és una realitat consolidada al nostre país.</p>
+        <p>Càritas Menorca aposta per aquest treball conjunt amb els diferents agents socials que, atenent a la situació actual i dins de les seves possibilitats, volen formar part d'aquesta xarxa solidària.</p> 
+        <p>
+          <h4>Avantatges de ser una Empresa/Entitat amb Cor</h4>
+          <ul class="lista--entre-lineas">
+              <li>Estalona el vostre paper com a membre dinàmic de la comunitat i desperta l’interès de clients, proveïdors i empleats, sobre tot, si poden participar directe o indirectament de lesaccions.</li>
+              <li>Reforça la vostra imatge de marca i l’impacte mediàtic, vinculant-vos mitjançant les accions de mecenatge, patrocini o esponsorització.</li>
+              <li>Presentar-vos davant la societat, i especialment davant el vostre públic, com una empresa o entitat responsable i socialment compromesa.</li>
+              <li>Per part de Càritas sempre es farà menció de la col·laboració en mitjans de comunicació i en els mitjans de difusió interna de la pròpia entitat, web, xarxes, memòria, etc.</li>
+              <li>Elaboració d'articles que expliquin el suport de les empreses o entitats, en mitjans especialitzats.</li>
+              <li>Ús de la nostra imatge i nom sempre previ permís.</li>
+              <li>Identificació visual de l'empresa com a “Empresa amb Cor”. Participació i organització d’actes conjunts on es reconeguin o promoguin aquest tipus de col·laboracions.</li>
+              <li>Beneficis fiscals, que contempla la legislació vigent, en termes de patrocini i mecenatge.</li>
+              <li>La senzilla satisfacció que dóna saber que s’està contribuint a fer un món més just i digne per a tots.</li>
+          </ul>
+
+        </p>
+        <p><a href="colabora" class="button">Ofereix la teva empresa</a></p>
       </div>
     </div>
   </div>

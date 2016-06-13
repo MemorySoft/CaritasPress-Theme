@@ -271,7 +271,7 @@
   <div class="small-12 columns">
     <div class="large callout texto-centrado">
       <h3>Contacta amb Càrites Diocesana de Menorca</h3>
-      <p><a href="contacto" class="button invertido" title="<?php _e('Contacta','caritaspress'); ?>"><?php _e('Contacta','caritaspress'); ?></a></p>
+      <p><a href="contacte" class="button invertido" title="<?php _e('Contacta','caritaspress'); ?>"><?php _e('Contacta','caritaspress'); ?></a></p>
     </div>
   </div>
 </div>

@@ -6,16 +6,16 @@
     
 <div class="row sin-margen--abajo texto-centrado">
   <div class="small-12 columns">
-    <h2 class="titulo">Els nostres projectes</h2>
+    <h2 class="sin-margen--abajo">Els nostres projectes</h2>
     <!-- <p class="texto-destacado">Es l’estructura administrativa, tècnica i professional que permet desenvolupar programes i serveis específics d’assistència, promoció, formació i sensibilització a les 17 parroquies de Menorca.</p> -->
   </div>
 </div>
 
 <!-- CONTENIDO | FILTROS -->
 
-<div class="row">
-  <div class="small-12 columns">
-    <p class="texto-centrado">Tria un dels teme seguents per filtrar les categories</p>
+<div class="row sin-margen--abajo">
+  <div class="small-12 columns texto-centrado">
+    <p class="texto-destacado">Tria un dels teme seguents per filtrar les categories</p>
     <div class="filtros-categorias">
       <div class="menu-centrado">
         <ul class="menu vertical medium-horizontal">
@@ -48,7 +48,7 @@
               <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" data-open="modal-<?php the_ID(); ?>"><?php the_post_thumbnail(); ?></a>
             </div>
           </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
+          <div class="articulo-seccion articulo-seccion--vertical espacio">
             <h4 class="articulo-titulo"><?php the_title(); ?></h4>
             <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" class="button" data-open="modal-<?php the_ID(); ?>"><?php _e('Llegir','caritaspress'); ?></a>
           </div>
@@ -73,7 +73,7 @@
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
                   foreach ( $terms as $term ) { ?>
-                    <span class="label"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
             </div>
@@ -88,4 +88,5 @@
   <?php } ?>
 </div>
 
+<hr>
 <?php get_footer(); ?>

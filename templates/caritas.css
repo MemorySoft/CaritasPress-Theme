@@ -1,5 +1,5 @@
 /*
-*	CÀRITES MENORCA
+*	CÀRITAS MENORCA
 *	---------------
 *	Basado en Foundation 6.1.2 
 *	http://foundation.zurb.com/sites/docs/
@@ -42,11 +42,10 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #fff;
   opacity: .7;
 }
 a:focus {
-  color: #D51834;
+  color: inherit;
 }
 
 p a { 

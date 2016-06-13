@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php /* 5pJQhrPh3XJCUOiaQCa6 */ ?><?php /*   */ ?>
+<?php /* uqjsQSyWVhmOHAEVa1i6 */ ?><!DOCTYPE html>
 <html class="no-js" itemscope itemtype="http://schema.org/Article" <?php language_attributes(); ?>>
 <head>
   <title><?php wp_title(''); ?></title>

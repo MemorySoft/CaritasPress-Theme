@@ -71,7 +71,7 @@
     </div>  
     <p class="texto-destacado--peque texto-sin-serifa">Si fas donatius puntuals de forma espòradica també obtindrás avantatges, amb una reducció del 30% al teu IRPF.</p>
   </div>
-  <a href="" class="large button">Mes informació <i class="fa fa-download"></i></a>
+  <a href="http://www.caritasmenorca.org/wp-content/uploads/2016/06/informacio_fiscal.pdf" class="large button" target="_blank">Mes informació <i class="fa fa-download"></i></a>
 </div>
 
 <!-- CONTENIDO | FORMULARIO DONATIVOS -->
@@ -87,8 +87,8 @@
     <div class="small-12 medium-6 medium-centered columns">
       <h4 class="titulo">Estem treballant per posar en marxa un nou sistema de donatius online. Gràcies per el teu interés!</h4>
       <p class="textodestacado">De moment, pots fer els donatius emprant el nostre imprès de donatius i presentant-lo en la teva entitat financera.</p>
-      <a href="#" class="button bordeado">DESCARREGA L'IMPRÈS</a>
-      <!-- <form class="donativos-formulario" action="">
+      <a href="http://www.caritasmenorca.org/wp-content/uploads/2016/06/informacio_fiscal.pdf" class="button invertido" target="_blank" title="Artxiu PDF de la bulleta d'inscripció i donatius">DESCARREGA L'IMPRÈS</a>
+      <!-- <form class="donativos-formulario" action="https://formspree.io/desarrolloweb@memorysoft.net">
         <h4>1&dash; Quantitat que vols aportar</h4>
         <fieldset class="donativos-selector">
           <div class="input-group">
@@ -142,7 +142,10 @@
   <div class="formulario">
     <div class="row">
       <div class="small-12 medium-12 medium-centered columns">
-        <form class="grid-form formulario-centrado formulario-centrado">
+        <form class="grid-form formulario-centrado" action="https://formspree.io/desarrolloweb@memorysoft.net" method="POST">
+          <input type="hidden" name="_subject" value="Nou missatge des de el formulari de Socis - Càritas Menorca" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_next" value="http://www.caritasmenorca.org/gracies" />
           <fieldset>
             <!-- Datos personales -->
             <legend>Dades personals</legend>
@@ -300,7 +303,10 @@
   <div class="formulario">
     <div class="row">
       <div class="small-12 medium-12 medium-centered columns">
-        <form class="grid-form formulario-centrado formulario-centrado">
+        <form class="grid-form formulario-centrado" action="https://formspree.io/desarrolloweb@memorysoft.net" method="POST">
+          <input type="hidden" name="_subject" value="Nou missatge des de el formulari de Voluntaris - Càritas Menorca" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_next" value="http://www.caritasmenorca.org/gracies" />
           <fieldset>
             <!-- Datos personales -->
             <legend>Dades personals</legend>
@@ -390,7 +396,10 @@
   <div class="formulario">
     <div class="row">
       <div class="small-12 medium-12 medium-centered columns">
-        <form class="grid-form formulario-centrado">
+        <form class="grid-form formulario-centrado" action="https://formspree.io/desarrolloweb@memorysoft.net" method="POST">
+          <input type="hidden" name="_subject" value="Nou missatge des de el formulari de Empreses - Càritas Menorca" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_next" value="http://www.caritasmenorca.org/gracies" />
           <fieldset>
             <!-- Datos de la empresa -->
             <legend>Dades de contacte</legend>
@@ -450,7 +459,10 @@
   <div class="formulario">
     <div class="row">
       <div class="small-12 medium-12 medium-centered columns">
-        <form class="grid-form formulario-centrado">
+        <form class="grid-form formulario-centrado" action="https://formspree.io/desarrolloweb@memorysoft.net" method="POST">
+          <input type="hidden" name="_subject" value="Nou missatge des de el formulari de Llegats - Càritas Menorca" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_next" value="http://www.caritasmenorca.org/gracies" />
           <fieldset>
             <!-- Datos de contacto -->
             <legend>Sol·licitut d'informació per a llegats solidaris</legend>

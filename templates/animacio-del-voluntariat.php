@@ -63,7 +63,7 @@
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
                   foreach ( $terms as $term ) { ?>
-                    <span class="label"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
                 <?php  } ?>
               </div>
             </div>
@@ -91,14 +91,5 @@
     </div>
   </div>
 <?php } ?>
-
-<div class="row">
-  <div class="small-12 columns">
-    <div class="large callout texto-centrado">
-      <h3>‘Càritas Jove’</h3>
-      <p class="textodestacado">‘Càritas Jove’ pretén impulsar el voluntariat entre els joves menorquins i implicar-los en els projectes i programes de l’entitat a favor dels exclosos.</p>
-    </div>
-  </div>
-</div>
 
 <?php get_footer(); ?>

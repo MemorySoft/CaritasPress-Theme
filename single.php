@@ -16,6 +16,10 @@
             <div class="small-12 columns">
               <h2 class="titulo post-titulo"><?php the_title(); ?></h2>
             </div>
+            
+<hr>
+<div class="espacio"></div>            
+           
             <div class="small-12 medium-4 columns post-lateral">
               <?php the_post_thumbnail(); ?>  
               <div class="post-metadatos">
@@ -36,7 +40,7 @@
     
         <!-- NAVEGACION POSTS -->
 
-        <div class="row navegacion-articulos">
+        <div class="row navegacion-articulos sin-margen--abajo">
           <hr>
           <div class="small-12 medium-6 texto-centrado medium columns navegacion-anterior-articulo"> 
             <?php previous_post_link( '<p>ARTÍCLE PREVI</p> %link', '%title' ); ?>
@@ -48,7 +52,7 @@
       <?php endif; ?>
   	</div>
   </div>
-
+<hr>
 </div> <!-- /.contenedor -->
 
 <?php get_footer(); ?>

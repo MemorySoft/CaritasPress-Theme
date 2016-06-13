@@ -6,7 +6,7 @@
     
 <div class="row sin-margen--abajo texto-centrado">
   <div class="small-12 columns">
-    <h2 class="titulo">Actualitat i noticies de Càritas Menorca</h2>
+    <h2 class="sin-margen--abajo">Actualitat i noticies de Càritas Menorca</h2>
   </div>
 </div>
 

@@ -2,7 +2,7 @@
 /**
 *   CARRUSEL POST TYPE
 *   --------------------
-*   Post type que genera un item para el carrusel de portada.
+*   Post type que genera un item para el carrusel de la sección Càritas.
 *   
 *   Autor: Hector Asencio @MemorySoft
 *   Versión: 1.0

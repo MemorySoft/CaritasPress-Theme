@@ -14,7 +14,7 @@
       <div class="row sin-margen--abajo">
         <h2 class="articulo-titulo texto-mayuscula">Cáritas al Youtube</h2>
         <p class="texto-destacado">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio rerum nesciunt ea maxime, dolore, porro pariatur tempore ad excepturi praesentium quos officiis eaque repudiandae iusto amet earum iure dolorem doloribus consequatur error accusamus. Dolorem, fuga.</p>
-        <a href="" class="large button">Veure el canal de Càritas</a>
+        <a href="https://www.youtube.com/channel/UCzcLy0ubLrH_QOmelsHbqcQ" target="_blank" class="large button">Veure el canal de Càritas</a>
       </div>
     </div>
 

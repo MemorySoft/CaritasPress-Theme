@@ -24,7 +24,10 @@
     <div class="franja fondo-gris--claro">
       <div class="row sin-margen--abajo">
         <div class="formulario small-12 medium-12 columns" id="formularioContacto">
-          <form class="grid-form">
+          <form class="grid-form" action="https://formspree.io/desarrolloweb@memorysoft.net" method="POST">
+            <input type="hidden" name="_subject" value="Nou missatge des de el formulari de Contacte - Càritas Menorca" />
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="hidden" name="_next" value="http://www.caritasmenorca.org/gracies" />
             <fieldset>
               <legend>Contacta amb Càritas Diocesana de Menorca</legend>
               <div data-row-span="6">

@@ -2,23 +2,48 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
-<!-- CARRUSEL -->
+<!--
+
+# CARRUSEL
+Este componente consiste en un carrusel que muestra el CPT 'Carrusel' o la
+categoría predefinida 'Portada' y está encapsulado en un sidebar que sobre-escribe
+el contenido de los anteriores items cuando está definido:
+
+  1- Muestra el CPT 'carrusel' por defecto
+  2- Si existe algún post con la categoría 'Portada' lo sobre-escribe
+  3- Si añadimos algún widget al sidebar, sobre-escribe lo anterior
+
+Ficheros relacionados:
+
+  * includes\entradas\post_carrusel.php
+  * includes\funciones\func_categorias.php
+  * includes\funciones\func_sidebars.php
+  * styles\caritas.css
+  * styles\owl.carousel.css
+  * styles\owl.theme.css
+
+-->
 
 <div class="row sin-margen--abajo">
-  <div class="small-12 columns">  
+  <div class="small-12 columns">
+    <!-- Declaramos el sidebar -->
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
+      <!-- Contenido por defecto si no hay nigún widget -->
       <div class="carrusel portada-carrusel -carrusel-un-item">
-        <?php 
+        <?php
+        // Preparamos las opciones para la query
         $noticias_args = array(
           'post_type' => 'post',
           'category_name' => 'portada',
-          'posts_per_page'=> 3,
+          'posts_per_page'=> 6,
         );
         $carrusel_args = array(
           'post_type' => 'carrusel'
         );
+        // Ejecutamos la query
         $carrusel_item = new WP_Query($carrusel_args);
         $noticias_item = new WP_Query($noticias_args);
+        // Si hay posts con la categoría 'Portada' sacamos las seis últimas
         if( $noticias_item->have_posts() ) { ?>
           <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
             <div class="carrusel-item">
@@ -31,7 +56,9 @@
               </div>
             </div>
           <?php endwhile; ?>
-        <?php } elseif( $carrusel_item->have_posts() ) { ?>
+        <?php
+        // Si ningún post tiene la categoría 'Portada' mostramos el CTP 'Carrusel'
+        } elseif( $carrusel_item->have_posts() ) { ?>
           <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
             <div>
               <?php the_post_thumbnail(); ?>
@@ -39,9 +66,9 @@
           <?php endwhile; ?>
         <?php } ?>
       </div>
-    <?php endif; ?> 
+    <?php endif; ?>
   </div>
-</div> 
+</div>
 
 <!-- COLABORA -->
 
@@ -83,25 +110,25 @@
   </div>
 </div>
 
-
 <!-- PROYECTOS -->
 
-<div class="projectos">
+<div class="proyectos">
   <div class="row texto-centrado">
     <div class="small-12 columns">
-      <h3>Els nostres projectes</h3>
-      <p class="texto-destacado">Càritas actua, compromesos amb la justicia</p>
+      <h3><?php echo $proyectos_titulo ?></h3>
+      <p class="texto-destacado"><?php echo $proyectos_texto ?></p>
     </div>
+
     <div class="item small-12 medium-6 large-3 columns">
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-            <img src="<?php bloginfo('template_directory'); ?>/images/programas/voluntariat.jpg" alt="Voluntaria ajudant a gent gran">
+            <img src="<?php echo $proyectos_imagen_uno ?>" alt="Imatge que simbolitza el voluntariat">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
-          <h4 class="articulo-titulo">Animació del <br>voluntariat</h4>
-          <a href="animacio-del-voluntariat" title="<?php esc_attr__('anar a la pàgina de la categoria Animació del voluntariat','caritaspress'); ?>" class="button">Veure projectes</a>
+          <h4 class="articulo-titulo"><?php echo $proyectos_nombre_categoria_uno ?></h4>
+          <a href="<?php echo $proyectos_enlace_boton_uno ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Animació del voluntariat','caritaspress'); ?>" class="button"><?php echo $proyectos_texto_boton_uno ?></a>
         </div>
       </div>
     </div>
@@ -109,12 +136,12 @@
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-	    <img src="<?php bloginfo('template_directory'); ?>/images/programas/ocupacio.jpg" alt="Imatge de dos mans agafan-se">
+	          <img src="<?php echo $proyectos_imagen_dos ?>" alt="Imatge que simbolitza ajuda">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
-          <h4 class="articulo-titulo">Acció <br>Social</h4>
-          <a href="accio-social" title="<?php esc_attr__('anar a la pàgina de la categoria Acció Social','caritaspress'); ?>" class="button">Veure projectes</a>
+          <h4 class="articulo-titulo"><?php echo $proyectos_nombre_categoria_dos ?></h4>
+          <a href="<?php echo $proyectos_enlace_boton_dos ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Acció Social','caritaspress'); ?>" class="button"><?php echo $proyectos_texto_boton_dos ?></a>
         </div>
       </div>
     </div>
@@ -122,12 +149,12 @@
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-            <img src="<?php bloginfo('template_directory'); ?>/images/programas/social.jpg" alt="Persona desplaçada treballant al Taller Mestral">
+            <img src="<?php echo $proyectos_imagen_tres ?>" alt="Imatge que simbolitza treball">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
-          <h4 class="articulo-titulo">Ocupació i <br>Inserció Laboral</h4>
-          <a href="ocupacio-i-insercio-laboral" title="<?php esc_attr__('anar a la pàgina de la categoria Ocupació i Inserció Laboral','caritaspress'); ?>" class="button">Veure projectes</a>
+          <h4 class="articulo-titulo"><?php echo $proyectos_nombre_categoria_tres ?></h4>
+          <a href="<?php echo $proyectos_enlace_boton_tres ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Ocupació i Inserció Laboral','caritaspress'); ?>" class="button"><?php echo $proyectos_texto_boton_tres ?></a>
         </div>
       </div>
     </div>
@@ -135,12 +162,12 @@
       <div class="articulo stack-for-small">
         <div class="articulo-seccion articulo-seccion--vertical">
           <div class="articulo-imagen">
-            <img src="<?php bloginfo('template_directory'); ?>/images/programas/cooperacio.jpg" alt="Cooperant a Jerusalem">
+            <img src="<?php echo $proyectos_imagen_cuatro ?>" alt="Imatge que simbolitza cooperació">
           </div>
         </div>
         <div class="articulo-seccion articulo-seccion--vertical">
-          <h4 class="articulo-titulo">Sensibilització <br>i cooperació</h4>
-          <a href="sensibilitzacio-i-cooperacio" title="<?php esc_attr__('anar a la pàgina de la categoria Sensibilització i cooperació','caritaspress'); ?>" class="button">Veure projectes</a>
+          <h4 class="articulo-titulo"><?php echo $proyectos_nombre_categoria_cuatro ?></h4>
+          <a href="<?php echo $proyectos_enlace_boton_cuatro ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Sensibilització i cooperació','caritaspress'); ?>" class="button"><?php echo $proyectos_texto_boton_cuatro ?></a>
         </div>
       </div>
     </div>
@@ -148,26 +175,27 @@
       <p><a href="projectes" title="<?php _e('Veure tots els projectes','caritaspress'); ?>"><?php _e('Veure tots els projectes','caritaspress'); ?> »</a></p>
     </div>
   </div>
-</div>    
-
+</div>
 
 <!-- MESTRAL -->
 
-<div class="franja fondo-gris--claro texto-centrado">
-  <div class="row sin-margen--abajo">
-    <div class="small-12 columns">
-      <img src="<?php bloginfo('template_directory'); ?>/images/logo_mestral_grande.png" alt="Logotipo del proyecto Taller Mestral">
-      <h2 class="small-12 titulo">Taller Mestral</h2>
-      <p class="texto-destacado">
-          Projecte de Càritas Menorca per a la inserció socio-laboral de persones en risc d'exclusió social, mitjançant la reutilització de residus voluminosos.
-      </p>
-      <a href="http://www.mestralmenorca.org/" target="_blank" class="large button" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php _e('Visita la web de Mestral','caritaspress'); ?></a>
+<?php if ($mestral_ver == 1) { ?>
+  <div class="franja fondo-gris--claro texto-centrado">
+    <div class="row sin-margen--abajo">
+      <div class="small-12 columns">
+        <img src="<?php echo $mestral_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','podemospress'); ?>">
+        <h2 class="small-12 titulo"><?php echo $mestral_titulo ?></h2>
+        <p class="texto-destacado">
+          <?php echo $mestral_descripcion ?>
+        </p>
+        <a href="<?php echo $mestral_enlace ?>" target="_blank" class="large button" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php echo $mestral_texto_boton ?></a>
+      </div>
     </div>
   </div>
-</div>
-
+<?php } ?>
 
 <!-- ACTUALIDAD -->
+
 <?php
   $args=array(
     'post_type' => 'post',
@@ -197,22 +225,24 @@
       <?php endwhile; ?>
     </div>
     <div class="small-12 columns texto-centrado">
-      <p><a href="actualitat.html" title="<?php esc_attr__('Veure tota l\'actualitat','caritaspress'); ?>"><?php _e('Veure tota l\'actualitat','caritaspress'); ?> »</a></p>
+      <p><a href="actualitat" title="<?php esc_attr__('Veure tota l\'actualitat','caritaspress'); ?>"><?php _e('Veure tota l\'actualitat','caritaspress'); ?> »</a></p>
     </div>
   </div>
 <?php } ?>
 
-<!-- EMPRERSAS AMB COR -->
+<!-- EMPRESAS -->
 
-<div class="franja fondo-gris--claro texto-centrado"> 
-  <div class="row sin-margen--abajo">
-    <div class="small-12 columns">
-      <img src="<?php bloginfo('template_directory'); ?>/images/logo_empreses.jpg" alt="<?php esc_attr__('Logotip de Empreses amb Cor','podemospress'); ?>">
-      <h2 class="small-12 titulo">Empreses amb cor</h2>
-      <p class="texto-destacado">Les empreses responsables són un dels agents més importants per al desenvolupament sostenible de la nostra societat i per a la seva cohesió social..</p>
-      <a href="javascript:void(0)" class="large button" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?></a> 
+<?php if ($empresas_ver == 1) { ?>
+  <div class="franja fondo-gris--claro texto-centrado">
+    <div class="row sin-margen--abajo">
+      <div class="small-12 columns">
+        <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
+        <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
+        <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
+        <a href="javascript:void(0)" class="large button" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?></a>
+      </div>
     </div>
   </div>
-</div>
+<?php } ?>
 
 <?php get_footer(); ?>

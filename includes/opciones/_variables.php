@@ -1,88 +1,165 @@
-<?php 
+<?php
 /**
-*		VARIABLES PARA MEMORYPRESS
-*  	--------------------------
-* 	Variables usadas por los distintos módulos.
-* 	
+*		VARIABLES PARA CARITASPRESS
+*  	---------------------------
+* 	Variables usadas por las páginas de opciones.
+*
 * 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
-*  	@package MemoryPress
+*  	@package CaritasPress
 */
 
 /**
  *  GLOBALES
  *  @since 1.0
  */
-// Banner
-$banner_ver 													= get_option('global_banner_visibilidad');
-$banner_texto 												= get_option('global_banner_texto');
-$banner_texto_boton 									= get_option('global_banner_texto_boton');
-$banner_enlace_boton 									= get_option('global_banner_enlace_boton');
-// Footer
-$footer_uno_titulo										= get_option('global_footer_uno_titulo');
-$footer_dos_titulo										= get_option('global_footer_dos_titulo');
-// Analitica
-$analitica 														= get_option('global_analitica');
+// Email footer
+$email_contacto                       = get_option("global_email_contacto");
+// Redes Sociales footer
+$enlace_twitter 											= get_option("global_twitter");
+$enlace_facebook 										  = get_option("global_facebook");
+$enlace_youtube 											= get_option("global_youtube");
+// Analitica de página
+$analitica_id												  = get_option("global_analitica");
+// Direcciones footer
+$calle_uno                            = get_option("global_direccion_uno_calle");
+$numero_uno                           = get_option("global_direccion_uno_numero");
+$cp_uno                               = get_option("global_direccion_uno_cp");
+$localidad_uno                        = get_option("global_direccion_uno_localidad");
+$telefono_uno                         = get_option("global_direccion_uno_telefono");
+$fax_uno                              = get_option("global_direccion_uno_fax");
+
+$calle_dos                            = get_option("global_direccion_dos_calle");
+$numero_dos                           = get_option("global_direccion_dos_numero");
+$cp_dos                               = get_option("global_direccion_dos_cp");
+$localidad_dos                        = get_option("global_direccion_dos_localidad");
+$telefono_dos                         = get_option("global_direccion_dos_telefono");
+$fax_dos                              = get_option("global_direccion_dos_fax");
+// Enlaces footer
+$enlace_logo_uno                      = get_option("global_enlace_uno");
+$imagen_logo_uno                      = get_option("global_logo_uno");
+
+$enlace_logo_dos                      = get_option("global_enlace_dos");
+$imagen_logo_dos                      = get_option("global_logo_dos");
+
+$enlace_logo_tres                     = get_option("global_enlace_tres");
+$imagen_logo_tres                     = get_option("global_logo_tres");
+
+$enlace_logo_cuatro                   = get_option("global_enlace_cuatro");
+$imagen_logo_cuatro                   = get_option("global_logo_cuatro");
 
 /**
- *  ORGANIZACIÓN
- *  @since 1.0
- */
-// Datos
-$organizacion_nombre 									= get_option('organizacion_nombre');
-$organizacion_direccion 							= get_option('organizacion_direccion');
-$icono_telefono_ver										= get_option('organizacion_telefono_icono_visibilidad');
-$organizacion_telefono 								= get_option('organizacion_telefono');
-$icono_hora_ver												= get_option('organizacion_horario_icono_visibilidad');
-$organizacion_horario_am 							= get_option('organizacion_horario_am');
-$organizacion_horario_pm 							= get_option('organizacion_horario_pm');
-$organizacion_mapa 										= get_option('organizacion_mapa');
-// Redes Sociales
-$enlace_twitter 											= get_option('organizacion_twitter');
-$enlace_facebook 											= get_option('organizacion_facebook');
-$enlace_youtube 											= get_option('organizacion_youtube');
-$enlace_instagram 										= get_option('organizacion_instagram');
+*  PORTADA
+*  @since 1.0
+*/
+// Sección Proyectos
+$proyectos_titulo                    = get_option("home_proyectos_titulo_seccion");
+$proyectos_texto                     = get_option("home_proyectos_texto_seccion");
+
+$proyectos_imagen_uno                = get_option("home_proyectos_imagen_uno");
+$proyectos_nombre_categoria_uno      = get_option("home_proyectos_nombre_categoria_uno");
+$proyectos_texto_boton_uno           = get_option("home_proyectos_texto_boton_uno");
+$proyectos_enlace_boton_uno          = get_option("home_proyectos_enlace_boton_uno");
+
+$proyectos_imagen_dos                = get_option("home_proyectos_imagen_dos");
+$proyectos_nombre_categoria_dos      = get_option("home_proyectos_nombre_categoria_dos");
+$proyectos_texto_boton_dos           = get_option("home_proyectos_texto_boton_dos");
+$proyectos_enlace_boton_dos          = get_option("home_proyectos_enlace_boton_dos");
+
+$proyectos_imagen_tres               = get_option("home_proyectos_imagen_tres");
+$proyectos_nombre_categoria_tres     = get_option("home_proyectos_nombre_categoria_tres");
+$proyectos_texto_boton_tres          = get_option("home_proyectos_texto_boton_tres");
+$proyectos_enlace_boton_tres         = get_option("home_proyectos_enlace_boton_tres");
+
+$proyectos_imagen_cuatro             = get_option("home_proyectos_imagen_cuatro");
+$proyectos_nombre_categoria_cuatro   = get_option("home_proyectos_nombre_categoria_cuatro");
+$proyectos_texto_boton_cuatro        = get_option("home_proyectos_texto_boton_cuatro");
+$proyectos_enlace_boton_cuatro       = get_option("home_proyectos_enlace_boton_cuatro");
+// Destacado Mestral
+$mestral_ver                         = get_option("home_mestral_visibilidad");
+$mestral_imagen                      = get_option("home_mestral_imagen");
+$mestral_titulo                      = get_option("home_mestral_titulo");
+$mestral_descripcion                 = get_option("home_mestral_descripcion");
+$mestral_texto_boton                 = get_option("home_mestral_texto_boton");
+$mestral_enlace                      = get_option("home_mestral_enlace");
+// Destacado Empresas
+$empresas_ver                         = get_option("home_empresas_visibilidad");
+$empresas_imagen                      = get_option("home_empresas_imagen");
+$empresas_titulo                      = get_option("home_empresas_titulo");
+$empresas_descripcion                 = get_option("home_empresas_descripcion");
 
 /**
- *  CONTACTO
- *  @since 1.0
- */
-$formulario_ver 											= get_option('contacto_formulario_visibilidad');
-$formulario_email											= get_option('contacto_formulario_email');
-$formulario_enlace										= get_option('contacto_formulario_enlace_legal');
-$formulario_descripcion								= get_option('contacto_formulario_descripcion');
-$formulario_gracias										= get_option('contacto_formulario_gracias');
+*  ENTIDAD
+*  @since 1.0
+*/
+// Caritas sección
+$caritas_ver                         = get_option("caritas_cabecera_visibilidad");
+$caritas_descripcion                 = get_option("caritas_cabecera_descripcion");
+// Programas bloques
+$programa_uno_titulo                 = get_option("caritas_programa_uno_titulo");
+$programa_uno_descripcion            = get_option("caritas_programa_uno_descripcion");
+$programa_uno_enlace                 = get_option("caritas_programa_uno_enlace");
 
-/**
- *  INICIO
- *  @since 1.0
- */
-// Carrusel
-$carrusel_home_ver                    = get_option('home_carrusel_visibilidad');
-// Portales
-$destacado_ver                        = get_option('home_destacado_visibilidad');
-$destacado_titulo_uno                 = get_option('home_destacado_titulo_uno');
-$destacado_texto_uno                  = get_option('home_destacado_texto_uno');
-$destacado_texto_btn_uno              = get_option('home_destacado_texto_boton_uno');
-$destacado_enlace_btn_uno             = get_option('home_destacado_enlace_boton_uno');
-$destacado_titulo_dos                 = get_option('home_destacado_titulo_dos');
-$destacado_texto_dos                  = get_option('home_destacado_texto_dos');
-$destacado_texto_btn_dos              = get_option('home_destacado_texto_boton_dos');
-$destacado_enlace_btn_dos             = get_option('home_destacado_enlace_boton_dos');
-$destacado_titulo_tres                = get_option('home_destacado_titulo_tres');
-$destacado_texto_tres                 = get_option('home_destacado_texto_tres');
-$destacado_texto_btn_tres             = get_option('home_destacado_texto_boton_tres');
-$destacado_enlace_btn_tres            = get_option('home_destacado_enlace_boton_tres');
-// Escaparates
-$escaparates_ver											= get_option('home_escaparates_visibilidad');
-$escaparate_boton											= get_option('home_escaparate_boton_texto');
-$escaparate_enlace										= get_option('home_escaparate_boton_enlace');
-// Tarjetas
-$tarjetas_ver													= get_option('home_tarjetas_visibilidad');
+$programa_dos_titulo                 = get_option("caritas_programa_dos_titulo");
+$programa_dos_descripcion            = get_option("caritas_programa_dos_descripcion");
+$programa_dos_enlace                 = get_option("caritas_programa_dos_enlace");
+
+$programa_tres_titulo                = get_option("caritas_programa_tres_titulo");
+$programa_tres_descripcion           = get_option("caritas_programa_tres_descripcion");
+$programa_tres_enlace                = get_option("caritas_programa_tres_enlace");
+
+$programa_cuatro_titulo              = get_option("caritas_programa_cuatro_titulo");
+$programa_cuatro_descripcion         = get_option("caritas_programa_cuatro_descripcion");
+$programa_cuatro_enlace              = get_option("caritas_programa_cuatro_enlace");
+// Destacado Revista
+$revista_ver                         = get_option("caritas_revista_visibilidad");
+$revista_titulo                      = get_option("caritas_revista_titulo");
+$revista_descripcion                 = get_option("caritas_revista_descripcion");
+$revista_imagen                      = get_option("caritas_revista_imagen");
+$revista_boton                       = get_option("caritas_revista_boton");
+$revista_enlace                      = get_option("caritas_revista_enlace");
+// Sección Qui Som
+$quien_subtitulo                     = get_option("caritas_quien_subtitulo");
+$quien_descripcion                   = get_option("caritas_quien_descripcion");
+
+$valores_uno_titulo                  = get_option("caritas_valores_uno_titulo");
+$valores_uno_descripcion             = get_option("caritas_valores_uno_descripcion");
+
+$valores_dos_titulo                  = get_option("caritas_valores_dos_titulo");
+$valores_dos_descripcion             = get_option("caritas_valores_dos_descripcion");
+
+$valores_tres_titulo                 = get_option("caritas_valores_tres_titulo");
+$valores_tres_descripcion            = get_option("caritas_valores_tres_descripcion");
+
+$organizacion_descripcion            = get_option("caritas_organizacion_descripcion");
+$organizacion_imagen                 = get_option("caritas_organizacion_imagen");
 // Callout
-$callout_home_ver                 		= get_option('home_callout_visibilidad');
-$callout_home_titulo              		= get_option('home_callout_titulo');
-$callout_home_texto               		= get_option('home_callout_texto');
-$callout_home_boton               		= get_option('home_callout_texto_boton');
-$callout_home_enlace              		= get_option('home_callout_enlace_boton');
+$anuncio_ver                         = get_option("caritas_anuncio_visibilidad");
+$anuncio_titulo                      = get_option("caritas_anuncio_titulo");
+$anuncio_descripcion                 = get_option("caritas_anuncio_descripcion");
+$anuncio_boton                       = get_option("caritas_anuncio_boton");
+$anuncio_enlace                      = get_option("caritas_anuncio_enlace");
+
+/**
+*  DONATIVOS
+*  @since 1.0
+*/
+// Sección Donatius
+$donativos_titulo                   = get_option("donativos_cabecera_titulo");
+$donativos_descripcion              = get_option("donativos_cabecera_descripcion");
+// Bloques info fiscal
+$fiscal_bloque_uno_titulo           = get_option("donativos_fiscal_bloque_uno_titulo");
+$fiscal_bloque_uno_descripcion      = get_option("donativos_fiscal_bloque_uno_descripcion");
+$fiscal_bloque_uno_cifra            = get_option("donativos_fiscal_bloque_uno_cifra");
+
+$fiscal_bloque_dos_titulo           = get_option("donativos_fiscal_bloque_dos_titulo");
+$fiscal_bloque_dos_descripcion      = get_option("donativos_fiscal_bloque_dos_descripcion");
+$fiscal_bloque_dos_cifra            = get_option("donativos_fiscal_bloque_dos_cifra");
+
+$fiscal_bloque_tres_titulo          = get_option("donativos_fiscal_bloque_tres_titulo");
+$fiscal_bloque_tres_descripcion     = get_option("donativos_fiscal_bloque_tres_descripcion");
+$fiscal_bloque_tres_cifra           = get_option("donativos_fiscal_bloque_tres_cifra");
+
+$fiscal_info_boton                  = get_option("donativos_fiscal_info_boton");
+$fiscal_info_enlace                 = get_option("donativos_fiscal_info_enlace");
 ?>

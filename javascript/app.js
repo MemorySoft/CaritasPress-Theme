@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   // FOUNDATION INIT
   $(document).foundation();
 
@@ -33,9 +33,18 @@ $(document).ready(function() {
   });
 
   // MENU
-  $('.menu-disparador').click(function() {
-    $('.top-bar-menu').toggle('fast');
+  $(".menu-disparador").click(function() {
+    $(".top-bar-menu").toggle("fast");
+  });
+
+  // ENLACES EXTERNOS
+  // Para evitar la vulnerabilidad target_blank en navegadores antiguos
+  // agregamos los atributos correspondientes de manera automática a todos
+  // los enlaces externos excepto el host y el localhost
+  $("a[href^='http']").not("a[href^='http:\/\/caritasmenorca.org'],a[href^='https:\/\/caritasmenorca.org'],a[href^='http:\/\/localhost'],a[href^='https:\/\/localhost']")
+    .attr({
+      target: "_blank",
+      rel: "noopener noreferer"
   });
 
 });
-

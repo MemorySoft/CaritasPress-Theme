@@ -2,9 +2,7 @@
 /**
 *		CONFIGURACIÓN GLOBAL
 *  	--------------------
-* 	Configuración de opciones comunes a varias partes del sitio web.
-*   
-* 	Creado por: Hector Asencio @MemorySoft
+* 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
 *  	@package CaritasPress
 */
@@ -14,119 +12,304 @@ add_action('admin_init', 'caritaspress_registra_opciones_configuracion');
 
 function caritaspress_crea_menu_configuracion() {
   add_menu_page(
-  	__("MemoryPress"), 
-  	__("MemoryPress"), 
-  	"manage_options", 
-  	"configuracion", 
-  	"caritaspress_configuracion_global", 
-  	"dashicons-admin-generic", 
+  	__("Caritas"),
+  	__("Caritas"),
+  	"manage_options",
+  	"configuracion",
+  	"caritaspress_configuracion_global",
+  	"dashicons-admin-generic",
   	4.1
   	);
   add_submenu_page(
   	"configuracion",
-  	__("Configuración"), 
-  	__("Configuración"), 
-  	"manage_options", 
-  	"configuracion", 
+  	__("Configuració"),
+  	__("Configuració"),
+  	"manage_options",
+  	"configuracion",
   	"caritaspress_configuracion_global"
   	);
 }
 
 function caritaspress_registra_opciones_configuracion() {
 
-  add_option("global_banner_visibilidad","","","yes");
-  add_option("global_banner_texto","","","yes");
-  add_option("global_banner_texto_boton","","","yes");
-  add_option("global_banner_enlace_boton","","","yes");
+  // Definición de opciones
+  add_option("global_email_contacto","","","yes");
 
-  add_option("global_footer_uno_titulo","","","yes");
-  add_option("global_footer_dos_titulo","","","yes");
+  add_option("global_twitter","","","yes");
+  add_option("global_facebook","","","yes");
+  add_option("global_youtube","","","yes");
 
   add_option("global_analitica","","","yes");
 
-  
-  register_setting("opciones_globales", "global_banner_visibilidad");
-  register_setting("opciones_globales", "global_banner_texto");
-  register_setting("opciones_globales", "global_banner_texto_boton");
-  register_setting("opciones_globales", "global_banner_enlace_boton");
+  add_option("global_direccion_uno_calle","","","yes");
+  add_option("global_direccion_uno_numero","","","yes");
+  add_option("global_direccion_uno_cp","","","yes");
+  add_option("global_direccion_uno_localidad","","","yes");
+  add_option("global_direccion_uno_telefono","","","yes");
+  add_option("global_direccion_uno_fax","","","yes");
 
-  register_setting("opciones_globales", "global_footer_uno_titulo");
-  register_setting("opciones_globales", "global_footer_dos_titulo");
+  add_option("global_direccion_dos_calle","","","yes");
+  add_option("global_direccion_dos_numero","","","yes");
+  add_option("global_direccion_dos_cp","","","yes");
+  add_option("global_direccion_dos_localidad","","","yes");
+  add_option("global_direccion_dos_telefono","","","yes");
+  add_option("global_direccion_dos_fax","","","yes");
+
+  add_option("global_enlace_uno","","","yes");
+  add_option("global_logo_uno","","","yes");
+
+  add_option("global_enlace_dos","","","yes");
+  add_option("global_logo_dos","","","yes");
+
+  add_option("global_enlace_tres","","","yes");
+  add_option("global_logo_tres","","","yes");
+
+  add_option("global_enlace_cuatro","","","yes");
+  add_option("global_logo_cuatro","","","yes");
+
+  // Registro de opciones
+  register_setting("opciones_globales", "global_email_contacto");
+
+  register_setting("opciones_globales", "global_twitter");
+  register_setting("opciones_globales", "global_facebook");
+  register_setting("opciones_globales", "global_youtube");
 
   register_setting("opciones_globales", "global_analitica");
 
+  register_setting("opciones_globales", "global_direccion_uno_calle");
+  register_setting("opciones_globales", "global_direccion_uno_numero");
+  register_setting("opciones_globales", "global_direccion_uno_cp");
+  register_setting("opciones_globales", "global_direccion_uno_localidad");
+  register_setting("opciones_globales", "global_direccion_uno_telefono");
+  register_setting("opciones_globales", "global_direccion_uno_fax");
+
+  register_setting("opciones_globales", "global_direccion_dos_calle");
+  register_setting("opciones_globales", "global_direccion_dos_numero");
+  register_setting("opciones_globales", "global_direccion_dos_cp");
+  register_setting("opciones_globales", "global_direccion_dos_localidad");
+  register_setting("opciones_globales", "global_direccion_dos_telefono");
+  register_setting("opciones_globales", "global_direccion_dos_fax");
+
+  register_setting("opciones_globales", "global_enlace_uno");
+  register_setting("opciones_globales", "global_logo_uno");
+
+  register_setting("opciones_globales", "global_enlace_dos");
+  register_setting("opciones_globales", "global_logo_dos");
+
+  register_setting("opciones_globales", "global_enlace_tres");
+  register_setting("opciones_globales", "global_logo_tres");
+
+  register_setting("opciones_globales", "global_enlace_cuatro");
+  register_setting("opciones_globales", "global_logo_cuatro");
 }
 
 function caritaspress_configuracion_global() {
-    if (!current_user_can('manage_options'))
-        wp_die(__("No tienes acceso a esta página."));
-    ?> 
+  if (!current_user_can('manage_options'))
+      wp_die(__("No tienes acceso a esta página."));
+  ?>
 
-    <div class="wrap">
-      <h1><span class="dashicons dashicons-admin-generic" style="font-size: 2rem; margin-right: 1rem;"></span>  Configuración Global <small>- Ajustes que afectan a todo el sitio web</small></h1>
-    
-      <hr>
+  <div class="wrap">
 
-      <?php settings_errors(); ?> 
+    <?php settings_errors(); ?>
+    <?php
+        if( isset( $_GET[ 'tab' ] ) ) {
+            $active_tab = $_GET[ 'tab' ];
+        } else {
+            $active_tab = 'general' ;
+        }
+    ?>
 
-      <form method="post" action="options.php">
-        <?php settings_fields('opciones_globales'); ?>
+    <!-- Titulo de la página -->
 
-	      <h2>Anuncio global</h2>
-	      <p>Este contenido aparecerá en la parte superior de todas las páginas del sitio. Úsalo consecuentemente.</p>
-	      <table class="form-table">
-	        <tr valign="top">
-	          <th scope="row">Mostrar anuncio</th>
-	          <td>
-	          <?php $options = get_option( "global_banner_visibilidad" ); ?>
-	          <input type="checkbox" name="global_banner_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el anuncio</span>
-	        </tr>
-	        <tr valign="top">
-	          <th scope="row">Texto del anuncio</th>
-	          <td><input type="text" name="global_banner_texto" size="40" value="<?php echo get_option('global_banner_texto'); ?>" /></td>
-	        </tr>
-	        <tr valign="top">
-	          <th scope="row">Botón del anuncio</th>
-	          <td><input type="text" name="global_banner_texto_boton" size="40" value="<?php echo get_option('global_banner_texto_boton'); ?>" />
-	          <span class="description">Texto del botón</span>
-	          <br>
-	          <input type="text" name="global_banner_enlace_boton" size="40" value="<?php echo get_option('global_banner_enlace_boton'); ?>" />
-	          <span class="description">Enlace del botón</span></td>
-	        </tr>
-	      </table>
+    <h1><span class="dashicons dashicons-admin-generic" style="font-size: 2rem; margin-right: 1rem;"></span> Configuració <small>- Opcions globals de configuració per tot el lloc web</small></h1>
 
-	      <hr>
+    <!-- Pestañas -->
 
-        <h2>Opciones del Footer</h2>
-        <p>Aquí están agrupadas las opciones que son comunes al Footer de todo el sitio.</p>
+    <h2 class="nav-tab-wrapper">
+        <a href="?page=configuracion&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>
+        <a href="?page=configuracion&tab=direcciones" class="nav-tab <?php echo $active_tab == 'direcciones' ? 'nav-tab-active' : ''; ?>">Adreçes</a>
+        <a href="?page=configuracion&tab=enlaces" class="nav-tab <?php echo $active_tab == 'enlaces' ? 'nav-tab-active' : ''; ?>">Enllaços</a>
+    </h2>
+
+    <!-- Formulario -->
+
+    <form method="post" action="options.php">
+      <?php settings_fields('opciones_globales'); ?>
+      <?php if( $active_tab == 'general' ) { ?>
+
+        <!-- Seccion General -->
+        <h2>General</h2>
+        <p>Aquesta es la secció on es configuren les opcions que efecten a tot el lloc web.</p>
+        <hr>
+
+        <h2>Contacte</h2>
         <table class="form-table">
           <tr valign="top">
-            <th scope="row">Titulo del primer bloque</th>
-            <td><input type="text" name="global_footer_uno_titulo" size="40" value="<?php echo get_option('global_footer_uno_titulo'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Titulo del segundo bloque</th>
-            <td><input type="text" name="global_footer_dos_titulo" size="40" value="<?php echo get_option('global_footer_dos_titulo'); ?>" /></td>
+            <th scope="row">Email de contacte</th>
+            <td><input type="text" name="global_email_contacto" size="40" value="<?php echo get_option('global_email_contacto'); ?>" />
+            <br><span class="description">Adreça de correu elèctronic que apareix al footer</span></td>
           </tr>
         </table>
 
         <hr>
 
-	      <h2>Analitica de página</h2>
-	      <p>Las analíticas de página ayudan a saber el número de visitantes, las páginas más vistas y otros parametros relativos a este sitio web.</p>
-	      <table class="form-table">
-	        <tr valign="top">
-	          <th scope="row">ID de Google Analytics</th>
-	          <td><input type="text" name="global_analitica" size="30" value="<?php echo get_option('global_analitica'); ?>" /></td>
-	        </tr>
-	      </table>
+        <h2>Xarxes Socials</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Perfil de Twitter</th>
+            <td><input type="text" name="global_twitter" size="40" value="<?php echo get_option('global_twitter'); ?>" />
+            <br><span class="description">Aferra aquí l'URL del perfil de Twitter</span></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Perfil de Facebook</th>
+            <td><input type="text" name="global_facebook" size="40" value="<?php echo get_option('global_facebook'); ?>" />
+            <br><span class="description">Aferra aquí l'URL del perfil de Facebook</span></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Perfil de YouTube</th>
+            <td><input type="text" name="global_youtube" size="40" value="<?php echo get_option('global_youtube'); ?>" />
+            <br><span class="description">Aferra aquí l'URL del perfil de YouTube</span></td>
+          </tr>
+        </table>
 
-	      <p class="submit">
-	        <input name="global_guardar" type="submit" class="button-primary" value="<?php _e('Guardar cambios') ?>" />
-	      </p>
-        
-      </form>  
-    </div>
-    <?php
-}
-?>
+        <hr>
+
+        <h2>Analìtica</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Google Analytics</th>
+            <td><input type="text" name="global_analitica" size="40" value="<?php echo get_option('global_analitica'); ?>" />
+            <br><span class="description">Introdueix aqui l'ID de Google Analytics</span></td>
+          </tr>
+        </table>
+
+      <?php } elseif ( $active_tab == 'direcciones' ) { ?>
+
+        <!-- Seccion Direcciones -->
+        <h2>Adreçes</h2>
+        <p>Configura en aquesta secció les adreçes postals que apareixen al peu de la pàgina.</p>
+        <hr>
+
+        <h2>Adreça 1</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Carrer</th>
+            <td><input type="text" name="global_direccion_uno_calle" size="40" value="<?php echo get_option('global_direccion_uno_calle'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Nombre</th>
+            <td><input type="text" name="global_direccion_uno_numero" size="40" value="<?php echo get_option('global_direccion_uno_numero'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Codi Postal</th>
+            <td><input type="text" name="global_direccion_uno_cp" size="40" value="<?php echo get_option('global_direccion_uno_cp'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Localitat</th>
+            <td><input type="text" name="global_direccion_uno_localidad" size="40" value="<?php echo get_option('global_direccion_uno_localidad'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Telefon</th>
+            <td><input type="text" name="global_direccion_uno_telefono" size="40" value="<?php echo get_option('global_direccion_uno_telefono'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Fax</th>
+            <td><input type="text" name="global_direccion_uno_fax" size="40" value="<?php echo get_option('global_direccion_uno_fax'); ?>" /></td>
+          </tr>
+        </table>
+
+        <hr>
+
+        <h2>Adreça 2</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Carrer</th>
+            <td><input type="text" name="global_direccion_dos_calle" size="40" value="<?php echo get_option('global_direccion_dos_calle'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Nombre</th>
+            <td><input type="text" name="global_direccion_dos_numero" size="40" value="<?php echo get_option('global_direccion_dos_numero'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Codi Postal</th>
+            <td><input type="text" name="global_direccion_dos_cp" size="40" value="<?php echo get_option('global_direccion_dos_cp'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Localitat</th>
+            <td><input type="text" name="global_direccion_dos_localidad" size="40" value="<?php echo get_option('global_direccion_dos_localidad'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Telefon</th>
+            <td><input type="text" name="global_direccion_dos_telefono" size="40" value="<?php echo get_option('global_direccion_dos_telefono'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Fax</th>
+            <td><input type="text" name="global_direccion_dos_fax" size="40" value="<?php echo get_option('global_direccion_dos_fax'); ?>" /></td>
+          </tr>
+        </table>
+
+        <?php } else { ?>
+
+          <!-- Seccion Enlaces -->
+          <h2>Enllaços</h2>
+          <p>En aquesta secció es configuren el enllaços i imatges dels logotips que apareixen al peu de les pàgines.</p>
+          <hr>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Enllaç un</th>
+              <td><input type="text" name="global_logo_uno" size="40" value="<?php echo get_option('global_logo_uno'); ?>" />
+              <span class="description">URL de l'arxiu d'imatge</span>
+              <br>
+              <input type="text" name="global_enlace_uno" size="40" value="<?php echo get_option('global_enlace_uno'); ?>" />
+              <span class="description">Enllaç</span></td>
+            </tr>
+          </table>
+
+          <hr>
+
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Enllaç un</th>
+              <td><input type="text" name="global_logo_dos" size="40" value="<?php echo get_option('global_logo_dos'); ?>" />
+              <span class="description">URL de l'arxiu d'imatge</span>
+              <br>
+              <input type="text" name="global_enlace_dos" size="40" value="<?php echo get_option('global_enlace_dos'); ?>" />
+              <span class="description">Enllaç</span></td>
+            </tr>
+          </table>
+
+          <hr>
+
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Enllaç un</th>
+              <td><input type="text" name="global_logo_tres" size="40" value="<?php echo get_option('global_logo_tres'); ?>" />
+              <span class="description">URL de l'arxiu d'imatge</span>
+              <br>
+              <input type="text" name="global_enlace_tres" size="40" value="<?php echo get_option('global_enlace_tres'); ?>" />
+              <span class="description">Enllaç</span></td>
+            </tr>
+          </table>
+
+          <hr>
+
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Enllaç un</th>
+              <td><input type="text" name="global_logo_cuatro" size="40" value="<?php echo get_option('global_logo_cuatro'); ?>" />
+              <span class="description">URL de l'arxiu d'imatge</span>
+              <br>
+              <input type="text" name="global_enlace_cuatro" size="40" value="<?php echo get_option('global_enlace_cuatro'); ?>" />
+              <span class="description">Enllaç</span></td>
+            </tr>
+          </table>
+
+      <?php } ?>
+
+      <p class="submit">
+      	<input name="configuracion_guardar" type="submit" class="button-primary" value="<?php _e('Guardar cambios') ?>" />
+      </p>
+
+    </form>
+  </div>
+<?php } ?>

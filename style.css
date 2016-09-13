@@ -4,7 +4,7 @@ Theme URI: http://www.memorysoft.es/
 Description: Tema desarrollado en exclusiva para Càrites Diocesana de Menorca
 Author: Hector Asencio @MemorySoft
 Author URI: http://hectorasencio.com
-Version: 1.0
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, custom-logo, featured-images, full-width-template, post-formats, custom-widgets
@@ -16,3 +16,8 @@ Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, c
 @import url(styles/foundation.min.css);
 @import url(styles/gridforms.css);
 @import url(styles/caritas.css);
+
+/* REGISTRO DE CAMBIOS
+# Versión 2.0
+- Añadidas páginas de configuración para opciones globales, portada, Càritas y donativos, e imtegradas en los correspondientes templates.
+*/

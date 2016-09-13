@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
-*		ÁREAS DE WIDGETS PARA MEMORYPRESS
+*		ÁREAS DE WIDGETS PARA CARITASPRESS
 *  	---------------------------------
 * 	Registro de zonas habilitadas para widgets.
-* 	
+*
 * 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
 *  	@package CaritasPress

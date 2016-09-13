@@ -6,8 +6,8 @@
 
 <div class="row texto-centrado sin-margen--abajo">
   <div class="small-12 columns">
-    <h2 class="titulo">Col·labora</h2>
-    <!-- <p class="texto-destacado">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ducimus eos iste, ut maxime, inventore quasi eligendi exercitationem deleniti unde, omnis suscipit eaque expedita magnam!</p> -->
+    <h2 class="titulo"><?php echo $donativos_titulo ?></h2>
+    <p class="texto-destacado"><?php echo $donativos_descripcion ?></p>
   </div>
 </div>
 
@@ -52,26 +52,26 @@
 <div class="row texto-centrado">
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
-      <span class="datos-cifra">75%</span>
-      <span class="datos-etiqueta">Desgravació fiscal</span>  
+      <span class="datos-cifra"><?php echo $fiscal_bloque_uno_cifra ?></span>
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_uno_titulo ?></span>  
     </div>  
-    <p class="texto-destacado--peque texto-sin-serifa">A partir de 2016 tens una desgravació del 75% per els primers 150 € del conjunt dels teus donatius anuals.</p>
+    <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_uno_descripcion ?></p>
   </div>
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
-      <span class="datos-cifra">35%</span>
-      <span class="datos-etiqueta">De deducció per donacions</span>  
+      <span class="datos-cifra"><?php echo $fiscal_bloque_dos_cifra ?></span>
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_dos_titulo ?></span>  
     </div>  
-    <p class="texto-destacado--peque texto-sin-serifa">Si col·labores per 3 anys consecutius amb una quantitat igual o major obtindras una deducció del 35%.</p>
+    <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_dos_descripcion ?></p>
   </div>
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
-      <span class="datos-cifra">30%</span>
-      <span class="datos-etiqueta">De reducció al IRPF</span>  
+      <span class="datos-cifra"><?php echo $fiscal_bloque_tres_cifra ?></span>
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_tres_titulo ?></span>  
     </div>  
-    <p class="texto-destacado--peque texto-sin-serifa">Si fas donatius puntuals de forma espòradica també obtindrás avantatges, amb una reducció del 30% al teu IRPF.</p>
+    <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_tres_descripcion ?></p>
   </div>
-  <a href="http://www.caritasmenorca.org/wp-content/uploads/2016/06/informacio_fiscal.pdf" class="large button" target="_blank">Mes informació <i class="fa fa-download"></i></a>
+  <a href="<?php echo $fiscal_info_enlace ?>" class="large button" target="_blank"><?php echo $fiscal_info_boton ?> <i class="fa fa-download"></i></a>
 </div>
 
 <!-- CONTENIDO | FORMULARIO DONATIVOS -->

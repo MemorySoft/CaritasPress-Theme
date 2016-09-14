@@ -65,12 +65,6 @@ function caritaspress_registra_opciones_entidad() {
   add_option("caritas_organizacion_descripcion","","","yes");
   add_option("caritas_organizacion_imagen","","","yes");
 
-  add_option("caritas_anuncio_visibilidad","","","yes");
-  add_option("caritas_anuncio_titulo","","","yes");
-  add_option("caritas_anuncio_descripcion","","","yes");
-  add_option("caritas_anuncio_boton","","","yes");
-  add_option("caritas_anuncio_enlace","","","yes");
-
   // Registro de opciones
   register_setting("opciones_entidad", "caritas_cabecera_visibilidad");
   register_setting("opciones_entidad", "caritas_cabecera_descripcion");
@@ -112,12 +106,6 @@ function caritaspress_registra_opciones_entidad() {
 
   register_setting("opciones_entidad", "caritas_organizacion_descripcion");
   register_setting("opciones_entidad", "caritas_organizacion_imagen");
-
-  register_setting("opciones_entidad", "caritas_anuncio_visibilidad");
-  register_setting("opciones_entidad", "caritas_anuncio_titulo");
-  register_setting("opciones_entidad", "caritas_anuncio_descripcion");
-  register_setting("opciones_entidad", "caritas_anuncio_boton");
-  register_setting("opciones_entidad", "caritas_anuncio_enlace");
 }
 
 function caritas_datos_entidad() {
@@ -145,242 +133,211 @@ function caritas_datos_entidad() {
       <!-- Formulario -->
 
       <form method="post" action="options.php">
+
         <?php settings_fields('opciones_entidad'); ?>
 
-          <!-- Seccion Cabecera -->
-          <h2>Capçelera</h2>
-          <p>Configura el texte que surt al principi de la pàgina Càritas y la seva visibilitat.</p>
+        <!-- Seccion Cabecera -->
+        <h2>Capçelera</h2>
+        <p>Configura el texte que surt al principi de la pàgina Càritas y la seva visibilitat.</p>
 
-          <hr>
+        <hr>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Descripció a la capçelera</th>
-              <td><textarea name="caritas_cabecera_descripcion" cols="37" rows="10"><?php echo get_option('caritas_cabecera_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Mostrar capçelera</th>
-              <td>
-              <?php $options = get_option( "caritas_cabecera_visibilidad" ); ?>
-              <input type="checkbox" name="caritas_cabecera_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar per mostrar la capçelera de la pàgina Càritas.</span>
-            </tr>
-          </table>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Descripció a la capçelera</th>
+            <td><textarea name="caritas_cabecera_descripcion" cols="37" rows="10"><?php echo get_option('caritas_cabecera_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Mostrar capçelera</th>
+            <td>
+            <?php $options = get_option( "caritas_cabecera_visibilidad" ); ?>
+            <input type="checkbox" name="caritas_cabecera_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar per mostrar la capçelera de la pàgina Càritas.</span>
+          </tr>
+        </table>
 
-          <!-- Seccion Entidad -->
-          <h2>Entitat</h2>
-  				<p>Aqui es configura l'informació relativa a l'entitat, que apareix al final de la página Càritas.</p>
-          <hr>
+        <!-- Seccion Entidad -->
+        <h2>Entitat</h2>
+				<p>Aqui es configura l'informació relativa a l'entitat, que apareix al final de la página Càritas.</p>
+        <hr>
 
-          <h2>Qui som</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Subtìtol</th>
-              <td><input type="text" name="caritas_quien_subtitulo" size="40" value="<?php echo get_option('caritas_quien_subtitulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció</th>
-              <td><textarea name="caritas_quien_descripcion" cols="37" rows="10"><?php echo get_option('caritas_quien_descripcion'); ?></textarea></td>
-            </tr>
-          </table>
+        <h2>Qui som</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Subtìtol</th>
+            <td><input type="text" name="caritas_quien_subtitulo" size="40" value="<?php echo get_option('caritas_quien_subtitulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció</th>
+            <td><textarea name="caritas_quien_descripcion" cols="37" rows="10"><?php echo get_option('caritas_quien_descripcion'); ?></textarea></td>
+          </tr>
+        </table>
 
-          <hr>
+        <hr>
 
-          <h2>Valors</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Tìtol un</th>
-              <td><input type="text" name="caritas_valores_uno_titulo" size="40" value="<?php echo get_option('caritas_valores_uno_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció un</th>
-              <td><textarea name="caritas_valores_uno_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_uno_descripcion'); ?></textarea></td>
-            </tr>
-          </table>
+        <h2>Valors</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Tìtol un</th>
+            <td><input type="text" name="caritas_valores_uno_titulo" size="40" value="<?php echo get_option('caritas_valores_uno_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció un</th>
+            <td><textarea name="caritas_valores_uno_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_uno_descripcion'); ?></textarea></td>
+          </tr>
+        </table>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Tìtol dos</th>
-              <td><input type="text" name="caritas_valores_dos_titulo" size="40" value="<?php echo get_option('caritas_valores_dos_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció dos</th>
-              <td><textarea name="caritas_valores_dos_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_dos_descripcion'); ?></textarea></td>
-            </tr>
-          </table>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Tìtol dos</th>
+            <td><input type="text" name="caritas_valores_dos_titulo" size="40" value="<?php echo get_option('caritas_valores_dos_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció dos</th>
+            <td><textarea name="caritas_valores_dos_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_dos_descripcion'); ?></textarea></td>
+          </tr>
+        </table>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Tìtol tres</th>
-              <td><input type="text" name="caritas_valores_tres_titulo" size="40" value="<?php echo get_option('caritas_valores_tres_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció tres</th>
-              <td><textarea name="caritas_valores_tres_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_tres_descripcion'); ?></textarea></td>
-            </tr>
-          </table>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Tìtol tres</th>
+            <td><input type="text" name="caritas_valores_tres_titulo" size="40" value="<?php echo get_option('caritas_valores_tres_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció tres</th>
+            <td><textarea name="caritas_valores_tres_descripcion" cols="37" rows="10"><?php echo get_option('caritas_valores_tres_descripcion'); ?></textarea></td>
+          </tr>
+        </table>
 
-          <hr>
+        <hr>
 
-          <h2>Organització</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Descripció de l'organització</th>
-              <td><textarea name="caritas_organizacion_descripcion" cols="37" rows="10"><?php echo get_option('caritas_organizacion_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Imatge</th>
-              <td><input type="text" name="caritas_organizacion_imagen" size="40" value="<?php echo get_option('caritas_organizacion_imagen'); ?>" />
-              <br><span class="description">Aferra aqui l'URL de la imatge</span></td>
-            </tr>
-          </table>
+        <h2>Organització</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Descripció de l'organització</th>
+            <td><textarea name="caritas_organizacion_descripcion" cols="37" rows="10"><?php echo get_option('caritas_organizacion_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Imatge</th>
+            <td><input type="text" name="caritas_organizacion_imagen" size="40" value="<?php echo get_option('caritas_organizacion_imagen'); ?>" />
+            <br><span class="description">Aferra aqui l'URL de la imatge</span></td>
+          </tr>
+        </table>
 
-          <!-- Seccion Programas -->
-          <h2>Programes</h2>
-          <p>Configuració dels blocs de presentació dels programes de projectes. Pots configurar el nom, la descripció i l'enllaç que porta a la categoria que correspon a cada programa.</p>
-          <hr>
+        <!-- Seccion Programas -->
+        <h2>Programes</h2>
+        <p>Configuració dels blocs de presentació dels programes de projectes. Pots configurar el nom, la descripció i l'enllaç que porta a la categoria que correspon a cada programa.</p>
+        <hr>
 
-          <h2>Programa 1</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Nom del programa 1</th>
-              <td><input type="text" name="caritas_programa_uno_titulo" size="40" value="<?php echo get_option('caritas_programa_uno_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció del programa 1</th>
-              <td><textarea name="caritas_programa_uno_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_uno_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Enllaç al programa 1</th>
-              <td><input type="text" name="caritas_programa_uno_enlace" size="40" value="<?php echo get_option('caritas_programa_uno_enlace'); ?>" />
-              <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
-            </tr>
-          </table>
+        <h2>Programa 1</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Nom del programa 1</th>
+            <td><input type="text" name="caritas_programa_uno_titulo" size="40" value="<?php echo get_option('caritas_programa_uno_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció del programa 1</th>
+            <td><textarea name="caritas_programa_uno_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_uno_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Enllaç al programa 1</th>
+            <td><input type="text" name="caritas_programa_uno_enlace" size="40" value="<?php echo get_option('caritas_programa_uno_enlace'); ?>" />
+            <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
+          </tr>
+        </table>
 
-          <hr>
+        <hr>
 
-          <h2>Programa 2</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Nom del programa 2</th>
-              <td><input type="text" name="caritas_programa_dos_titulo" size="40" value="<?php echo get_option('caritas_programa_dos_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció del programa 2</th>
-              <td><textarea name="caritas_programa_dos_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_dos_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Enllaç al programa 2</th>
-              <td><input type="text" name="caritas_programa_dos_enlace" size="40" value="<?php echo get_option('caritas_programa_dos_enlace'); ?>" />
-              <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
-            </tr>
-          </table>
+        <h2>Programa 2</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Nom del programa 2</th>
+            <td><input type="text" name="caritas_programa_dos_titulo" size="40" value="<?php echo get_option('caritas_programa_dos_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció del programa 2</th>
+            <td><textarea name="caritas_programa_dos_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_dos_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Enllaç al programa 2</th>
+            <td><input type="text" name="caritas_programa_dos_enlace" size="40" value="<?php echo get_option('caritas_programa_dos_enlace'); ?>" />
+            <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
+          </tr>
+        </table>
 
-          <hr>
+        <hr>
 
-          <h2>Programa 3</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Nom del programa 3</th>
-              <td><input type="text" name="caritas_programa_tres_titulo" size="40" value="<?php echo get_option('caritas_programa_tres_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció del programa 3</th>
-              <td><textarea name="caritas_programa_tres_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_tres_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Enllaç al programa 3</th>
-              <td><input type="text" name="caritas_programa_tres_enlace" size="40" value="<?php echo get_option('caritas_programa_tres_enlace'); ?>" />
-              <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
-            </tr>
-          </table>
+        <h2>Programa 3</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Nom del programa 3</th>
+            <td><input type="text" name="caritas_programa_tres_titulo" size="40" value="<?php echo get_option('caritas_programa_tres_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció del programa 3</th>
+            <td><textarea name="caritas_programa_tres_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_tres_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Enllaç al programa 3</th>
+            <td><input type="text" name="caritas_programa_tres_enlace" size="40" value="<?php echo get_option('caritas_programa_tres_enlace'); ?>" />
+            <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
+          </tr>
+        </table>
 
-          <hr>
+        <hr>
 
-          <h2>Programa 4</h2>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Nom del programa 4</th>
-              <td><input type="text" name="caritas_programa_cuatro_titulo" size="40" value="<?php echo get_option('caritas_programa_cuatro_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció del programa 4</th>
-              <td><textarea name="caritas_programa_cuatro_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_cuatro_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Enllaç al programa 4</th>
-              <td><input type="text" name="caritas_programa_cuatro_enlace" size="40" value="<?php echo get_option('caritas_programa_cuatro_enlace'); ?>" />
-              <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
-            </tr>
-          </table>
+        <h2>Programa 4</h2>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Nom del programa 4</th>
+            <td><input type="text" name="caritas_programa_cuatro_titulo" size="40" value="<?php echo get_option('caritas_programa_cuatro_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció del programa 4</th>
+            <td><textarea name="caritas_programa_cuatro_descripcion" cols="37" rows="10"><?php echo get_option('caritas_programa_cuatro_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Enllaç al programa 4</th>
+            <td><input type="text" name="caritas_programa_cuatro_enlace" size="40" value="<?php echo get_option('caritas_programa_cuatro_enlace'); ?>" />
+            <br><span class="description">Aferra l'URL a la categoria de projectes, que correspon a cada un dels programes.</span></td>
+          </tr>
+        </table>
 
-          <!-- Seccion Revista -->
-          <h2>Revista</h2>
-          <p>Configura la visibilitat i el contingut de la secció Revista de Cáritas.</p>
-          <hr>
+        <!-- Seccion Revista -->
+        <h2>Revista</h2>
+        <p>Configura la visibilitat i el contingut de la secció Revista de Cáritas.</p>
+        <hr>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Mostrar Revista de Cáritas</th>
-              <td>
-              <?php $options = get_option( "caritas_revista_visibilidad" ); ?>
-              <input type="checkbox" name="caritas_revista_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar per mostrar la secció Revista de Cáritas.</span>
-            </tr>
-          </table>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Tìtol</th>
-              <td><input type="text" name="caritas_revista_titulo" size="40" value="<?php echo get_option('caritas_revista_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Descripció</th>
-              <td><textarea name="caritas_revista_descripcion" cols="37" rows="10"><?php echo get_option('caritas_revista_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Imatge</th>
-              <td><input type="text" name="caritas_revista_imagen" size="40" value="<?php echo get_option('caritas_revista_imagen'); ?>" />
-              <br><span class="description">Aferra aquí l'URL de l'imatge</span></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Botó</th>
-              <td><input type="text" name="caritas_revista_texto_boton" size="40" value="<?php echo get_option('caritas_revista_texto_boton'); ?>" />
-              <span class="description">Texte del botó</span>
-              <br>
-              <input type="text" name="caritas_revista_enlace" size="40" value="<?php echo get_option('caritas_revista_enlace'); ?>" />
-              <span class="description">Enllaç del botó</span></td>
-            </tr>
-          </table>
-
-          <!-- Seccion Anuncio -->
-          <h2>Anunci</h2>
-          <p>Configura aqui la visibilitat del bloc destacat al peu de la pàgina, que serveix per recordar accions al usuari o destacar informació.</p>
-          <hr>
-
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Mostrar anunci</th>
-              <td>
-              <?php $options = get_option( "caritas_anuncio_visibilidad" ); ?>
-              <input type="checkbox" name="caritas_anuncio_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar per mostrar l'anunci a peu de pàgina.</span>
-            </tr>
-          </table>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Tìtol</th>
-              <td><input type="text" name="caritas_anuncio_titulo" size="40" value="<?php echo get_option('caritas_anuncio_titulo'); ?>" /></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Texte</th>
-              <td><textarea name="caritas_anuncio_descripcion" cols="37" rows="10"><?php echo get_option('caritas_anuncio_descripcion'); ?></textarea></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Botó</th>
-              <td><input type="text" name="caritas_anuncio_texto_boton" size="40" value="<?php echo get_option('caritas_anuncio_texto_boton'); ?>" />
-              <span class="description">Texte del botó</span>
-              <br>
-              <input type="text" name="caritas_anuncio_enlace" size="40" value="<?php echo get_option('caritas_anuncio_enlace'); ?>" />
-              <span class="description">Enllaç del botó</span></td>
-            </tr>
-          </table>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Mostrar Revista de Cáritas</th>
+            <td>
+            <?php $options = get_option( "caritas_revista_visibilidad" ); ?>
+            <input type="checkbox" name="caritas_revista_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar per mostrar la secció Revista de Cáritas.</span>
+          </tr>
+        </table>
+        <table class="form-table">
+          <tr valign="top">
+            <th scope="row">Tìtol</th>
+            <td><input type="text" name="caritas_revista_titulo" size="40" value="<?php echo get_option('caritas_revista_titulo'); ?>" /></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Descripció</th>
+            <td><textarea name="caritas_revista_descripcion" cols="37" rows="10"><?php echo get_option('caritas_revista_descripcion'); ?></textarea></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Imatge</th>
+            <td><input type="text" name="caritas_revista_imagen" size="40" value="<?php echo get_option('caritas_revista_imagen'); ?>" />
+            <br><span class="description">Aferra aquí l'URL de l'imatge</span></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Botó</th>
+            <td><input type="text" name="caritas_revista_texto_boton" size="40" value="<?php echo get_option('caritas_revista_texto_boton'); ?>" />
+            <span class="description">Texte del botó</span>
+            <br>
+            <input type="text" name="caritas_revista_enlace" size="40" value="<?php echo get_option('caritas_revista_enlace'); ?>" />
+            <span class="description">Enllaç del botó</span></td>
+          </tr>
+        </table>
 
         <p class="submit">
         	<input name="entidad_guardar" type="submit" class="button-primary" value="<?php _e('Guardar cambios') ?>" />

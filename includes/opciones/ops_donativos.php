@@ -78,6 +78,7 @@ function caritaspress_pagina_donativos() {
     <!-- Fomulario -->
 
     <form method="post" action="options.php">
+
       <?php settings_fields('opciones_donativos'); ?>
 
       <!-- Seccion Cabecera -->

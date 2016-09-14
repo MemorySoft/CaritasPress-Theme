@@ -109,202 +109,181 @@ function caritaspress_configuracion_global() {
   ?>
 
   <div class="wrap">
-
-    <?php settings_errors(); ?>
-    <?php
-        if( isset( $_GET[ 'tab' ] ) ) {
-            $active_tab = $_GET[ 'tab' ];
-        } else {
-            $active_tab = 'general' ;
-        }
-    ?>
-
+    
     <!-- Titulo de la página -->
 
     <h1><span class="dashicons dashicons-admin-generic" style="font-size: 2rem; margin-right: 1rem;"></span> Configuració <small>- Opcions globals de configuració per tot el lloc web</small></h1>
 
-    <!-- Pestañas -->
-
-    <h2 class="nav-tab-wrapper">
-        <a href="?page=configuracion&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>
-        <a href="?page=configuracion&tab=direcciones" class="nav-tab <?php echo $active_tab == 'direcciones' ? 'nav-tab-active' : ''; ?>">Adreçes</a>
-        <a href="?page=configuracion&tab=enlaces" class="nav-tab <?php echo $active_tab == 'enlaces' ? 'nav-tab-active' : ''; ?>">Enllaços</a>
-    </h2>
-
+    <?php settings_errors(); ?>
+    
     <!-- Formulario -->
 
     <form method="post" action="options.php">
+
       <?php settings_fields('opciones_globales'); ?>
-      <?php if( $active_tab == 'general' ) { ?>
 
-        <!-- Seccion General -->
-        <h2>General</h2>
-        <p>Aquesta es la secció on es configuren les opcions que efecten a tot el lloc web.</p>
-        <hr>
+      <!-- Seccion General -->
+      <h2>General</h2>
+      <p>Aquesta es la secció on es configuren les opcions que efecten a tot el lloc web.</p>
+      <hr>
 
-        <h2>Contacte</h2>
-        <table class="form-table">
-          <tr valign="top">
-            <th scope="row">Email de contacte</th>
-            <td><input type="text" name="global_email_contacto" size="40" value="<?php echo get_option('global_email_contacto'); ?>" />
-            <br><span class="description">Adreça de correu elèctronic que apareix al footer</span></td>
-          </tr>
-        </table>
+      <h2>Contacte</h2>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Email de contacte</th>
+          <td><input type="text" name="global_email_contacto" size="40" value="<?php echo get_option('global_email_contacto'); ?>" />
+          <br><span class="description">Adreça de correu elèctronic que apareix al footer</span></td>
+        </tr>
+      </table>
 
-        <hr>
+      <hr>
 
-        <h2>Xarxes Socials</h2>
-        <table class="form-table">
-          <tr valign="top">
-            <th scope="row">Perfil de Twitter</th>
-            <td><input type="text" name="global_twitter" size="40" value="<?php echo get_option('global_twitter'); ?>" />
-            <br><span class="description">Aferra aquí l'URL del perfil de Twitter</span></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Perfil de Facebook</th>
-            <td><input type="text" name="global_facebook" size="40" value="<?php echo get_option('global_facebook'); ?>" />
-            <br><span class="description">Aferra aquí l'URL del perfil de Facebook</span></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Perfil de YouTube</th>
-            <td><input type="text" name="global_youtube" size="40" value="<?php echo get_option('global_youtube'); ?>" />
-            <br><span class="description">Aferra aquí l'URL del perfil de YouTube</span></td>
-          </tr>
-        </table>
+      <h2>Xarxes Socials</h2>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Perfil de Twitter</th>
+          <td><input type="text" name="global_twitter" size="40" value="<?php echo get_option('global_twitter'); ?>" />
+          <br><span class="description">Aferra aquí l'URL del perfil de Twitter</span></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Perfil de Facebook</th>
+          <td><input type="text" name="global_facebook" size="40" value="<?php echo get_option('global_facebook'); ?>" />
+          <br><span class="description">Aferra aquí l'URL del perfil de Facebook</span></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Perfil de YouTube</th>
+          <td><input type="text" name="global_youtube" size="40" value="<?php echo get_option('global_youtube'); ?>" />
+          <br><span class="description">Aferra aquí l'URL del perfil de YouTube</span></td>
+        </tr>
+      </table>
 
-        <hr>
+      <hr>
 
-        <h2>Analìtica</h2>
-        <table class="form-table">
-          <tr valign="top">
-            <th scope="row">Google Analytics</th>
-            <td><input type="text" name="global_analitica" size="40" value="<?php echo get_option('global_analitica'); ?>" />
-            <br><span class="description">Introdueix aqui l'ID de Google Analytics</span></td>
-          </tr>
-        </table>
+      <h2>Analìtica</h2>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Google Analytics</th>
+          <td><input type="text" name="global_analitica" size="40" value="<?php echo get_option('global_analitica'); ?>" />
+          <br><span class="description">Introdueix aqui l'ID de Google Analytics</span></td>
+        </tr>
+      </table>
 
-      <?php } elseif ( $active_tab == 'direcciones' ) { ?>
+      <!-- Seccion Direcciones -->
+      <h2>Adreçes</h2>
+      <p>Configura en aquesta secció les adreçes postals que apareixen al peu de la pàgina.</p>
+      <hr>
 
-        <!-- Seccion Direcciones -->
-        <h2>Adreçes</h2>
-        <p>Configura en aquesta secció les adreçes postals que apareixen al peu de la pàgina.</p>
-        <hr>
+      <h2>Adreça 1</h2>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Carrer</th>
+          <td><input type="text" name="global_direccion_uno_calle" size="40" value="<?php echo get_option('global_direccion_uno_calle'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Nombre</th>
+          <td><input type="text" name="global_direccion_uno_numero" size="40" value="<?php echo get_option('global_direccion_uno_numero'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Codi Postal</th>
+          <td><input type="text" name="global_direccion_uno_cp" size="40" value="<?php echo get_option('global_direccion_uno_cp'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Localitat</th>
+          <td><input type="text" name="global_direccion_uno_localidad" size="40" value="<?php echo get_option('global_direccion_uno_localidad'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Telefon</th>
+          <td><input type="text" name="global_direccion_uno_telefono" size="40" value="<?php echo get_option('global_direccion_uno_telefono'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Fax</th>
+          <td><input type="text" name="global_direccion_uno_fax" size="40" value="<?php echo get_option('global_direccion_uno_fax'); ?>" /></td>
+        </tr>
+      </table>
 
-        <h2>Adreça 1</h2>
-        <table class="form-table">
-          <tr valign="top">
-            <th scope="row">Carrer</th>
-            <td><input type="text" name="global_direccion_uno_calle" size="40" value="<?php echo get_option('global_direccion_uno_calle'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Nombre</th>
-            <td><input type="text" name="global_direccion_uno_numero" size="40" value="<?php echo get_option('global_direccion_uno_numero'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Codi Postal</th>
-            <td><input type="text" name="global_direccion_uno_cp" size="40" value="<?php echo get_option('global_direccion_uno_cp'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Localitat</th>
-            <td><input type="text" name="global_direccion_uno_localidad" size="40" value="<?php echo get_option('global_direccion_uno_localidad'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Telefon</th>
-            <td><input type="text" name="global_direccion_uno_telefono" size="40" value="<?php echo get_option('global_direccion_uno_telefono'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Fax</th>
-            <td><input type="text" name="global_direccion_uno_fax" size="40" value="<?php echo get_option('global_direccion_uno_fax'); ?>" /></td>
-          </tr>
-        </table>
+      <hr>
 
-        <hr>
+      <h2>Adreça 2</h2>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Carrer</th>
+          <td><input type="text" name="global_direccion_dos_calle" size="40" value="<?php echo get_option('global_direccion_dos_calle'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Nombre</th>
+          <td><input type="text" name="global_direccion_dos_numero" size="40" value="<?php echo get_option('global_direccion_dos_numero'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Codi Postal</th>
+          <td><input type="text" name="global_direccion_dos_cp" size="40" value="<?php echo get_option('global_direccion_dos_cp'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Localitat</th>
+          <td><input type="text" name="global_direccion_dos_localidad" size="40" value="<?php echo get_option('global_direccion_dos_localidad'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Telefon</th>
+          <td><input type="text" name="global_direccion_dos_telefono" size="40" value="<?php echo get_option('global_direccion_dos_telefono'); ?>" /></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Fax</th>
+          <td><input type="text" name="global_direccion_dos_fax" size="40" value="<?php echo get_option('global_direccion_dos_fax'); ?>" /></td>
+        </tr>
+      </table>
 
-        <h2>Adreça 2</h2>
-        <table class="form-table">
-          <tr valign="top">
-            <th scope="row">Carrer</th>
-            <td><input type="text" name="global_direccion_dos_calle" size="40" value="<?php echo get_option('global_direccion_dos_calle'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Nombre</th>
-            <td><input type="text" name="global_direccion_dos_numero" size="40" value="<?php echo get_option('global_direccion_dos_numero'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Codi Postal</th>
-            <td><input type="text" name="global_direccion_dos_cp" size="40" value="<?php echo get_option('global_direccion_dos_cp'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Localitat</th>
-            <td><input type="text" name="global_direccion_dos_localidad" size="40" value="<?php echo get_option('global_direccion_dos_localidad'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Telefon</th>
-            <td><input type="text" name="global_direccion_dos_telefono" size="40" value="<?php echo get_option('global_direccion_dos_telefono'); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Fax</th>
-            <td><input type="text" name="global_direccion_dos_fax" size="40" value="<?php echo get_option('global_direccion_dos_fax'); ?>" /></td>
-          </tr>
-        </table>
+      <!-- Seccion Enlaces -->
+      <h2>Enllaços</h2>
+      <p>En aquesta secció es configuren el enllaços i imatges dels logotips que apareixen al peu de les pàgines.</p>
+      <hr>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Enllaç un</th>
+          <td><input type="text" name="global_logo_uno" size="40" value="<?php echo get_option('global_logo_uno'); ?>" />
+          <span class="description">URL de l'arxiu d'imatge</span>
+          <br>
+          <input type="text" name="global_enlace_uno" size="40" value="<?php echo get_option('global_enlace_uno'); ?>" />
+          <span class="description">Enllaç</span></td>
+        </tr>
+      </table>
 
-        <?php } else { ?>
+      <hr>
 
-          <!-- Seccion Enlaces -->
-          <h2>Enllaços</h2>
-          <p>En aquesta secció es configuren el enllaços i imatges dels logotips que apareixen al peu de les pàgines.</p>
-          <hr>
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Enllaç un</th>
-              <td><input type="text" name="global_logo_uno" size="40" value="<?php echo get_option('global_logo_uno'); ?>" />
-              <span class="description">URL de l'arxiu d'imatge</span>
-              <br>
-              <input type="text" name="global_enlace_uno" size="40" value="<?php echo get_option('global_enlace_uno'); ?>" />
-              <span class="description">Enllaç</span></td>
-            </tr>
-          </table>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Enllaç un</th>
+          <td><input type="text" name="global_logo_dos" size="40" value="<?php echo get_option('global_logo_dos'); ?>" />
+          <span class="description">URL de l'arxiu d'imatge</span>
+          <br>
+          <input type="text" name="global_enlace_dos" size="40" value="<?php echo get_option('global_enlace_dos'); ?>" />
+          <span class="description">Enllaç</span></td>
+        </tr>
+      </table>
 
-          <hr>
+      <hr>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Enllaç un</th>
-              <td><input type="text" name="global_logo_dos" size="40" value="<?php echo get_option('global_logo_dos'); ?>" />
-              <span class="description">URL de l'arxiu d'imatge</span>
-              <br>
-              <input type="text" name="global_enlace_dos" size="40" value="<?php echo get_option('global_enlace_dos'); ?>" />
-              <span class="description">Enllaç</span></td>
-            </tr>
-          </table>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Enllaç un</th>
+          <td><input type="text" name="global_logo_tres" size="40" value="<?php echo get_option('global_logo_tres'); ?>" />
+          <span class="description">URL de l'arxiu d'imatge</span>
+          <br>
+          <input type="text" name="global_enlace_tres" size="40" value="<?php echo get_option('global_enlace_tres'); ?>" />
+          <span class="description">Enllaç</span></td>
+        </tr>
+      </table>
 
-          <hr>
+      <hr>
 
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Enllaç un</th>
-              <td><input type="text" name="global_logo_tres" size="40" value="<?php echo get_option('global_logo_tres'); ?>" />
-              <span class="description">URL de l'arxiu d'imatge</span>
-              <br>
-              <input type="text" name="global_enlace_tres" size="40" value="<?php echo get_option('global_enlace_tres'); ?>" />
-              <span class="description">Enllaç</span></td>
-            </tr>
-          </table>
-
-          <hr>
-
-          <table class="form-table">
-            <tr valign="top">
-              <th scope="row">Enllaç un</th>
-              <td><input type="text" name="global_logo_cuatro" size="40" value="<?php echo get_option('global_logo_cuatro'); ?>" />
-              <span class="description">URL de l'arxiu d'imatge</span>
-              <br>
-              <input type="text" name="global_enlace_cuatro" size="40" value="<?php echo get_option('global_enlace_cuatro'); ?>" />
-              <span class="description">Enllaç</span></td>
-            </tr>
-          </table>
-
-      <?php } ?>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Enllaç un</th>
+          <td><input type="text" name="global_logo_cuatro" size="40" value="<?php echo get_option('global_logo_cuatro'); ?>" />
+          <span class="description">URL de l'arxiu d'imatge</span>
+          <br>
+          <input type="text" name="global_enlace_cuatro" size="40" value="<?php echo get_option('global_enlace_cuatro'); ?>" />
+          <span class="description">Enllaç</span></td>
+        </tr>
+      </table>
 
       <p class="submit">
       	<input name="configuracion_guardar" type="submit" class="button-primary" value="<?php _e('Guardar cambios') ?>" />

@@ -92,7 +92,7 @@ $empresas_descripcion                 = get_option("home_empresas_descripcion");
 *  ENTIDAD
 *  @since 1.0
 */
-// Caritas sección
+// Caritas cabecera
 $caritas_ver                         = get_option("caritas_cabecera_visibilidad");
 $caritas_descripcion                 = get_option("caritas_cabecera_descripcion");
 // Programas bloques
@@ -133,12 +133,6 @@ $valores_tres_descripcion            = get_option("caritas_valores_tres_descripc
 
 $organizacion_descripcion            = get_option("caritas_organizacion_descripcion");
 $organizacion_imagen                 = get_option("caritas_organizacion_imagen");
-// Callout
-$anuncio_ver                         = get_option("caritas_anuncio_visibilidad");
-$anuncio_titulo                      = get_option("caritas_anuncio_titulo");
-$anuncio_descripcion                 = get_option("caritas_anuncio_descripcion");
-$anuncio_boton                       = get_option("caritas_anuncio_boton");
-$anuncio_enlace                      = get_option("caritas_anuncio_enlace");
 
 /**
 *  DONATIVOS

@@ -1,7 +1,7 @@
 /*
 Theme Name: CaritasPress
 Theme URI: http://www.memorysoft.es/
-Description: Tema desarrollado en exclusiva para Càrites Diocesana de Menorca
+Description: Tema desarrollado para Càrites Diocesana de Menorca por Memory Soft
 Author: Hector Asencio @MemorySoft
 Author URI: http://hectorasencio.com
 Version: 2.0
@@ -18,6 +18,19 @@ Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, c
 @import url(styles/caritas.css);
 
 /* REGISTRO DE CAMBIOS
+
 # Versión 2.0
-- Añadidas páginas de configuración para opciones globales, portada, Càritas y donativos, e imtegradas en los correspondientes templates.
+  - Añadidas páginas de configuración para opciones globales, portada, Càritas y donativos, e integradas en los
+  correspondientes templates.
+  - Mejorada la navegación en proyectos
+  - Añadida navegación en las páginas de descripción de programas
+  - El texto descriptivo en las páginas de programas, ahora es editable como contenido normal de la página
+  - Agregado un sidebar para contener widgets en los templates 'sidebar-left' y 'sidebar-right'
+  - Reseteado el auto formato de WordPress en el contenido de las páginas y posts, en init.php
+  - Arreglado un bug en page.php que renderizaba la plantilla actualidad.php y no una página estandar
+  - Arreglado un error con la variable que renderiza el texto del botón en la sección Revista de la página Càritas
+  - Arreglado un bug en el script que evita la vulnerabilidad target_blank
+  - Eliminado el banner superior, heredado del tema base
+  - Eliminados templates sobrantes
+  - Eliminadas páginas de opciones no usadas
 */

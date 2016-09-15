@@ -2,13 +2,14 @@
 /**
 *		INICIALIZACIÓN
 *  	--------------
-* 	Inicialización de soporte y funciones básicas de MemoryPress.
+* 	Inicialización de soporte y funciones básicas de CaritasPress.
 * 	
 * 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
 *  	@package CaritasPress
 */
 function caritaspress_setup() {
+
 	// MENUS
 	add_theme_support( 'menus' );
 	register_nav_menus(array(
@@ -100,6 +101,10 @@ function caritaspress_setup() {
 	  return $query;
 	}
 	add_filter('pre_get_posts', 'caritaspress_filtra_busqueda');
+
+	// DESHABILITA EL AUTO-FORMATO
+	remove_filter('the_content', 'wpautop');
 }
+
 add_action( 'after_setup_theme', 'caritaspress_setup' );
 ?>

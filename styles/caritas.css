@@ -454,8 +454,8 @@ button.close-button:hover {
 
 .filtros-categorias {
 	border-top: 1px solid #afafaf;
-	border-bottom: 0px solid #afafaf;
-	padding: 2.3rem 0;
+	border-bottom: 1px solid #afafaf;
+	padding: 1.3rem 0;
 }
 
 /* TEXTO */
@@ -546,26 +546,9 @@ button.close-button:hover {
 	padding-top:15px;
 	line-height:30px;
 }
-/*.articulo-imagen {
-	position: relative;
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  padding: 4px;
-  border: 1px solid #ddd;
-}
-.articulo-imagen img {
-	position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-}*/
-img.wp-post-image {
+
+.post img.wp-post-image,
+.proyecto img.wp-post-image {
 	width: 100%;
   max-width: 480px;
   height: auto;

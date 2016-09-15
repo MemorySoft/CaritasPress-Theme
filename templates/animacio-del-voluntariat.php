@@ -2,17 +2,19 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
-<!-- TITULO -->
+<!-- CABECERA -->
 
-<div class="row">
-  <div class="small-12 columns texto-centrado">
-    <h2 class="pagina-titulo">Programa d'Animació del Voluntariat</h2>
-    <p class="texto-destacado">L’objectiu d’aquest projecte és impulsar i dinamitzar el territori, fent que les parròquies es converteixin en el cor de la vida de l’acció social de la nostra comunitat. Treballem per posar les bases per tal que el servei d’acollida i acompanyament, de les persones i famílies més vulnerables, es faci des de les parròquies.</p>
-    <p>
-    Gràcies a aquest treball s’ha reforçat la identitat de Càritas, com acció socio-caritativa de l’Església, i algunes parròquies han iniciat serveis d’escolta, acompanyament i  trobada per a les persones més necessitades. També s’ha creat un nou equip de Càritas parroquial a Ciutadella.</p>
-    <hr>
-  </div>
-</div>  
+<?php if(have_posts()) : ?>
+  <?php while(have_posts()) : the_post(); ?>
+    <div class="row">
+      <div class="small-12 columns texto-centrado">
+        <h2 class="pagina-titulo"><?php the_title(); ?></h2>
+        <p class="texto-destacado"><?php the_content(); ?></p>
+        <hr>
+      </div>
+    </div>
+  <?php endwhile; ?>
+<?php endif; ?>  
 
 <!-- NOTICIAS -->
 
@@ -58,7 +60,11 @@
                 <?php the_title(); ?>
               </h2>
             </div>
-            <div class="small-12 medium-6 columns proyecto-lateral">
+
+            <hr>
+            <div class="espacio"></div>
+
+            <div class="small-12 medium-4 columns proyecto-lateral">
               <?php the_post_thumbnail(); ?>
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
@@ -67,7 +73,7 @@
                 <?php  } ?>
               </div>
             </div>
-            <div class="small-12 medium-6 columns proyecto-cuerpo">
+            <div class="small-12 medium-8 columns proyecto-cuerpo">
               <?php the_content(); ?>
             </div>
             <a href="javascript:void(0)" class="close-button" data-close aria-label="<?php esc_attr__('Tancar','caritaspress'); ?>">&times;</a>
@@ -76,6 +82,24 @@
       </div>
     <?php endwhile; ?>
   <?php } ?>
+</div>
+
+<!-- NAVEGACIÓN -->
+
+<div class="row">
+  <div class="small-12 columns texto-centrado">
+    <div class="filtros-categorias">
+      <div class="menu-centrado">
+        <ul class="menu vertical medium-horizontal">
+          <li><p class="texto-destacado sin-margen--abajo">PROGRAMES: &nbsp;&nbsp;</p></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>animacio-del-voluntariat">Animació del Voluntariat</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>accio-social">Acció Social</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>ocupacio-i-insercio-laboral">Ocupació i Inserció Laboral</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>sensibilitzacio-i-cooperacio">Sensibilització i Cooperació</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- PAGINADOR -->

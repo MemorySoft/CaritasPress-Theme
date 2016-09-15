@@ -2,15 +2,19 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
-<!-- TITULO -->
+<!-- CABECERA -->
 
-<div class="row">
-  <div class="small-12 columns texto-centrado">
-    <h2 class="pagina-titulo">Programa de Sensibilització i Cooperació</h2>
-    <p class="texto-destacado">La sensibilització té com objectiu principal, donar unitat i coherència a les diferents accions derivades dels programes i projectes de Càritas, i possibilitar que la nostra acció arribi a la ciutadania, perquè el compromís amb els més vulnerables, sigui captat en tota la seva dimensió, i així, la resta de la comunitat, pugui ajudar-nos a donar resposta.</p>
-    <hr>
-  </div>
-</div>  
+<?php if(have_posts()) : ?>
+  <?php while(have_posts()) : the_post(); ?>
+    <div class="row">
+      <div class="small-12 columns texto-centrado">
+        <h2 class="pagina-titulo"><?php the_title(); ?></h2>
+        <p class="texto-destacado"><?php the_content(); ?></p>
+        <hr>
+      </div>
+    </div>
+  <?php endwhile; ?>
+<?php endif; ?> 
 
 <!-- NOTICIAS -->
 
@@ -48,15 +52,19 @@
               <h2 class="titulo proyecto-titulo">
                 <?php if ( get_theme_mod( 'caritaspress_logo' ) ) : ?>
                   <div class='site-logo'>
-                    <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-                      <img src='<?php echo esc_url( get_theme_mod( 'caritaspress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                      <img src="<?php echo esc_url( get_theme_mod( 'caritaspress_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                     </a>
                   </div>
                 <?php endif; ?>
                 <?php the_title(); ?>
               </h2>
             </div>
-            <div class="small-12 medium-6 columns proyecto-lateral">
+
+            <hr>
+            <div class="espacio"></div>
+
+            <div class="small-12 medium-4 columns proyecto-lateral">
               <?php the_post_thumbnail(); ?>
               <div class="proyecto-metadatos">
                 <?php $terms = get_the_terms( $post->ID , 'programa' ); 
@@ -65,7 +73,7 @@
                 <?php  } ?>
               </div>
             </div>
-            <div class="small-12 medium-6 columns proyecto-cuerpo">
+            <div class="small-12 medium-8 columns proyecto-cuerpo">
               <?php the_content(); ?>
             </div>
             <a href="javascript:void(0)" class="close-button" data-close aria-label="<?php esc_attr__('Tancar','caritaspress'); ?>">&times;</a>
@@ -75,7 +83,25 @@
     <?php endwhile; ?>
   <?php } ?>
 </div>
-<hr>
+
+<!-- NAVEGACIÓN -->
+
+<div class="row">
+  <div class="small-12 columns texto-centrado">
+    <div class="filtros-categorias">
+      <div class="menu-centrado">
+        <ul class="menu vertical medium-horizontal">
+          <li><p class="texto-destacado sin-margen--abajo">PROGRAMES: &nbsp;&nbsp;</p></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>animacio-del-voluntariat">Animació del Voluntariat</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>accio-social">Acció Social</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>ocupacio-i-insercio-laboral">Ocupació i Inserció Laboral</a></li>
+          <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>sensibilitzacio-i-cooperacio">Sensibilització i Cooperació</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PAGINADOR -->
 
 <?php if (previous_posts_link() != '' || next_posts_link() != '' ) { ?>

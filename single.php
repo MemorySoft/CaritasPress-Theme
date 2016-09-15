@@ -17,8 +17,8 @@
               <h2 class="titulo post-titulo"><?php the_title(); ?></h2>
             </div>
             
-<hr>
-<div class="espacio"></div>            
+            <hr>
+            <div class="espacio"></div>            
            
             <div class="small-12 medium-4 columns post-lateral">
               <?php the_post_thumbnail(); ?>  

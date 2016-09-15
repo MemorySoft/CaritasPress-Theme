@@ -41,7 +41,7 @@ $(document).ready(function() {
   // Para evitar la vulnerabilidad target_blank en navegadores antiguos
   // agregamos los atributos correspondientes de manera automática a todos
   // los enlaces externos excepto el host y el localhost
-  $("a[href^='http']").not("a[href^='http:\/\/caritasmenorca.org'],a[href^='https:\/\/caritasmenorca.org'],a[href^='http:\/\/localhost'],a[href^='https:\/\/localhost']")
+  $("a[href^='http']").not("a[href^='http:\/\/www.caritasmenorca.org'],a[href^='https:\/\/www.caritasmenorca.org'],a[href^='http:\/\/localhost'],a[href^='https:\/\/localhost']")
     .attr({
       target: "_blank",
       rel: "noopener noreferer"

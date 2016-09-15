@@ -56,29 +56,6 @@
     js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-
-	<!-- BANNER GLOBAL -->
-
-  <?php 
-    if ($banner_ver == 1) {
-    ?>
-    <div class="franja--estrecha fondo-gris--medio sin-margen--abajo">
-      <div class="row sin-margen--abajo">
-        <div class="small-12 columns">
-          <div class="callout-enlinea texto-centrado">
-            <span class="callout-enlinea-texto"><strong><?php echo $banner_texto ?></strong></span>
-            <?php if ($banner_texto_boton !== '' && $banner_enlace_boton !== '') { ?>
-              <span class="callout-enlinea-boton">
-                <a href="<?php echo $banner_enlace_boton ?>" class="button tiny invertido sin-margen--abajo">
-                  <?php echo $banner_texto_boton ?>
-                </a>
-              </span>
-            <?php } ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php } ?>
   
   <!-- NAVEGACIÓN -->
 

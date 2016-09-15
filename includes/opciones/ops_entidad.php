@@ -331,7 +331,7 @@ function caritas_datos_entidad() {
           </tr>
           <tr valign="top">
             <th scope="row">Botó</th>
-            <td><input type="text" name="caritas_revista_texto_boton" size="40" value="<?php echo get_option('caritas_revista_texto_boton'); ?>" />
+            <td><input type="text" name="caritas_revista_boton" size="40" value="<?php echo get_option('caritas_revista_boton'); ?>" />
             <span class="description">Texte del botó</span>
             <br>
             <input type="text" name="caritas_revista_enlace" size="40" value="<?php echo get_option('caritas_revista_enlace'); ?>" />

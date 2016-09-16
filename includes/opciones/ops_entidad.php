@@ -11,7 +11,7 @@ add_action('admin_menu', 'caritaspress_crea_menu_entidad');
 add_action('admin_init', 'caritaspress_registra_opciones_entidad');
 
 function caritaspress_crea_menu_entidad() {
-  if (!current_user_can('manage_options'))
+  if (!current_user_can('manage_options') || current_user_can('administrator'))
     add_submenu_page(
     	"configuracion",
     	__("Càritas"),

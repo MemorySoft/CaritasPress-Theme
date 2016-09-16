@@ -11,7 +11,7 @@ add_action('admin_menu', 'caritaspress_crea_menu_configuracion');
 add_action('admin_init', 'caritaspress_registra_opciones_configuracion');
 
 function caritaspress_crea_menu_configuracion() {
-  if (!current_user_can('manage_options'))
+  if (!current_user_can('manage_options') || current_user_can('administrator'))
     add_menu_page(
     	__("Caritas"),
     	__("Caritas"),

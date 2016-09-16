@@ -11,14 +11,15 @@ add_action('admin_menu', 'caritaspress_crea_menu_entidad');
 add_action('admin_init', 'caritaspress_registra_opciones_entidad');
 
 function caritaspress_crea_menu_entidad() {
-  add_submenu_page(
-  	"configuracion",
-  	__("Càritas"),
-  	__("Càritas"),
-  	"manage_options",
-  	"caritas",
-  	"caritas_datos_entidad"
-  	);
+  if (!current_user_can('manage_options'))
+    add_submenu_page(
+    	"configuracion",
+    	__("Càritas"),
+    	__("Càritas"),
+    	"edit_pages",
+    	"caritas",
+    	"caritas_datos_entidad"
+    	);
 }
 
 function caritaspress_registra_opciones_entidad() {
@@ -109,7 +110,7 @@ function caritaspress_registra_opciones_entidad() {
 }
 
 function caritas_datos_entidad() {
-    if (!current_user_can('manage_options'))
+    if (!current_user_can('edit_pages'))
         wp_die(__("No tienes acceso a esta página."));
     ?>
 

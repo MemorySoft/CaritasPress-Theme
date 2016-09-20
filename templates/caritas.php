@@ -10,16 +10,33 @@
   </div>
 </div>
 
-<!-- CARRUSEL DE MEMORIAS -->
+<!-- CARRUSEL MEMORIAS -->
 
 <div class="row sin-margen--abajo">
+  <div class="small-12 columns">
+    <div class="carrusel -carrusel-un-item">
+      <?php
+      $carrusel_args = array(
+        'post_type' => 'carrusel'
+      );
+      $carrusel_item = new WP_Query($carrusel_args); ?>
+      <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
+        <div>
+          <?php the_post_thumbnail(); ?>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row sin-margen--abajo">
   <div class="small-12 columns">
     <div class="-carrusel-un-item">
       <div><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/caritas_memoria_2014_1.png" alt="1.632 persones ateses de les quals el 57% van ser dones i el 43% van ser homes"></a></div>
       <div><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/caritas_memoria_2014_2.png" alt="De les persones ateses 225 van ser persones soles, 5% parelles sense fills, 41% parelles amb fills, 26% families monoparenterals i 6%altres tipus de families"></a></div>
     </div>
   </div>
-</div>
+</div> -->
 
 <?php if ($caritas_ver == 1) { ?>
   <div class="row sin-margen--abajo texto-centrado">

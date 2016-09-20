@@ -5,17 +5,15 @@
 <!--
 
 # CARRUSEL
-Este componente consiste en un carrusel que muestra el CPT 'Carrusel' o la
-categoría predefinida 'Portada' y está encapsulado en un sidebar que sobre-escribe
-el contenido de los anteriores items cuando está definido:
+Este componente consiste en un carrusel que muestra la categoría predefinida 'Portada'
+y está encapsulado en un sidebar que sobre-escribe el contenido de los anteriores items
+cuando está definido:
 
-  1- Muestra el CPT 'carrusel' por defecto
-  2- Si existe algún post con la categoría 'Portada' lo sobre-escribe
-  3- Si añadimos algún widget al sidebar, sobre-escribe lo anterior
+  1- Si existe algún post con la categoría 'Portada' lo sobre-escribe
+  2- Si añadimos algún widget al sidebar, sobre-escribe lo anterior
 
 Ficheros relacionados:
 
-  * includes\entradas\post_carrusel.php
   * includes\funciones\func_categorias.php
   * includes\funciones\func_sidebars.php
   * styles\caritas.css
@@ -26,45 +24,26 @@ Ficheros relacionados:
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <!-- Declaramos el sidebar -->
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
-      <!-- Contenido por defecto si no hay nigún widget -->
       <div class="carrusel portada-carrusel -carrusel-un-item">
         <?php
-        // Preparamos las opciones para la query
         $noticias_args = array(
           'post_type' => 'post',
           'category_name' => 'portada',
           'posts_per_page'=> 6,
         );
-        $carrusel_args = array(
-          'post_type' => 'carrusel'
-        );
-        // Ejecutamos la query
-        $carrusel_item = new WP_Query($carrusel_args);
-        $noticias_item = new WP_Query($noticias_args);
-        // Si hay posts con la categoría 'Portada' sacamos las seis últimas
-        if( $noticias_item->have_posts() ) { ?>
-          <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
-            <div class="carrusel-item">
-              <?php the_post_thumbnail(); ?>
-              <div class="carrusel-seccion">
-                <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-                <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
-                    <?php _e('Llegir','caritaspress'); ?>
-                  </a>
-              </div>
+        $noticias_item = new WP_Query($noticias_args); ?>
+        <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
+          <div class="carrusel-item">
+            <?php the_post_thumbnail(); ?>
+            <div class="carrusel-seccion">
+              <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
+              <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
+                  <?php _e('Llegir','caritaspress'); ?>
+                </a>
             </div>
-          <?php endwhile; ?>
-        <?php
-        // Si ningún post tiene la categoría 'Portada' mostramos el CTP 'Carrusel'
-        } elseif( $carrusel_item->have_posts() ) { ?>
-          <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
-            <div>
-              <?php the_post_thumbnail(); ?>
-            </div>
-          <?php endwhile; ?>
-        <?php } ?>
+          </div>
+        <?php endwhile; ?>
       </div>
     <?php endif; ?>
   </div>

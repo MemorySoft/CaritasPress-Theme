@@ -3,7 +3,7 @@
 <?php get_header(); ?>
 
 <!-- INTRO -->
-    
+
 <div class="row sin-margen--abajo texto-centrado">
   <div class="small-12 columns">
     <h2 class="sin-margen--abajo">Els nostres projectes</h2>
@@ -30,8 +30,8 @@
 
 <!-- PROYECTOS -->
 
-<div class="row small-up-1 medium-up-2 large-up-3">     
-  <?php 
+<div class="row small-up-1 medium-up-2 large-up-3">
+  <?php
   $args = array(
     'post_type' => 'proyecto',
     'posts_per_page' => 100,
@@ -73,16 +73,18 @@
             <div class="small-12 medium-4 columns proyecto-lateral">
               <?php the_post_thumbnail(); ?>
               <div class="proyecto-metadatos">
-                <?php $terms = get_the_terms( $post->ID , 'programa' ); 
+                <?php $terms = get_the_terms( $post->ID , 'programa' );
                   foreach ( $terms as $term ) { ?>
-                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>
                 <?php  } ?>
               </div>
             </div>
             <div class="small-12 medium-8 columns proyecto-cuerpo">
               <?php the_content(); ?>
             </div>
-            <a href="javascript:void(0)" class="close-button" data-close aria-label="<?php esc_attr__('Tancar','caritaspress'); ?>">&times;</a>
+            <button class="boton-cerrar boton-iconizado" data-close aria-label="Cerrar" type="button">
+              <span aria-hidden="true">Enrrere</span>
+            </button>
           </div>
         </div>
       </div>

@@ -15,31 +15,36 @@
 
 <div class="row colaboracion-opciones small-up-1 medium-up-5 texto-centrado">
   <div class="columns colaboracion-elemento">
-    <h3>Fes un <br>donatiu</h3>
+    <!-- <h3>Fes un <br>donatiu</h3> -->
+    <h3>Donatius</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_donatius__rojo.png" alt="Donatius">
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="#formularioDonativos" class="button">Vull fer un donatiu</a>
   </div>
   <div class="columns colaboracion-elemento">
-    <h3>Fes-te soci<br>de Càritas</h3>
+    <!-- <h3>Fes-te soci<br>de Càritas</h3> -->
+    <h3>Socis</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_socis__rojo.png" alt="Socis">
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioSocios">Vull fer-me soci</a>
   </div>
   <div class="columns colaboracion-elemento">
-    <h3>Fes-te <br>voluntari</h3>
+    <!-- <h3>Fes-te <br>voluntari</h3> -->
+    <h3>Voluntaris</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_voluntaris__rojo.png" alt="Voluntaris">
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioVoluntarios">Vull ser voluntari</a>
   </div>
   <div class="columns colaboracion-elemento">
-    <h3>Empresa <br>amb cor</h3>
+    <!-- <h3>Empresa <br>amb cor</h3> -->
+    <h3>Empreses</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_empreses__rojo.png" alt="Empreses">
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioEmpresas">Vull posar-hi cor</a>
   </div>
   <div class="columns colaboracion-elemento">
-    <h3>Fes un <br>llegat</h3>
+    <!-- <h3>Fes un <br>llegat</h3> -->
+    <h3>Llegats</h3>
     <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats__rojo.png" alt="Llegats">
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a, excepturi. Praesentium.</p> -->
     <a href="javascript:void(0)" class="button" data-toggle="formularioLegados">Vull llegar</a>
@@ -53,36 +58,36 @@
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
       <span class="datos-cifra"><?php echo $fiscal_bloque_uno_cifra ?></span>
-      <span class="datos-etiqueta"><?php echo $fiscal_bloque_uno_titulo ?></span>  
-    </div>  
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_uno_titulo ?></span>
+    </div>
     <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_uno_descripcion ?></p>
   </div>
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
       <span class="datos-cifra"><?php echo $fiscal_bloque_dos_cifra ?></span>
-      <span class="datos-etiqueta"><?php echo $fiscal_bloque_dos_titulo ?></span>  
-    </div>  
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_dos_titulo ?></span>
+    </div>
     <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_dos_descripcion ?></p>
   </div>
   <div class="small-12 medium-4 columns">
     <div class="datos-contenedor">
       <span class="datos-cifra"><?php echo $fiscal_bloque_tres_cifra ?></span>
-      <span class="datos-etiqueta"><?php echo $fiscal_bloque_tres_titulo ?></span>  
-    </div>  
+      <span class="datos-etiqueta"><?php echo $fiscal_bloque_tres_titulo ?></span>
+    </div>
     <p class="texto-destacado--peque texto-sin-serifa"><?php echo $fiscal_bloque_tres_descripcion ?></p>
   </div>
-  <a href="<?php echo $fiscal_info_enlace ?>" class="large button" target="_blank"><?php echo $fiscal_info_boton ?> <i class="fa fa-download"></i></a>
+  <a href="<?php echo $fiscal_info_enlace ?>" class="large button boton-iconizado" target="_blank" title="Descarrega l'informació fiscal relativa als donatius"><?php echo $fiscal_info_boton ?> <i class="fa fa-download"></i></a>
 </div>
 
 <!-- CONTENIDO | FORMULARIO DONATIVOS -->
 
-<div class="franja fondo-gris--claro sin-margen--abajo texto-centrado" id="formularioDonativos"> 
+<div class="franja fondo-gris--claro sin-margen--abajo texto-centrado" id="formularioDonativos">
   <div class="row sin-margen--abajo">
     <h2 class="titulo">FES UN DONATIU A CÀRITAS MENORCA</h2>
     <p class="texto-destacado">La majoria dels ingresos de Càritas Menorca prové de donacions de persones particulars, gent com tu que vol ajudar als demes. Ajudar es facil i costa molt poc, de fet costa nomes el que tu vulguis&hellip;</p>
   </div>
 </div>
-<div class="franja fondo-rojo texto-centrado"> 
+<div class="franja fondo-rojo texto-centrado">
   <div class="row sin-margen--abajo">
     <div class="small-12 medium-6 medium-centered columns">
       <h4 class="titulo">Estem treballant per posar en marxa un nou sistema de donatius online. Gràcies per el teu interés!</h4>
@@ -100,7 +105,7 @@
               <option value="10">10 &euro;</option>
             </select>
             <span class="input-group-label donativos-titulo">a Càritas</span>
-          </div> 
+          </div>
         </fieldset>
         <hr>
         <h4>2&dash; Forma de pagament</h4>
@@ -109,7 +114,7 @@
           <label for="radio3"><input id="radio3" name="pagar" type="radio" value="visa"><i class="fa fa-cc-visa"></i> Visa</label>
           <label for="radio2"><input id="radio2" name="pagar" type="radio" value="maestro"><i class="fa fa-credit-card-alt"></i> Maestro</label>
           <label for="radio4"><input id="radio4" name="pagar" type="radio" value="paypal"><i class="fa fa-cc-paypal"></i> PayPal</label>
-        </fieldset> 
+        </fieldset>
         <hr>
         <fieldset class="donativos-boton">
           <button type="submit" class="large button bordeado">Fer donatiu</button>
@@ -119,7 +124,7 @@
   </div>
 </div>
 
-<!-- 
+<!--
   MODALES ////////////////////////////////////////////////////////////////////////////////////////////////
 -->
 
@@ -135,7 +140,6 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES-TE SOCI</h2>
-        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>
@@ -184,7 +188,6 @@
                   <option value="Fornells">Fornells</option>
                   <option value="Llucmaçanes">Llucmaçanes</option>
                   <option value="Calan Porter">Calan Porter</option>
-                  <option value="Es Grau">Es Grau</option>
                 </select>
               </div>
             </div>
@@ -296,7 +299,6 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES-TE VOLUNTARI</h2>
-        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>
@@ -345,7 +347,6 @@
                   <option value="Fornells">Fornells</option>
                   <option value="Llucmaçanes">Llucmaçanes</option>
                   <option value="Calan Porter">Calan Porter</option>
-                  <option value="Es Grau">Es Grau</option>
                 </select>
               </div>
             </div>
@@ -388,8 +389,7 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>POSA-HI COR A LA TEVA EMPRESA</h2>
-        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
-        <a href="#" class="small button bordeado--blanco">Descarrega l'informació fiscal</a>
+        <a href="http://www.caritasmenorca.org/wp-content/uploads/2016/06/informacio_fiscal.pdf" class="small button bordeado--blanco">Descarrega l'informació fiscal</a>
       </div>
     </div>
   </div>
@@ -452,7 +452,6 @@
     <div class="row sin-margen--abajo">
       <div class="small-12 columns">
         <h2>FES UN LLEGAT</h2>
-        <!-- <p class="texto-destacado--peque">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti in optio excepturi, ut, animi, tempore quasi rem inventore, quod architecto assumenda mollitia exercitationem autem quaerat cupiditate. Itaque quaerat, ipsa pariatur quidem, dolorum est distinctio.</p> -->
       </div>
     </div>
   </div>

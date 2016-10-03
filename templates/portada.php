@@ -2,69 +2,31 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
-<!--
-
-# CARRUSEL
-Este componente consiste en un carrusel que muestra el CPT 'Carrusel' o la
-categoría predefinida 'Portada' y está encapsulado en un sidebar que sobre-escribe
-el contenido de los anteriores items cuando está definido:
-
-  1- Muestra el CPT 'carrusel' por defecto
-  2- Si existe algún post con la categoría 'Portada' lo sobre-escribe
-  3- Si añadimos algún widget al sidebar, sobre-escribe lo anterior
-
-Ficheros relacionados:
-
-  * includes\entradas\post_carrusel.php
-  * includes\funciones\func_categorias.php
-  * includes\funciones\func_sidebars.php
-  * styles\caritas.css
-  * styles\owl.carousel.css
-  * styles\owl.theme.css
-
--->
+<!-- CARRUSEL -->
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <!-- Declaramos el sidebar -->
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
-      <!-- Contenido por defecto si no hay nigún widget -->
-      <div class="carrusel portada-carrusel -carrusel-un-item">
+
+      <div class="-carrusel-un-item carrusel-de-uno">
         <?php
-        // Preparamos las opciones para la query
         $noticias_args = array(
           'post_type' => 'post',
           'category_name' => 'portada',
           'posts_per_page'=> 6,
         );
-        $carrusel_args = array(
-          'post_type' => 'carrusel'
-        );
-        // Ejecutamos la query
-        $carrusel_item = new WP_Query($carrusel_args);
-        $noticias_item = new WP_Query($noticias_args);
-        // Si hay posts con la categoría 'Portada' sacamos las seis últimas
-        if( $noticias_item->have_posts() ) { ?>
-          <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
-            <div class="carrusel-item">
-              <?php the_post_thumbnail(); ?>
-              <div class="carrusel-seccion">
-                <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-                <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
-                    <?php _e('Llegir','caritaspress'); ?>
-                  </a>
-              </div>
+        $noticias_item = new WP_Query($noticias_args); ?>
+        <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
+          <div class="carrusel-item banner">
+            <?php the_post_thumbnail(); ?>
+            <div class="banner-franja">
+              <h2 class="banner-titulo"><?php the_title(); ?></h2>
+              <a class="banner-enlace button tiny" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
+                <?php _e('Llegir','caritaspress'); ?>
+              </a>
             </div>
-          <?php endwhile; ?>
-        <?php
-        // Si ningún post tiene la categoría 'Portada' mostramos el CTP 'Carrusel'
-        } elseif( $carrusel_item->have_posts() ) { ?>
-          <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
-            <div>
-              <?php the_post_thumbnail(); ?>
-            </div>
-          <?php endwhile; ?>
-        <?php } ?>
+          </div>
+        <?php endwhile; ?>
       </div>
     <?php endif; ?>
   </div>
@@ -74,9 +36,11 @@ Ficheros relacionados:
 
 <div class="franja fondo-rojo texto-centrado">
   <div class="row sin-margen--abajo">
-    <h2 class="small-12">Càritas Diocesana de Menorca, ajudan's a ajudar!</h2>
+    <div class="small-12 columns">
+      <h2>Càritas Diocesana de Menorca, ajudan's a ajudar!</h2>
+    </div>
   </div>
-  <div class="row small-up-1 medium-up-5 sin-margen--abajo texto-centrado">
+  <div class="row small-up-2 medium-up-5 sin-margen--abajo texto-centrado">
     <div class="columns">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_donatius.png" alt="Donatius">
@@ -106,6 +70,14 @@ Ficheros relacionados:
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats.png" alt="Llegats">
         <h5>Fes un <br>llegat</h5>
       </a>
+    </div>
+    <div class="columns hide-for-medium">
+      <hr>
+      <a href="colabora">
+        <h5 class="sin-margen--abajo">Col·labora <br>amb Càritas</h5>
+        <i class="fa fa-angle-double-right fa-2x"></i>
+      </a>
+      <hr>
     </div>
   </div>
 </div>
@@ -171,28 +143,27 @@ Ficheros relacionados:
         </div>
       </div>
     </div>
-    <div class="small-12 columns texto-centrado">
-      <p><a href="projectes" title="<?php _e('Veure tots els projectes','caritaspress'); ?>"><?php _e('Veure tots els projectes','caritaspress'); ?> »</a></p>
-    </div>
   </div>
 </div>
 
-<!-- MESTRAL -->
+<div class="franja fondo-gris--claro texto-centrado">
+  <div class="row sin-margen--abajo">
 
-<?php if ($mestral_ver == 1) { ?>
-  <div class="franja fondo-gris--claro texto-centrado">
-    <div class="row sin-margen--abajo">
-      <div class="small-12 columns">
-        <img src="<?php echo $mestral_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','podemospress'); ?>">
-        <h2 class="small-12 titulo"><?php echo $mestral_titulo ?></h2>
-        <p class="texto-destacado">
-          <?php echo $mestral_descripcion ?>
-        </p>
-        <a href="<?php echo $mestral_enlace ?>" target="_blank" class="large button" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php echo $mestral_texto_boton ?></a>
-      </div>
-    </div>
+    <!-- MESTRAL -->
+
+    <?php if ($mestral_ver == 1) { ?>
+        <div class="small-12 columns">
+          <img src="<?php echo $mestral_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','podemospress'); ?>">
+          <h2 class="small-12 titulo"><?php echo $mestral_titulo ?></h2>
+          <p class="texto-destacado">
+            <?php echo $mestral_descripcion ?>
+          </p>
+          <a href="<?php echo $mestral_enlace ?>" target="_blank" class="large button boton-iconizado" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php echo $mestral_texto_boton ?> <i class="fa fa-share"></i></a>
+        </div>
+    <?php } ?>
   </div>
-<?php } ?>
+</div>
+
 
 <!-- ACTUALIDAD -->
 
@@ -224,25 +195,23 @@ Ficheros relacionados:
         </div>
       <?php endwhile; ?>
     </div>
-    <div class="small-12 columns texto-centrado">
-      <p><a href="actualitat" title="<?php esc_attr__('Veure tota l\'actualitat','caritaspress'); ?>"><?php _e('Veure tota l\'actualitat','caritaspress'); ?> »</a></p>
-    </div>
   </div>
 <?php } ?>
 
-<!-- EMPRESAS -->
+<div class="franja fondo-gris--claro texto-centrado">
+  <div class="row sin-margen--abajo">
 
-<?php if ($empresas_ver == 1) { ?>
-  <div class="franja fondo-gris--claro texto-centrado">
-    <div class="row sin-margen--abajo">
-      <div class="small-12 columns">
-        <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
-        <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
-        <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
-        <a href="javascript:void(0)" class="large button" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?></a>
-      </div>
-    </div>
+    <!-- EMPRESAS -->
+
+    <?php if ($empresas_ver == 1) { ?>
+        <div class="small-12 columns">
+          <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
+          <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
+          <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
+          <a href="javascript:void(0)" class="large button boton-iconizado" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?> <i class="fa fa-heart"></i></a>
+        </div>
+    <?php } ?>
   </div>
-<?php } ?>
+</div>
 
 <?php get_footer(); ?>

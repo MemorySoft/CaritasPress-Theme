@@ -11,23 +11,24 @@ add_action('admin_menu', 'caritaspress_crea_menu_configuracion');
 add_action('admin_init', 'caritaspress_registra_opciones_configuracion');
 
 function caritaspress_crea_menu_configuracion() {
-  add_menu_page(
-  	__("Caritas"),
-  	__("Caritas"),
-  	"manage_options",
-  	"configuracion",
-  	"caritaspress_configuracion_global",
-  	"dashicons-admin-generic",
-  	4.1
-  	);
-  add_submenu_page(
-  	"configuracion",
-  	__("Configuració"),
-  	__("Configuració"),
-  	"manage_options",
-  	"configuracion",
-  	"caritaspress_configuracion_global"
-  	);
+  if (!current_user_can('manage_options') || current_user_can('administrator'))
+    add_menu_page(
+    	__("Caritas"),
+    	__("Caritas"),
+    	"edit_pages",
+    	"configuracion",
+    	"caritaspress_configuracion_global",
+    	"dashicons-admin-generic",
+    	4.1
+    	);
+    add_submenu_page(
+    	"configuracion",
+    	__("Configuració"),
+    	__("Configuració"),
+    	"edit_pages",
+    	"configuracion",
+    	"caritaspress_configuracion_global"
+    	);
 }
 
 function caritaspress_registra_opciones_configuracion() {
@@ -104,7 +105,7 @@ function caritaspress_registra_opciones_configuracion() {
 }
 
 function caritaspress_configuracion_global() {
-  if (!current_user_can('manage_options'))
+  if (!current_user_can('edit_pages'))
       wp_die(__("No tienes acceso a esta página."));
   ?>
 

@@ -11,14 +11,15 @@ add_action('admin_menu', 'caritaspress_crea_menu_inicio');
 add_action('admin_init', 'caritaspress_registra_opciones_inicio');
 
 function caritaspress_crea_menu_inicio() {
-  add_submenu_page(
-    "configuracion",
-  	__("Portada"),
-  	__("Portada"),
-  	"manage_options",
-  	"home",
-  	"caritaspress_pagina_inicio"
-  	);
+  if (!current_user_can('manage_options') || current_user_can('administrator'))
+    add_submenu_page(
+      "configuracion",
+    	__("Portada"),
+    	__("Portada"),
+    	"edit_pages",
+    	"home",
+    	"caritaspress_pagina_inicio"
+    	);
 }
 
 function caritaspress_registra_opciones_inicio() {
@@ -97,7 +98,7 @@ function caritaspress_registra_opciones_inicio() {
 }
 
 function caritaspress_pagina_inicio() {
-  if (!current_user_can('manage_options'))
+  if (!current_user_can('edit_pages'))
       wp_die(__("No tienes acceso a esta página."));
   ?>
 

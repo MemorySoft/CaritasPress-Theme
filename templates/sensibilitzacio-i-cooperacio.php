@@ -14,12 +14,12 @@
       </div>
     </div>
   <?php endwhile; ?>
-<?php endif; ?> 
+<?php endif; ?>
 
 <!-- NOTICIAS -->
 
-<div class="row small-up-1 medium-up-2 large-up-3">   
-  <?php 
+<div class="row small-up-1 medium-up-2 large-up-3">
+  <?php
   $args = array(
     'tax_query' => array(
       array(
@@ -67,16 +67,19 @@
             <div class="small-12 medium-4 columns proyecto-lateral">
               <?php the_post_thumbnail(); ?>
               <div class="proyecto-metadatos">
-                <?php $terms = get_the_terms( $post->ID , 'programa' ); 
+                <?php $terms = get_the_terms( $post->ID , 'programa' );
                   foreach ( $terms as $term ) { ?>
-                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>    
+                    <span class="label fondo-gris--medio"><?php echo $term->name ?></span>
                 <?php  } ?>
               </div>
             </div>
             <div class="small-12 medium-8 columns proyecto-cuerpo">
               <?php the_content(); ?>
             </div>
-            <a href="javascript:void(0)" class="close-button" data-close aria-label="<?php esc_attr__('Tancar','caritaspress'); ?>">&times;</a>
+            <button class="boton-cerrar" data-close aria-label="Cerrar" type="button">
+              <i class="fa fa-angle-double-left"></i>
+              <span aria-hidden="true">Enrrere</span>
+            </button>
           </div>
         </div>
       </div>

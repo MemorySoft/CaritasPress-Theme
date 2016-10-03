@@ -19,21 +19,20 @@
       <?php } elseif ( isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
         <h2 class="pagina-titulo">Artxiu de <?php bloginfo( 'name' ); ?></h2>
         </div>
-      </div>  
+      </div>
       <?php } else { ?>
         <h2 class="sin-margen--abajo">Actualitat i noticies de Càritas Menorca</h2>
         <p class="texto-destacado">Últimes notícies publicades al bloc</p>
       <?php } ?>
   </div>
   <hr>
-</div>  
+</div>
 
 <!-- FILTROS -->
 <div class="espacio"></div>
 <div class="row sin-margen--abajo">
   <div class="small-12 medium-6 columns">
     <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <!--<label>Cercar</label> -->
         <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
         <div class="input-group">
           <input class="input-group-field" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
@@ -47,8 +46,7 @@
   <div class="formulario-navegacion">
   <form class="navegacion-noticias show-for-medium" id="formularioNavegacion" action="">
     <div class="small-12 medium-3 columns">
-      <!--<label>Categories</label> -->
-      <?php 
+      <?php
       $args = array(
         'show_option_none' => 'Sel·lecciona una categoria',
       ); ?>
@@ -67,7 +65,7 @@
     </div>
     <div class="small-12 medium-3 columns end">
       <!--<label>Etiquetes</label> -->
-      <?php 
+      <?php
       $args = array(
         'taxonomy' => 'post_tag',
         'show_option_none' => 'Sel·lecciona una etiqueta',
@@ -84,16 +82,16 @@
         dropdown.onchange = onCatChange;
         -->
       </script>
-    </div> 
-  </form> 
-  </div>  
+    </div>
+  </form>
+  </div>
 </div>
 
 <div class="row sin-margen--abajo espacio">
   <div class="small-12 columns">
     <?php if ( is_search() ) { ?>
       <h4 class="texto-centrado">
-        <?php printf( __( 'Resultats de la cerca: %s', 'shape' ), get_search_query()  ); ?>  
+        <?php printf( __( 'Resultats de la cerca: %s', 'shape' ), get_search_query()  ); ?>
       </h4>
     <?php } ?>
   </div>
@@ -101,9 +99,9 @@
 
 <!-- NOTICIAS -->
 
-<div class="row small-up-1 medium-up-2 large-up-3">   
+<div class="row small-up-1 medium-up-2 large-up-3">
   <?php if(have_posts()) : ?>
-    <?php while(have_posts()) : the_post(); ?>  
+    <?php while(have_posts()) : the_post(); ?>
       <div class="column">
         <div class="articulo stack-for-small texto centrado">
           <div class="articulo-seccion articulo-seccion--vertical">
@@ -126,16 +124,17 @@
 
 <!-- PAGINADOR -->
 
-<?php if (previous_posts_link() != '' || next_posts_link() != '' ) { ?>
-  <div class="row">
-    <div class="small-12 columns">
-      <hr>
-      <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-        <li class="pagination-prev"><?php next_posts_link( 'Noticies recents' ); ?></li>
-        <li class="pagination-next"><?php previous_posts_link( 'Noticies antigues' ); ?></li>
-      </ul>
+<div class="row sin-margen--abajo">
+  <div class="small-12 columns">
+    <div class="pagination text-center" role="navigation" aria-label="Pagination">
+      <span class="pagination-prev">
+        <?php previous_posts_link(); ?>
+      </span>
+      <span class="pagination-next">
+        <?php next_posts_link(); ?>
+      </span>
     </div>
   </div>
-<?php } ?>
+</div>
 <hr>
 <?php get_footer(); ?>

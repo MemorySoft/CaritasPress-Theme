@@ -12,13 +12,13 @@
   <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/imagenes/favicon.ico">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" />  
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" />
 
   <!-- Estilos críticos -->
   <style>
     /* Insertar aquí los estilos críticos que se deban cargar al inicio */
   </style>
-  
+
   <!-- Twitter card -->
   <meta name="twitter:widgets:csp" content="on">
   <meta name="twitter:card" content="summary">
@@ -37,6 +37,7 @@
   <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/foundation.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/owl.carousel.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/gridforms.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/touchtouch.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/javascript/app.js"></script>
 
   <!-- Cabeceras insertadas por WordPress -->
@@ -56,10 +57,10 @@
     js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-  
-  <!-- NAVEGACIÓN -->
 
-  <div class="row top-bar">
+  <!-- NAVEGACIÓN -->
+<nav>
+  <div class="row top-bar sin-margen--abajo">
     <div class="small-12 columns">
       <div class="top-bar-title">
         <?php if ( get_theme_mod( 'caritaspress_logo' ) ) : ?>
@@ -82,8 +83,8 @@
         </span>
       </span>
       <div class="top-bar-right">
-        <?php caritaspress_menu_principal(); ?> 
+        <?php caritaspress_menu_principal(); ?>
       </div>
     </div>
   </div>
-    
+</nav>

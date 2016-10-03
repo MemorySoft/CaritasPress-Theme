@@ -30,7 +30,7 @@
   </div>
 
   <footer>
-    <div class="franja fondo-rojo sin-margen--abajo">
+    <div class="franja fondo-rojo sin-margen--abajo sin-relleno--abajo">
       <div class="row footer sin-margen--abajo">
         <div class="small-12 columns texto-centrado">
           <h1>
@@ -54,8 +54,6 @@
             </div>
             <div class="elemento-multicolumna-seccion">
               <p class="elemento-multicolumna-titulo texto-miniscula texto-delgado texto-con-serifa">
-                <!-- C/ SANTA EULALIA, 83 - 07702 - MAO <br>
-                Teléfon 971 36 10 01 | Fax 971 35 37 79</p> -->
                 <?php echo $calle_uno ?>,
                 <?php echo $numero_uno ?> -
                 <?php echo $cp_uno ?> -
@@ -71,8 +69,6 @@
             </div>
             <div class="elemento-multicolumna-seccion">
               <p class="elemento-multicolumna-titulo texto-miniscula texto-delgado texto-con-serifa">
-                <!-- C/ FIVALLER, 20 - 07760 - CIUTADELLA <br>
-                Teléfon 971 48 11 40 | Fax 971 35 37 79</p> -->
                 <?php echo $calle_dos ?>,
                 <?php echo $numero_dos ?> -
                 <?php echo $cp_dos ?> -
@@ -88,7 +84,6 @@
             </div>
             <div class="elemento-multicolumna-seccion">
               <p class="elemento-multicolumna-titulo texto-miniscula texto-delgado texto-con-serifa">
-                <!-- caritas@caritasmenorca.org</p> -->
                 <?php echo $email_contacto ?>
               </p>
             </div>
@@ -101,15 +96,12 @@
           <?php endif; ?>
           <h5>Segueix-nos</h5>
           <div class="redes-sociales--horizontal">
-            <!-- <a class="redes-sociales-item" href="https://www.youtube.com/channel/UCzcLy0ubLrH_QOmelsHbqcQ" target="_blank"> -->
               <a class="redes-sociales-item" href="<?php echo $enlace_youtube ?>" target="_blank">
               <img src="<?php bloginfo('template_directory'); ?>/images/icono_youtube.png" alt="Icono de YouTube">
             </a>
-            <!-- <a class="redes-sociales-item" href="https://www.facebook.com/cdmenorca" target="_blank"> -->
             <a class="redes-sociales-item" href="<?php echo $enlace_facebook ?>" target="_blank">
               <img src="<?php bloginfo('template_directory'); ?>/images/icono_facebook.png" alt="Icono de Facebook">
             </a>
-            <!-- <a class="redes-sociales-item" href="https://twitter.com/caritasmenorca?lang=es" target="_blank"> -->
             <a class="redes-sociales-item" href="<?php echo $enlace_twitter ?>" target="_blank">
               <img src="<?php bloginfo('template_directory'); ?>/images/icono_twitter.png" alt="Icono de Twitter">
             </a>

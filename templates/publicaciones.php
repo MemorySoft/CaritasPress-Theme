@@ -3,33 +3,41 @@
 <?php get_header(); ?>
 
 <!-- CONTENIDO -->
-    
-    <div class="row sin-margen--abajo">
-      <div class="small-12 columns">
-        <h3 class="titulo">Publicacions de Càritas Menorca</h3>
-      </div>
 
-      <div class="small-12 columns">
-      <?php 
-        $publicacion_args = array(
-        'post_type' => 'publicacion',
-        'posts_per_page'=> 100,
-      );
-      $wp_query = new WP_Query($publicacion_args);
-      if( $wp_query->have_posts() ) { ?>       
-        <ul class="coleccion">
-          <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-            <?php $enlace = get_post_meta( get_the_id(), 'publicacion_enlace', true ); ?>
-            <li class="coleccion-elemento">
-              <span class="titulo"><i class="fa fa-newspaper-o"></i> <?php the_title(); ?></span>
-              <a class="coleccion-elemento--secundario" href="<?php echo $enlace ?>" target="_blank">
-                <i class="fa fa-download"></i>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        </ul>
-      <?php } ?>
-    </div>
+<div class="row">
+  <div class="small-12 columns">
+    <h3 class="titulo">Publicacions</h3>
   </div>
+
+  <div class="small-12 columns">
+    <?php
+      $publicacion_args = array(
+      'post_type' => 'publicacion',
+    );
+    $wp_query = new WP_Query($publicacion_args);
+    if( $wp_query->have_posts() ) { ?>
+      <ul class="coleccion">
+        <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+          <?php $publicacion_enlace = get_post_meta( get_the_id(), 'publicacion_enlace', true ); ?>
+          <?php $publicacion_fecha = get_post_meta( get_the_id(), 'publicacion_fecha', true ); ?>
+          <li class="coleccion-elemento">
+            <div class="coleccion-titulo">
+              <a href="<?php echo $audio_enlace ?>" target="_blank">
+                <?php the_title(); ?>
+              </a>
+            </div>
+            <small class="coleccion-fecha"><?php echo $publicacion_fecha ?></small>
+            <p class="coleccion-descripcion"><?php echo the_content(); ?></p>
+            <a class="coleccion-elemento--secundario boton-flotante--invertido" href="<?php echo $publicacion_enlace ?>" target="_blank">
+              <i class="fa fa-download"></i>
+            </a>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    <?php } ?>
+  </div>
+</div>
+
+<hr>
 
 <?php get_footer(); ?>

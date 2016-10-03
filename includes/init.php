@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
 *		INICIALIZACIÓN
 *  	--------------
 * 	Inicialización de soporte y funciones básicas de CaritasPress.
-* 	
+*
 * 	Autor: Hector Asencio @MemorySoft
 * 	Versión: 1.0
 *  	@package CaritasPress
@@ -23,7 +23,7 @@ function caritaspress_setup() {
 	function caritaspress_menu_principal() {
 		wp_nav_menu( array(
 			'theme_location' 		=> 'menu-principal',
-			'container'       	=> 'nav',
+			'container'       	=> 'div',
 			'container_class'		=> 'top-bar-menu',
 			'menu_class' 				=> 'menu menu-principal menu-responsive',
 			'menu_id'         	=> 'menu-primario',
@@ -55,7 +55,7 @@ function caritaspress_setup() {
 			'menu_class' 				=> 'menu-footer lista--simple texto-con-serifa'
 		));
 	}
-	
+
 	// SOPORTE PARA TRADUCCIONES
 	load_theme_textdomain( 'caritaspress', get_template_directory() . '/languages' );
 	$locale = get_locale();
@@ -103,7 +103,7 @@ function caritaspress_setup() {
 	add_filter('pre_get_posts', 'caritaspress_filtra_busqueda');
 
 	// DESHABILITA EL AUTO-FORMATO
-	remove_filter('the_content', 'wpautop');
+	// remove_filter('the_content', 'wpautop');
 }
 
 add_action( 'after_setup_theme', 'caritaspress_setup' );

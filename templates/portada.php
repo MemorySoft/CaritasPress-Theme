@@ -2,13 +2,39 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
+<<<<<<< HEAD
 <!-- CARRUSEL -->
+=======
+<!--
+
+# CARRUSEL
+Este componente consiste en un carrusel que muestra la categoría predefinida 'Portada'
+y está encapsulado en un sidebar que sobre-escribe el contenido de los anteriores items
+cuando está definido:
+
+  1- Si existe algún post con la categoría 'Portada' lo sobre-escribe
+  2- Si añadimos algún widget al sidebar, sobre-escribe lo anterior
+
+Ficheros relacionados:
+
+  * includes\funciones\func_categorias.php
+  * includes\funciones\func_sidebars.php
+  * styles\caritas.css
+  * styles\owl.carousel.css
+  * styles\owl.theme.css
+
+-->
+>>>>>>> origin/master
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
+<<<<<<< HEAD
 
       <div class="-carrusel-un-item carrusel-de-uno">
+=======
+      <div class="carrusel portada-carrusel -carrusel-un-item">
+>>>>>>> origin/master
         <?php
         $noticias_args = array(
           'post_type' => 'post',
@@ -17,6 +43,7 @@
         );
         $noticias_item = new WP_Query($noticias_args); ?>
         <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
+<<<<<<< HEAD
           <div class="carrusel-item banner">
             <?php the_post_thumbnail(); ?>
             <div class="banner-franja">
@@ -24,6 +51,15 @@
               <a class="banner-enlace button tiny" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
                 <?php _e('Llegir','caritaspress'); ?>
               </a>
+=======
+          <div class="carrusel-item">
+            <?php the_post_thumbnail(); ?>
+            <div class="carrusel-seccion">
+              <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
+              <a class="carrusel-enlace button" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>">
+                  <?php _e('Llegir','caritaspress'); ?>
+                </a>
+>>>>>>> origin/master
             </div>
           </div>
         <?php endwhile; ?>

@@ -15,6 +15,7 @@ Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, c
 @import url(styles/owl.theme.css);
 @import url(styles/foundation.min.css);
 @import url(styles/gridforms.css);
+@import url(styles/touchTouch.css);
 @import url(styles/caritas.css);
 
 /* REGISTRO DE CAMBIOS

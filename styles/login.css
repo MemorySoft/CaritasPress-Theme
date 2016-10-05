@@ -1,6 +1,96 @@
-h1 a { 
-  background-image: url(../img/tu-logo.png) !important;
-	background-size: 300px !important;
-	width: 300px !important;
-	height: 33px !important;
+body.login {
+  background-color: #D51834;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-image: url(../images/logo_caritas_fondo_negativo.png) !important;
+}
+@media screen and (max-width: 39.125em) {
+  body.login {
+    background-color: #D51834;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 50%;
+  }
+}
+@media screen and (max-width: 320px) {
+  body.login {
+    background-image: none !important;
+  }
+}
+body.login h1 a {
+  background-image: url(../images/logo_caritas_negativo.png) !important;
+	background-size: 250px !important;
+	width: 250px !important;
+	height: 50px !important;
+	margin-bottom: 0;
+}
+body.login form {
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 1rem;
+}
+body.login div#login form#loginform p label {
+	color: #fff;
+}
+body.login input[type="text"]{
+  background-color: #ffffff;
+  border-color: transparent;
+  -webkit-border-radius: none;
+  border-radius: 0;
+}
+body.login input[type="password"]{
+  background-color: #ffffff;
+  border-color: transparent;
+  -webkit-border-radius: none;
+  border-radius: 0;
+}
+body.login div#login form#loginform p.forgetmenot input#rememberme {
+	border-color: #fff;
+}
+body.login .button-primary {
+  padding: 2rem 2.5rem;
+  float:right;
+  background-color:#333 !important;
+  color: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #333;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+body.login .button-primary:hover {
+  background-color:#fff !important;
+  color: #D51834;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #fff;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+body.login .button-primary:active {
+  background-color:#fff !important;
+  color: #D51834;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #fff;
+  box-shadow: none;
+  text-shadow: none;
+}
+body.login div#login p#backtoblog {
+  display: none;
+}
+body.login div#login p#nav {
+	background-color: transparent !important;
+	padding: .5rem;
+	text-align: center;
+	border-radius: 0;
+	width: 60%;
+	margin: 0 auto;
+}
+body.login div#login p#nav a {
+	color: #fff;
 }

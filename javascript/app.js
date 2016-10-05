@@ -9,13 +9,15 @@ $(document).ready(function() {
     slideSpeed : 300,
     paginationSpeed : 400,
     singleItem:true,
-    pagination : false
+    pagination : false,
+    navigation: true,
+    navigationText: ["«","»"],
   });
 
   $(".-carrusel-tres-items").owlCarousel({
     autoPlay: true,
     navigation: true,
-    navigationText: ["←","→"],
+    navigationText: ["«","»"],
     pagination: false,
     items : 3,
     itemsDesktop : [1200,3],
@@ -25,12 +27,15 @@ $(document).ready(function() {
   $(".-carrusel-cuatro-items").owlCarousel({
     autoPlay: true,
     navigation: true,
-    navigationText: ["←","→"],
+    navigationText: ["«","»"],
     pagination: false,
     items : 4,
     itemsDesktop : [1200,3],
     itemsDesktopSmall : [400,1]
   });
+
+  // GALERIAS
+  $('.gallery-item a').touchTouch();
 
   // MENU
   $(".menu-disparador").click(function() {

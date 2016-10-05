@@ -1,14 +1,14 @@
-<?php  
+<?php
 /**
 *   AUDIOS POST TYPE
 *   ------------------
 *   Genera un post que muestra los archivos sonoros de Caritas.
-*   
+*
 *   Autor: Hector Asencio @MemorySoft
-*   Versión: 1.0
+*   Versión: 2.0
 *   @package CaritasPress
 *
-*/ 
+*/
 
 // POST TYPE
 function caritaspress_crear_audios() {
@@ -31,7 +31,7 @@ function caritaspress_crear_audios() {
       ),
       'public' => true,
       'menu_position' => 50,
-      'supports' => array( 'title' ),
+      'supports' => array( 'title','editor' ),
       'taxonomies' => array( '' ),
       'menu_icon' => 'dashicons-controls-volumeon',
       'has_archive' => true
@@ -43,10 +43,10 @@ add_action( 'init', 'caritaspress_crear_audios' );
 // META BOXES
 function caritaspress_audio_meta_box() {
     add_meta_box( 'enlace-audio',
-        'Enlace al archivo de audio',
+        'Enllaç a l\'arxiu d\'audio',
         'caritaspress_muestra_audio_meta_box',
-        'audio', 
-        'normal', 
+        'audio',
+        'normal',
         'core'
     );
 }
@@ -54,23 +54,29 @@ add_action( 'admin_init', 'caritaspress_audio_meta_box' );
 
 function caritaspress_muestra_audio_meta_box( $audio ) {
   $enlace = esc_html( get_post_meta( $audio->ID, 'audio_enlace', true ) );
+  $fecha = esc_html( get_post_meta( $audio->ID, 'audio_fecha', true ) );
   ?>
   <table class="form-table">
     <tr valign="top">
-      <th scope="row"></th>
+      <th scope="row">URL de l'enllaç</th>
       <td>
-        <p>Pega aquí el enlace al archivo de audio.</p>
-        <hr>
+        <input
+        type="tel"
+        size="140"
+        name="audio_enlace"
+        value="<?php echo $enlace; ?>" /><br>
       </td>
     </tr>
+  </table>
+  <table class="form-table">
     <tr valign="top">
-      <th scope="row">URL del enlace</th>
+      <th scope="row">Data del audio</th>
       <td>
-        <input 
-        type="tel" 
-        size="140" 
-        name="audio_enlace" 
-        value="<?php echo $enlace; ?>" /><br>
+        <input
+        type="tel"
+        size="40"
+        name="audio_fecha"
+        value="<?php echo $fecha; ?>" /><br>
       </td>
     </tr>
   </table>
@@ -80,13 +86,22 @@ function caritaspress_muestra_audio_meta_box( $audio ) {
 function caritaspress_enlace_audio( $datos_id, $audio ) {
   if ( $audio->post_type == 'audio' ) {
     if ( isset( $_POST['audio_enlace'] ) && $_POST['audio_enlace'] != '' ) {
-      update_post_meta( 
-        $datos_id, 
-        'audio_enlace', 
-        $_POST['audio_enlace'] 
+      update_post_meta(
+        $datos_id,
+        'audio_enlace',
+        $_POST['audio_enlace']
         );
     } else {
       delete_post_meta( $datos_id, 'audio_enlace' );
+    }
+    if ( isset( $_POST['audio_fecha'] ) && $_POST['audio_fecha'] != '' ) {
+      update_post_meta(
+        $datos_id,
+        'audio_fecha',
+        $_POST['audio_fecha']
+        );
+    } else {
+      delete_post_meta( $datos_id, 'audio_fecha' );
     }
   }
 }

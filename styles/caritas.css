@@ -1,14 +1,14 @@
 /*
 *	CÀRITES MENORCA
 *	---------------
-*	Basado en Foundation 6.1.2 
+*	Basado en Foundation 6.1.2
 *	http://foundation.zurb.com/sites/docs/
-* 
+*
 *	Autor: Hector Asencio @MemorySoft
 * Copyright Memory Soft
 * License: GNU General Public License v2 or later
 * Versión: 0.1
-* 
+*
 */
 
 /*	GENERALES
@@ -42,14 +42,14 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #fff;
+  color: #333;
   opacity: .7;
 }
 a:focus {
   color: #D51834;
 }
 
-p a { 
+p a {
 	border-bottom: 1px solid #D51834;
 }
 p a:hover {
@@ -69,14 +69,18 @@ p {
   margin-bottom: 1.6rem;
 }
 
-/* MISCELANEA */
-::selection { 
-	background: #D51834; 
-	color: #fff; 
+hr {
+    border-bottom: 1px solid #efefef;
 }
-::-moz-selection { 
-	background: #D51834; 
-	color: #fff; 
+
+/* MISCELANEA */
+::selection {
+	background: #D51834;
+	color: #fff;
+}
+::-moz-selection {
+	background: #D51834;
+	color: #fff;
 }
 
 dl.sitemap h5 {
@@ -87,8 +91,8 @@ dl.sitemap dd {
 }
 
 /*	REAJUSTANDO FOUNDATION
-		Agrupa los elementos del framework 
-		que han sido modificados o extendidos 
+		Agrupa los elementos del framework
+		que han sido modificados o extendidos
 ***********************************************************************/
 
 /* GRID */
@@ -97,11 +101,14 @@ dl.sitemap dd {
 }
 
 /* NAVIGATION */
-.top-bar {
+nav {
+  border-bottom: 1px solid #efefef;
   margin-bottom: 3em;
+}
+.top-bar {
   padding: 0;
 }
-.top-bar, 
+.top-bar,
 .top-bar ul {
   background-color: #fff;
 }
@@ -226,7 +233,6 @@ ul.menu-horizontal {
 
 .pagination a {
   color: #D51834;
-  display: block;
   padding: 0.35em .8em;
   border: 1px solid #D51834;
   font-family: "Roboto Slab", FreeSerif, "Georgia", "Times New Roman", serif;
@@ -242,7 +248,7 @@ ul.menu-horizontal {
 .pagination-next {
 	float: right;
 }
-.pagination-next a::after, 
+.pagination-next a::after,
 .pagination-next.disabled::after {
   content: '';
 }
@@ -258,7 +264,7 @@ ul.menu-horizontal {
   font-weight: bold;
   font-family: "Roboto Slab", FreeSerif, "Georgia", "Times New Roman", serif;
 }
-.button:hover, 
+.button:hover,
 .button:focus {
   background: #D51834;
 }
@@ -294,6 +300,99 @@ button.close-button:hover {
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
+}
+
+.boton-secundario {
+  padding: .4rem .8rem;
+  background-color: #fff;
+  letter-spacing: .5px;
+  border: 1px solid #D51834;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  font-size: .6rem;
+}
+.boton-secundario:hover,
+.boton-secundario:active {
+  padding: .4rem .8rem;
+  background-color: #fff;
+  letter-spacing: .5px;
+  border: 1px solid #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Roboto, Ubuntu, "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+  font-size: .6rem;
+}
+
+.boton-cerrar {
+  position: fixed;
+	color: #fff;
+	background: #D51834;
+	padding: .85em 1em;
+	border-left: none;
+  left: 0;
+  top: 50%;
+  font-size: rem;
+  line-height: 1rem;
+  cursor: pointer;
+	z-index: 9999;
+}
+.boton-cerrar:hover {
+	background: #333;
+	color: #fff;
+}
+
+.boton-flotante,
+.boton-flotante--invertido {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  margin: 0;
+  z-index: 99999;
+}
+.boton-flotante--invertido {
+  background: #D51834;
+}
+.boton-flotante i,
+.boton-flotante--invertido i {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  display: inline-block;
+  text-align: center;
+  color: #D51834;
+}
+.boton-flotante--invertido i {
+  color: #fff;
+}
+@media screen and (max-width: 55.125em) {
+	.boton-cerrar {
+		width: 100%;
+	  left: 0;
+	  top: 93.5%;
+		border: none;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+	}
+	.boton-cerrar:hover {
+		opacity: 1;
+	}
+}
+
+.boton-iconizado i {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 .5rem;
+    line-height: 2.5rem;
+    display: inline-block;
+    text-align: center;
+    color: #D51834;
 }
 
 /* LABELS */
@@ -347,13 +446,18 @@ button.close-button:hover {
 .radio-button-group label input {
 	margin: 0 .5rem;
 }
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {	
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
 	.radio-button-group label {
 		display: block;
 	}
 }
 
 /* CALLOUTS */
+.callout {
+  background: #efefef;
+  border: 1px solid #efefef;
+  color: #333;
+}
 .callout-enlinea {
   padding: .5rem;
 }
@@ -371,20 +475,20 @@ button.close-button:hover {
 ***********************************************************************/
 
 /* GRID FORMS */
-.grid-form [type="text"], 
-.grid-form [type="password"], 
-.grid-form [type="date"], 
-.grid-form [type="datetime"], 
-.grid-form [type="datetime-local"], 
-.grid-form [type="month"], 
-.grid-form [type="week"], 
-.grid-form [type="email"], 
-.grid-form [type="number"], 
-.grid-form [type="search"], 
-.grid-form [type="tel"], 
-.grid-form [type="time"], 
-.grid-form [type="url"], 
-.grid-form [type="color"], 
+.grid-form [type="text"],
+.grid-form [type="password"],
+.grid-form [type="date"],
+.grid-form [type="datetime"],
+.grid-form [type="datetime-local"],
+.grid-form [type="month"],
+.grid-form [type="week"],
+.grid-form [type="email"],
+.grid-form [type="number"],
+.grid-form [type="search"],
+.grid-form [type="tel"],
+.grid-form [type="time"],
+.grid-form [type="url"],
+.grid-form [type="color"],
 .grid-form textarea {
     box-shadow: none;
 }
@@ -411,8 +515,8 @@ button.close-button:hover {
 .grid-form button {
 	float: right;
 }
-.grid-form [data-row-span] [data-field-span]:hover { 
-	background: #ffedef; 
+.grid-form [data-row-span] [data-field-span]:hover {
+	background: #ffedef;
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
 	.grid-form button {
@@ -421,7 +525,12 @@ button.close-button:hover {
 	}
 }
 
-/*	COMPONENTES 
+.grid-form br,
+.grid-form p {
+  display: none;
+}
+
+/*	COMPONENTES
 		Todos los elementos nuevos que hemos creado
 		y que no forman parte del framework
 ***********************************************************************/
@@ -445,7 +554,7 @@ button.close-button:hover {
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
 	.menu-centrado ul.menu {
 		min-width: 390px;
-	}	
+	}
 	.menu-centrado ul.menu li {
 		display: inline;
 		float: none;
@@ -453,8 +562,8 @@ button.close-button:hover {
 }
 
 .filtros-categorias {
-	border-top: 1px solid #afafaf;
-	border-bottom: 1px solid #afafaf;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
 	padding: 1.3rem 0;
 }
 
@@ -495,50 +604,50 @@ button.close-button:hover {
 /* ELEMENTO MULTICOLUMNA */
 .elemento-multicolumna {
 	margin-bottom: 1rem;
-	display: block; 
+	display: block;
 	text-decoration: none;
 }
 .elemento-multicolumna-imagen {
-	max-width: none; 
+	max-width: none;
 }
 .elemento-multicolumna-extracto {
 	color: #333;
 }
 .elemento-multicolumna-seccion {
   display: table-cell;
-  vertical-align: top; 
+  vertical-align: top;
 }
 .elemento-multicolumna-seccion:first-child {
-  padding-right: 1rem; 
+  padding-right: 1rem;
 }
 .elemento-multicolumna-seccion:last-child:not(:nth-child(2)) {
-  padding-left: 1rem; 
+  padding-left: 1rem;
 }
 .elemento-multicolumna-seccion.middle {
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 .elemento-multicolumna-seccion.bottom {
-  vertical-align: bottom; 
+  vertical-align: bottom;
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
 	.stack-for-small .elemento-multicolumna-seccion {
 	  display: block;
 	  padding: 0;
-	  padding-bottom: 1rem; 
+	  padding-bottom: 1rem;
 	}
   .stack-for-small .elemento-multicolumna-imagen {
-    width: 100%; 
-  } 
+    width: 100%;
+  }
 }
 
 .page-template-caritas .elemento-multicolumna-imagen {
-  max-width: 280px; 
+  max-width: 280px;
 }
 
 /* ARTICULOS */
 .articulo {
 	margin-bottom: 2rem;
-	display: block; 
+	display: block;
 	text-decoration: none;
 }
 .articulo-titulo {
@@ -558,7 +667,7 @@ button.close-button:hover {
 }
 .articulo-seccion {
   display: inline;
-  vertical-align: top; 
+  vertical-align: top;
   float: left;
 }
 .articulo-seccion--vertical {
@@ -572,29 +681,29 @@ button.close-button:hover {
 }
 
 .articulo-seccion:first-child {
-  padding-right: 2rem; 
+  padding-right: 2rem;
 }
 .articulo-seccion--vertical:first-child {
-  padding-right: 0; 
+  padding-right: 0;
 }
 .articulo-seccion:last-child:not(:nth-child(2)) {
-  padding-left: 1rem; 
+  padding-left: 1rem;
 }
 .articulo-seccion.middle {
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 .articulo-seccion.bottom {
-  vertical-align: bottom; 
+  vertical-align: bottom;
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
 	.stack-for-small .articulo-seccion {
 	  display: block;
 	  padding: 0;
-	  padding-bottom: 1rem; 
+	  padding-bottom: 1rem;
 	}
   .stack-for-small .articulo-imagen {
-    width: 100%; 
-  } 
+    width: 100%;
+  }
 }
 
 /* COLABORACION */
@@ -622,6 +731,9 @@ button.close-button:hover {
 .colaboracion-elemento img {
 	margin-bottom: 1rem;
 }
+.colaboracion-elemento .button {
+	display: block;
+}
 
 /* DONATIVOS */
 .donativos-selector .input-group-field {
@@ -632,7 +744,7 @@ button.close-button:hover {
   font-weight: bolder;
   color: #D51834;
   text-align: center;
-} 
+}
 .donativos-pago label {
 		display: inline;
 		color: #fff;
@@ -660,27 +772,29 @@ button.close-button:hover {
 	.donativos-selector .input-group-field {
     height: 2.5rem;
     font-size: 1.2rem;
-	} 
+	}
 	.donativos-titulo {
 	  line-height: 2.7rem;
 	  font-size: 1.6rem;
-	}	
+	}
 }
 
 /* TARJETAS */
 .tarjeta {
   overflow: hidden;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background: #D51834;
   color: #333;
   margin-bottom: 2rem;
   position: relative;
 }
 .tarjeta-titulo {
+  width: 80%;
 	font-family: "Roboto Slab", FreeSerif, "Georgia", "Times New Roman", serif;
   line-height: 1.7rem;
   font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
+  color: #fff;
 }
 .tarjeta-contenido {
   font-weight: 300;
@@ -690,15 +804,19 @@ button.close-button:hover {
 	background: #D51834;
   padding: 1.3rem;
   border-top: 1px solid #ccc;
+  position: relative;
+  bottom: 0;
 }
 .tarjeta-accion a {
 	color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  float: right;
+}
+.tarjeta-accion a i {
+	font-size: 1.5rem;
 }
 .tarjeta-accion a:hover {
-	opacity: .5;			
+	opacity: .5;
 }
 .tarjeta-imagen {
   position: relative;
@@ -723,17 +841,33 @@ button.close-button:hover {
   position: relative;
 }
 .coleccion-elemento {
+  position: relative;
   background-color: #fff;
   line-height: 2rem;
   padding: 20px;
   margin: 0;
   border-bottom: 1px solid #e0e0e0;
 }
-.coleccion-elemento .titulo {
-	font-size: 1.8rem;
+.coleccion-elemento:last-child {
+  border-bottom: none;
+}
+.coleccion-titulo {
+  width: 85%;
+  color: #D51834;
+	font-size: 1.2rem;
+  line-height: 1.1;
+}
+.coleccion-fecha {
+  margin-bottom: 1rem
+}
+.coleccion-descripcion {
+  width: 95%;
+  margin: 0;
 }
 .coleccion-elemento--secundario {
-	float: right;
+  position: absolute;
+  top: .7rem;
+	right: .7rem;
 	color: #D51834;
 	font-size: 2rem;
 }
@@ -745,8 +879,8 @@ button.close-button:hover {
 	  margin: 0;
 	  border-bottom: 1px solid #e0e0e0;
 	}
-	.coleccion-elemento .titulo {
-		font-size: 1.3rem;
+	.coleccion-titulo {
+		font-size: 1rem;
 	}
 	.coleccion-elemento--secundario {
 		font-size: 1.6rem;
@@ -755,24 +889,12 @@ button.close-button:hover {
 
 /* DATOS */
 .datos-contenedor {
-	background: #D51834;
-	color: #fff;
+	/*background: #D51834;*/
+  /*background: #efefef;*/
+	color: #D51834;
 	padding: 2.5rem 5rem;
 	margin-bottom: 1rem;
-}
-
-.datos-contenedor-1 {
-	background: #dd465d;
-	color: #fff;
-	padding: 2.5rem 5rem;
-	margin-bottom: 1rem;
-}
-
-.datos-contenedor-2 {
-	background: #e67485;
-	color: #fff;
-	padding: 2.5rem 5rem;
-	margin-bottom: 1rem;
+  border: 1px solid #D51834;
 }
 
 .datos-cifra {
@@ -782,7 +904,7 @@ button.close-button:hover {
 }
 .datos-etiqueta {
 	font-size: 1.5rem;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 1.8rem;
 	text-transform: uppercase;
 }
@@ -880,7 +1002,28 @@ button.close-button:hover {
 
 /* FOOTER */
 .footer {
-	padding-top: 1rem;
+  background-color: #D51834;
+  background-repeat: no-repeat;
+  background-position: 95% 100%;
+  background-image: url(../images/logo_caritas_fondo_negativo.png) !important;
+  background-size: 15%;
+}
+@media screen and (max-width: 39.125em) {
+  .footer {
+    background-color: #D51834;
+    background-repeat: no-repeat;
+    background-position: 90% 100%;
+    background-size: 50%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer {
+    background-image: none !important;
+  }
+}
+
+.footer {
+	padding: 1rem 0;
 }
 .footer h1 small {
 	margin-left: 3rem;
@@ -902,114 +1045,37 @@ button.close-button:hover {
 	}
 }
 
-/* ICONOS SOCIALES */
-.botones-compartir {
+/* CARRUSELES */
+.carrusel-de-uno .owl-item {
+	padding: 0;
+}
+.carrusel-item {
+  max-height: 600px;
   overflow: hidden;
-  margin: 1rem 0; 
-  padding: 0;
-  list-style: none;
 }
-.botones-compartir li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-.botones-compartir li a {
-  font-style: normal;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box
-  -o-transition: .1s;
-  -ms-transition: .1s;
-  -moz-transition: .1s;
-  -webkit-transition: .1s;
-  transition: .1s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  overflow: hidden;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  position: relative;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  font-size: 17px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  margin-right: 10px;
-  color: #ffffff;
-  background-color: none;
-}
-.boton-compartir--icon-last{
-  margin: 0 !important;
-}
-.boton-compartir--twitter {
-  background-color: #4da7de;
-}
-.boton-compartir--facebook {
-  background-color: #3e5b98;
-}
-.boton-compartir--google {
-  background-color: #d93e2d;
-}
-.boton-compartir--linkedin {
-  background-color: #3371b7;
-}
-.boton-compartir--email {
-  background-color: #578AD6;
-}
-.boton-compartir--twitter:hover {
-  background-color: #61bbf2;
-}
-.boton-compartir--facebook:hover {
-  background-color: #526fac;
-}
-.boton-compartir--google:hover {
-  background-color: #ed5241;
-}
-.boton-compartir--linkedin:hover {
-  background-color: #4785cb;
-}
-.boton-compartir--email:hover {
-  background-color: #6b9eea;
+.carrusel-item .wp-post-image {
+  width: 100%;
 }
 
-/* CARRUSELES */
-.owl-carousel .owl-item {
-  padding: 0 .5rem;
-  border: none;
-}
-.owl-item img.wp-post-image {
-  min-width: 100%;
-}
 .owl-theme {
   position: relative;
 }
 .owl-theme .owl-controls {
-  position: absolute;
-  width: 100%;
-  top: 25%;
-  overflow: hidden;
+	position: absolute;
+	width: 100%;
+	top: -10px;
+	right: 0;
+	overflow: hidden;
 }
 .owl-theme .owl-controls .owl-buttons div {
-  color: #333;
+  color: #fff;
   display: inline-block;
-  zoom: 1;
   *display: inline;
-  margin: 5px;
-  padding: 3px 10px;
-  font-size: 2rem;
-  background: transparent;
+  padding: 5px 20px;
+  font-size: 1.8rem;
+	line-height: 3rem;
+  background: #D51834;
+  margin: 0;
 }
 .owl-theme .owl-controls .owl-buttons .owl-prev {
   float: left;
@@ -1017,102 +1083,56 @@ button.close-button:hover {
 .owl-theme .owl-controls .owl-buttons .owl-next {
   float: right;
 }
-.portada-carrusel .owl-controls {
-  top: 40%;
-}
-.portada-carrusel .owl-controls .owl-buttons .owl-prev,
-.portada-carrusel .owl-controls .owl-buttons .owl-next {
-  color: #fff;
-  font-size: 3rem;
-  text-shadow: 0 0 10px #333;
-}
 
-.carrusel {
-  /*padding-bottom: 1rem;*/
+/* BANNER */
+.banner {
+	position: relative;
 }
-.carrusel-item {
-  height: 40rem;
-  width: 100%;
-  position: relative;
-}
-.carrusel-item .wp-post-image {
-  top: 0;
-  left: 0;
-  position: absolute;
-}
-.carrusel.owl-carousel .owl-item {
-  padding: 0;
-  border: none;
-}
-.carrusel-seccion {
-  width: 1200px;
-  height: 100%;
+.banner-franja {
+  background: #333;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
   margin: 0 auto;
-  text-align: center;
-  position: relative;
+  width: 100%;
+	padding: 1.5rem 1.5rem;
+	position: absolute;
 }
-.carrusel-enlace {
-  margin-top: 1.5rem;
-}
-.carrusel-item .carrusel-titulo {
+.banner-titulo {
   color: #fff;
-  text-shadow: 0 0 10px #333;
+	font-size: 1.8rem;
+	line-height: 2rem;
+	margin: 0;
+  width: 90%;
 }
-.carrusel-item .carrusel-titulo,
-.carrusel-item .button {
-  position: relative;
-  top: 40%;
-  left: 0;
+.banner-enlace {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.8rem;
 }
-@media screen and (max-width: 69.313em) {   /* MOVILES + TABLETS * PC VIEJUNO */
-  .carrusel-item {
-    height: 30rem;
+@media screen and (min-width: 0em) and (max-width: 69.750em) {
+	.banner .columns {
+		padding: 0;
+	}
+	.banner-franja {
+		width: 100%;
+		position: relative;
+		border-radius: 0;
+    background: #333;
+    padding: 1rem 1rem;
+	}
+	.banner-titulo {
+		font-size: .8rem;
+		line-height: 1.2rem;
+    width: 80%;
+	}
+  .banner-enlace {
+    right: 1rem;
+    top: 1.2rem;
   }
-  .carrusel-seccion {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 6rem;
-  }
-  .carrusel-item .carrusel-titulo,
-  .carrusel-item .button {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .carrusel-enlace {
-    margin-top: .5rem;
-  }
-  .home .carrusel {
-    padding-bottom: 0;
-  }
-}
-@media screen and (max-width: 39.9375em) {   /* MOVILES */
-  .carrusel-item {
-    height: 20rem;
-  }
-  .carrusel-seccion {
-    padding: 5rem;
-  }
-}
-@media screen and (max-width: 20.000em) {   /* CHUNGUI MOVILES */
-  .carrusel-item {
-    height: 15em;
-  }
-  .carrusel-seccion {
-    padding: 2rem;
-  }
-}
-
-/*  PÁGINAS
-    Estilos específicos de las página
-***********************************************************************/
-.home .top-bar {
-  margin-bottom: 0;
 }
 
 /*	UTILIDADES Versión 0.1
-		Clases intercambiables 
+		Clases intercambiables
 		que ayudan a la maquetación
 ***********************************************************************/
 
@@ -1149,6 +1169,10 @@ button.close-button:hover {
 	margin: 0 auto;
 }
 
+.texto-derecha {
+  text-align: right;
+}
+
 .texto-mini {
 	font-size: .8rem;
 }
@@ -1179,7 +1203,7 @@ button.close-button:hover {
 
 .fondo-gris--claro {
   background: #F2F2F2;
-  border: 0px;
+  border: 0;
 }
 .fondo-gris--medio,
 .fondo-gris--medio a {
@@ -1203,7 +1227,7 @@ button.close-button:hover {
 }
 .lista--simple,
 .lista--simple ul {
-  list-style: none;  
+  list-style: none;
   margin-left: 0;
 }
 
@@ -1211,6 +1235,10 @@ button.close-button:hover {
 .tiene-borde--arriba {
 	border: none;
 	border-top: 1px solid rgba(10, 10, 10, 0.25);
+}
+
+.sin-borde--derecho {
+  border-right: 0 !important;
 }
 
 /* RESEST DE MÁRGENES */

@@ -4,7 +4,7 @@ Theme URI: http://www.memorysoft.es/
 Description: Tema desarrollado para Càrites Diocesana de Menorca por Memory Soft
 Author: Hector Asencio @MemorySoft
 Author URI: http://hectorasencio.com
-Version: 2.0
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, custom-logo, featured-images, full-width-template, post-formats, custom-widgets
@@ -15,13 +15,45 @@ Tags: responsive, two-columns, right-sidebar, left-sidebar, custom-background, c
 @import url(styles/owl.theme.css);
 @import url(styles/foundation.min.css);
 @import url(styles/gridforms.css);
+@import url(styles/touchTouch.css);
 @import url(styles/caritas.css);
 
 /* REGISTRO DE CAMBIOS
 
+# Versión 2.1
+- Creada la página 404
+- Se ha habilitado el acceso a las páginas de configuración para los usuarios con el rol Editor
+- Se han añadido campos para fecha y descripción en los CPT Audio y Publicación
+- Implementada la libreria TouchTouch para las galerías de imágenes nativas de WordPress
+- Corregidos algunos enlaces que fallaban por falta del hook que enlaza al template_path
+- El carrusel de Portada ahora ya no renderiza el CPT carrusel
+- El CTP Carrusel ahora se pinta en la sección Càritas
+- Agregada navegación a los items del carrusel, mejorada la responsividad y refactorizado el titular y el enlace al post
+- Mejorado el botón para cerrar los modales
+- Arreglado el páginador en Actualidad
+- Se ha reducido el texto de los módulos en Donativos para mejorar la conversión
+- Cambiada la apariencia de los bloques de información fiscal
+- Añadido icono al botón de descarga de la información fiscal
+- Se han eliminado las imágenes de las tarjetas de Memorias y se ha mejorado su aspecto
+- Se han mejorado los botones de descarga, ahora son circulares
+- Mejoras estéticas en las listas (colecciones) de archivos multimedia y publicaciones
+- Cambiada la estructura de contenidos de la sección Cáritas para mejorar el story-telling
+- Añadidas ilustraciones en la sección 'Qui som'
+- Corregido el enlace al canal de YouTube en Càritas
+- Cambiada la estética de los callouts, ahora tiene el fondo gris
+- Añadidos enlaces a los botones de Mestral y Empreses en la Portada
+- Eliminados los enlaces a secciones en la portada, solo se mantiene la navegación principal
+- Convertido el logo de mestral a PNG para mantener la transparencia
+- Agregado el logo de Càritas al footer de la página
+- Decorado el login, ahora tiene la imágen corporativa de la entidad
+- Bordes y lineas ahora son más ligeros
+- Corregido el hover de los enlaces
+- Eliminada la opción 'Es Grau' en los formularios
+- Arreglados varios bugs del layout en vista de movil
+- Eliminado código basura
+
 # Versión 2.0
-  - Añadidas páginas de configuración para opciones globales, portada, Càritas y donativos, e integradas en los
-  correspondientes templates.
+  - Añadidas páginas de configuración para opciones globales, portada, Càritas y donativos, e integradas en sus templates.
   - Mejorada la navegación en proyectos
   - Añadida navegación en las páginas de descripción de programas
   - El texto descriptivo en las páginas de programas, ahora es editable como contenido normal de la página

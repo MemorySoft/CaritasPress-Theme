@@ -3,13 +3,13 @@
 <?php get_header(); ?>
 
 <!-- CONTENIDO -->
-    
-<div class="row sin-margen--abajo">
+
+<div class="row sin-margen--abajo" data-equalizer data-equalize-on="medium">
   <div class="small-12 columns">
     <h3 class="titulo">Memòries anuals</h3>
   </div>
 
-  <?php 
+  <?php
       $memoria_args = array(
       'post_type' => 'memoria',
       'posts_per_page'=> 100,
@@ -18,20 +18,22 @@
     if( $wp_query->have_posts() ) { ?>
       <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
         <?php $enlace = get_post_meta( get_the_id(), 'memoria_enlace', true ); ?>
-        <div class="small-6 medium-3 columns end">
-          <div class="tarjeta">
+        <div class="small-12 medium-3 columns">
+          <div class="tarjeta" data-equalizer-watch>
             <div class="tarjeta-contenido tarjeta-imagen">
-              <?php the_post_thumbnail(); ?>
+              <?php //the_post_thumbnail(); ?>
             </div>
             <div class="tarjeta-accion">
-              <span class="tarjeta-titulo fondo-rojo"><?php the_title(); ?></span>
-              <a href="<?php echo $enlace ?>" target="_blank" title="<?php _e('Descarrega','caritaspress'); ?> <?php the_title(); ?>"><i class="fa fa-download"></i></a>
+              <div class="tarjeta-titulo fondo-rojo"><?php the_title(); ?></div>
+              <a class="boton-flotante" href="<?php echo $enlace ?>" target="_blank" title="<?php _e('Descarrega','caritaspress'); ?> <?php the_title(); ?>"><i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
       <?php endwhile; ?>
     <?php } ?>
-  
+
 </div>
+
+<hr>
 
 <?php get_footer(); ?>

@@ -47,7 +47,6 @@ function caritaspress_setup() {
 		));
 	}
 
-<<<<<<< HEAD
 	// SOPORTE PARA LIBRE-FORMS
 	function caritaspress_libreform_envio_con_shortcodes() {
 		wp_enqueue_script('wplf-form-js');
@@ -55,8 +54,6 @@ function caritaspress_setup() {
 	}
 	add_action( 'wp_enqueue_scripts', 'caritaspress_libreform_envio_con_shortcodes' );
 
-=======
->>>>>>> origin/master
 	// SOPORTE PARA TRADUCCIONES
 	load_theme_textdomain( 'caritaspress', get_template_directory() . '/languages' );
 	$locale = get_locale();
@@ -102,12 +99,6 @@ function caritaspress_setup() {
 	  return $query;
 	}
 	add_filter('pre_get_posts', 'caritaspress_filtra_busqueda');
-<<<<<<< HEAD
-=======
-
-	// DESHABILITA EL AUTO-FORMATO
-	// remove_filter('the_content', 'wpautop');
->>>>>>> origin/master
 }
 
 add_action( 'after_setup_theme', 'caritaspress_setup' );

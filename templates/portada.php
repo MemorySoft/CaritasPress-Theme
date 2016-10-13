@@ -147,7 +147,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
 <!-- MESTRAL -->
 
 <div class="franja fondo-gris--claro texto-centrado">

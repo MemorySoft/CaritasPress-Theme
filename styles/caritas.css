@@ -732,9 +732,6 @@ button.close-button:hover {
 	  padding: 0;
 	  padding-bottom: 3rem;
 	}
-  .stack-for-small .articulo-imagen:not(.icon) {
-    /*width: 100%;*/
-  }
   .stack-for-small .articulo-imagen .icono {
     width: 50%;
   }
@@ -937,8 +934,6 @@ button.close-button:hover {
 
 /* DATOS */
 .datos-contenedor {
-	/*background: #D51834;*/
-  /*background: #efefef;*/
 	color: #D51834;
 	padding: 2.5rem 5rem;
 	margin-bottom: 1rem;

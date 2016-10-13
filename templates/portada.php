@@ -2,12 +2,12 @@
 <?php require( trailingslashit( get_template_directory() ). '/includes/opciones/_variables.php'); ?>
 <?php get_header(); ?>
 
+
 <!-- CARRUSEL -->
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
-
       <div class="-carrusel-un-item carrusel-de-uno">
         <?php
         $noticias_args = array(
@@ -71,6 +71,14 @@
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats.png" alt="Llegats">
         <h5>Fes un <br>llegat</h5>
       </a>
+    </div>
+    <div class="columns hide-for-medium">
+      <hr>
+      <a href="colabora">
+        <h5 class="sin-margen--abajo">Col·labora <br>amb Càritas</h5>
+        <i class="fa fa-angle-double-right fa-2x"></i>
+      </a>
+      <hr>
     </div>
   </div>
 </div>
@@ -139,11 +147,11 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 <!-- MESTRAL -->
 
 <div class="franja fondo-gris--claro texto-centrado">
   <div class="row sin-margen--abajo">
-
     <?php if ($mestral_ver == 1) { ?>
         <div class="small-12 columns">
           <img src="<?php echo $mestral_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','podemospress'); ?>">
@@ -194,14 +202,13 @@
 
 <div class="franja fondo-gris--claro texto-centrado">
   <div class="row sin-margen--abajo">
-
     <?php if ($empresas_ver == 1) { ?>
-        <div class="small-12 columns">
-          <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
-          <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
-          <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
-          <a href="javascript:void(0)" class="large button boton-iconizado" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?> <i class="fa fa-heart show-for-medium"></i></a>
-        </div>
+      <div class="small-12 columns">
+        <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
+        <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
+        <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
+        <a href="javascript:void(0)" class="large button boton-iconizado" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?> <i class="fa fa-heart show-for-medium"></i></a>
+      </div>
     <?php } ?>
   </div>
 </div>

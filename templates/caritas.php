@@ -26,7 +26,6 @@
         </div>
       <?php endwhile; ?>
     </div>
-    <hr class="hide-for-small">
   </div>
 </div>
 
@@ -313,7 +312,8 @@
   <div class="small-12 columns texto-centrado">
     <p><a class="boton-secundario" href="https://www.youtube.com/channel/UCzcLy0ubLrH_QOmelsHbqcQ" title="<?php _e('Canal de YouTube de Càritas Menorca','caritaspress'); ?>"><?php _e('Canal de Youtube de Càritas Menorca','caritaspress'); ?> »</a></p>
   </div>
-</div>
+<?php } ?>
+
 
 <hr>
 

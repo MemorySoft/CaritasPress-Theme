@@ -5,7 +5,6 @@
 * 	Inicialización de soporte y funciones básicas de CaritasPress.
 *
 * 	Autor: Hector Asencio @MemorySoft
-* 	Versión: 1.0
 *  	@package CaritasPress
 */
 function caritaspress_setup() {
@@ -15,10 +14,8 @@ function caritaspress_setup() {
 	register_nav_menus(array(
 		'menu-principal'			=> __( 'Menú principal' ),
 		'menu-secundario' 		=> __( 'Menú secundario' ),
-		'menu-subdelegaciones'=> __( 'Menú subdelegaciones' ),
 		'menu-inferior'				=> __( 'Menú inferior' ),
 		'menu-footer-uno'			=> __( 'Menú footer uno' ),
-		'menu-footer-dos'			=> __( 'Menú footer dos' ),
 	));
 	function caritaspress_menu_principal() {
 		wp_nav_menu( array(
@@ -35,12 +32,6 @@ function caritaspress_setup() {
 		wp_nav_menu( array(
 			'theme_location' 		=> 'menu-secundario',
 			'menu_class' 				=> 'menu-secundario lista--simple lista--entre-lineas'
-		));
-	}
-	function caritaspress_menu_subdelegaciones() {
-		wp_nav_menu( array(
-			'theme_location' 		=> 'menu-subdelegaciones',
-			'menu_class' 				=> 'menu menu-subdelegaciones'
 		));
 	}
 	function caritaspress_menu_inferior() {

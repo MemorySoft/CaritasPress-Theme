@@ -4,9 +4,9 @@
 
 <!-- CONTENIDO -->
 
-<div class="row">
+<div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h3 class="titulo">Publicacions</h3>
+    <h2 class="titulo">Informes i boletins</h2>
   </div>
 
   <div class="small-12 columns">
@@ -22,7 +22,7 @@
           <?php $publicacion_fecha = get_post_meta( get_the_id(), 'publicacion_fecha', true ); ?>
           <li class="coleccion-elemento">
             <div class="coleccion-titulo">
-              <a href="<?php echo $audio_enlace ?>" target="_blank">
+              <a href="<?php echo $publicacion_enlace ?>" target="_blank">
                 <?php the_title(); ?>
               </a>
             </div>
@@ -38,6 +38,5 @@
   </div>
 </div>
 
-<hr>
 
 <?php get_footer(); ?>

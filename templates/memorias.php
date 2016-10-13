@@ -18,11 +18,8 @@
     if( $wp_query->have_posts() ) { ?>
       <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
         <?php $enlace = get_post_meta( get_the_id(), 'memoria_enlace', true ); ?>
-        <div class="small-12 medium-3 columns">
+        <div class="small-12 medium-4 columns">
           <div class="tarjeta" data-equalizer-watch>
-            <div class="tarjeta-contenido tarjeta-imagen">
-              <?php //the_post_thumbnail(); ?>
-            </div>
             <div class="tarjeta-accion">
               <div class="tarjeta-titulo fondo-rojo"><?php the_title(); ?></div>
               <a class="boton-flotante" href="<?php echo $enlace ?>" target="_blank" title="<?php _e('Descarrega','caritaspress'); ?> <?php the_title(); ?>"><i class="fa fa-download"></i></a>

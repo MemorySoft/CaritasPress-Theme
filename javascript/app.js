@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready( function() {
 
   // FOUNDATION INIT
   $(document).foundation();
@@ -35,10 +35,10 @@ $(document).ready(function() {
   });
 
   // GALERIAS
-  $('.gallery-item a').touchTouch();
+  $(".gallery-item a").touchTouch();
 
   // MENU
-  $(".menu-disparador").click(function() {
+  $(".menu-disparador").click( function() {
     $(".top-bar-menu").toggle("fast");
   });
 
@@ -51,5 +51,4 @@ $(document).ready(function() {
       target: "_blank",
       rel: "noopener noreferer"
   });
-
 });

@@ -72,8 +72,10 @@
 
 <div class="franja fondo-gris--claro sin-margen--abajo texto-centrado" id="formularioDonativos">
   <div class="row sin-margen--abajo">
-    <h2 class="titulo">FES UN DONATIU A CÀRITAS MENORCA</h2>
-    <p class="texto-destacado">La majoria dels ingresos de Càritas Menorca prové de donacions de persones particulars, gent com tu que vol ajudar als demes. Ajudar es facil i costa molt poc, de fet costa nomes el que tu vulguis&hellip;</p>
+    <div class="small-12 columns">
+      <h2 class="titulo">FES UN DONATIU A CÀRITAS MENORCA</h2>
+      <p class="texto-destacado">La majoria dels ingresos de Càritas Menorca prové de donacions de persones particulars, gent com tu que vol ajudar als demes. Ajudar es facil i costa molt poc, de fet costa nomes el que tu vulguis&hellip;</p>
+    </div>
   </div>
 </div>
 <div class="franja fondo-rojo texto-centrado">

@@ -33,57 +33,56 @@
 <div class="row sin-margen--abajo">
   <div class="small-12 medium-6 columns">
     <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
-        <div class="input-group">
-          <input class="input-group-field" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
-          <div class="input-group-button">
-            <input class="button" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
-          </div>
+      <label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'label' ); ?></label>
+      <div class="input-group">
+        <input class="input-group-field" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
+        <div class="input-group-button">
+          <input class="button" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" />
         </div>
+      </div>
     </form>
     <a href="javascript:void(0)" class="button small secondary hide-for-medium -filtro">Filtra el contingut</a>
   </div>
   <div class="formulario-navegacion">
-  <form class="navegacion-noticias show-for-medium" id="formularioNavegacion" action="">
-    <div class="small-12 medium-3 columns">
-      <?php
-      $args = array(
-        'show_option_none' => 'Sel·lecciona una categoria',
-      ); ?>
-      <?php wp_dropdown_categories('show_option_none=Sel·lecciona una categoria'); ?>
-      <script type="text/javascript">
-        <!--
-        var dropdown = document.getElementById("cat");
-        function onCatChange() {
-          if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-            location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+    <form class="navegacion-noticias show-for-medium" id="formularioNavegacion" action="">
+      <div class="small-12 medium-3 columns">
+        <?php
+        $args = array(
+          'show_option_none' => 'Sel·lecciona una categoria',
+        ); ?>
+        <?php wp_dropdown_categories('show_option_none=Sel·lecciona una categoria'); ?>
+        <script type="text/javascript">
+          <!--
+          var dropdown = document.getElementById("cat");
+          function onCatChange() {
+            if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+              location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+            }
           }
-        }
-        dropdown.onchange = onCatChange;
-        -->
-      </script>
-    </div>
-    <div class="small-12 medium-3 columns end">
-      <!--<label>Etiquetes</label> -->
-      <?php
-      $args = array(
-        'taxonomy' => 'post_tag',
-        'show_option_none' => 'Sel·lecciona una etiqueta',
-      ); ?>
-      <?php wp_dropdown_categories( $args ); ?>
-      <script type="text/javascript">
-        <!--
-        var dropdown = document.getElementById("cat");
-        function onCatChange() {
-          if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-            location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+          dropdown.onchange = onCatChange;
+          -->
+        </script>
+      </div>
+      <div class="small-12 medium-3 columns end">
+        <?php
+        $args = array(
+          'taxonomy' => 'post_tag',
+          'show_option_none' => 'Sel·lecciona una etiqueta',
+        ); ?>
+        <?php wp_dropdown_categories( $args ); ?>
+        <script type="text/javascript">
+          <!--
+          var dropdown = document.getElementById("cat");
+          function onCatChange() {
+            if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+              location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat="+dropdown.options[dropdown.selectedIndex].value;
+            }
           }
-        }
-        dropdown.onchange = onCatChange;
-        -->
-      </script>
-    </div>
-  </form>
+          dropdown.onchange = onCatChange;
+          -->
+        </script>
+      </div>
+    </form>
   </div>
 </div>
 

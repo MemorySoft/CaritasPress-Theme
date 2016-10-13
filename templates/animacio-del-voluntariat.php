@@ -37,7 +37,7 @@
         <div class="articulo stack-for-small texto centrado">
           <div class="articulo-seccion articulo-seccion--vertical">
             <div class="articulo-imagen">
-              <a href="javascript:void(0)" title="<?php esc_attr__('Llegir','caritaspress'); ?> <?php the_title(); ?>" data-open="modal-<?php the_ID(); ?>"><?php the_post_thumbnail(); ?></a>
+              <?php the_post_thumbnail(); ?>
             </div>
           </div>
           <div class="articulo-seccion articulo-seccion--vertical">
@@ -94,7 +94,7 @@
     <div class="filtros-categorias">
       <div class="menu-centrado">
         <ul class="menu vertical medium-horizontal">
-          <li><p class="texto-destacado sin-margen--abajo">PROGRAMES: &nbsp;&nbsp;</p></li>
+          <li><p class="texto-destacado sin-margen--abajo show-for-medium">PROGRAMES: &nbsp;&nbsp;</p></li>
           <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>animacio-del-voluntariat">Animació del Voluntariat</a></li>
           <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>accio-social">Acció Social</a></li>
           <li><a class="label" href="<?php echo esc_url( home_url( '/' ) ); ?>ocupacio-i-insercio-laboral">Ocupació i Inserció Laboral</a></li>

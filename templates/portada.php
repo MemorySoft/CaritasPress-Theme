@@ -38,46 +38,39 @@
   <div class="row sin-margen--abajo">
     <div class="small-12 columns">
       <h2>Càritas Diocesana de Menorca, ajudan's a ajudar!</h2>
+      <a class="expanded button large invertido hide-for-medium" href="<?php echo site_url(); ?>colabora">Col·labora amb Càritas</a>
     </div>
   </div>
-  <div class="row small-up-2 medium-up-5 sin-margen--abajo texto-centrado">
-    <div class="columns">
+  <div class="row medium-up-5 sin-margen--abajo texto-centrado">
+    <div class="columns show-for-medium">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_donatius.png" alt="Donatius">
         <h5>Vull fer un <br>donatiu</h5>
       </a>
     </div>
-    <div class="columns">
+    <div class="columns show-for-medium">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_socis.png" alt="Socis">
         <h5>Vull fer-me <br>soci</h5>
       </a>
     </div>
-    <div class="columns">
+    <div class="columns show-for-medium">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_voluntaris.png" alt="Voluntaris">
         <h5>Vull fer-me <br>voluntari</h5>
       </a>
     </div>
-    <div class="columns">
+    <div class="columns show-for-medium">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_empreses.png" alt="Empreses">
         <h5>Empresa <br>amb cor</h5>
       </a>
     </div>
-    <div class="columns">
+    <div class="columns show-for-medium">
       <a href="colabora">
         <img src="<?php bloginfo('template_directory'); ?>/images/icono_llegats.png" alt="Llegats">
         <h5>Fes un <br>llegat</h5>
       </a>
-    </div>
-    <div class="columns hide-for-medium">
-      <hr>
-      <a href="colabora">
-        <h5 class="sin-margen--abajo">Col·labora <br>amb Càritas</h5>
-        <i class="fa fa-angle-double-right fa-2x"></i>
-      </a>
-      <hr>
     </div>
   </div>
 </div>
@@ -146,10 +139,10 @@
   </div>
 </div>
 
+<!-- MESTRAL -->
+
 <div class="franja fondo-gris--claro texto-centrado">
   <div class="row sin-margen--abajo">
-
-    <!-- MESTRAL -->
 
     <?php if ($mestral_ver == 1) { ?>
         <div class="small-12 columns">
@@ -158,12 +151,11 @@
           <p class="texto-destacado">
             <?php echo $mestral_descripcion ?>
           </p>
-          <a href="<?php echo $mestral_enlace ?>" target="_blank" class="large button boton-iconizado" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php echo $mestral_texto_boton ?> <i class="fa fa-share"></i></a>
+          <a href="<?php echo $mestral_enlace ?>" target="_blank" class="large button boton-iconizado" title="<?php _e('Visita la web de Mestral','caritaspress'); ?>"><?php echo $mestral_texto_boton ?> <i class="fa fa-share show-for-medium"></i></a>
         </div>
     <?php } ?>
   </div>
 </div>
-
 
 <!-- ACTUALIDAD -->
 
@@ -174,7 +166,7 @@
   );
   $actualidad = new WP_Query($args);
   if( $actualidad->have_posts() ) { ?>
-  <div class="row texto-centrado">
+  <div class="row texto-centrado sin-margen--abajo">
     <div class="small-12 columns">
       <h3 class="titulo">Actualitat</h3>
     </div>
@@ -198,17 +190,17 @@
   </div>
 <?php } ?>
 
+<!-- EMPRESAS -->
+
 <div class="franja fondo-gris--claro texto-centrado">
   <div class="row sin-margen--abajo">
-
-    <!-- EMPRESAS -->
 
     <?php if ($empresas_ver == 1) { ?>
         <div class="small-12 columns">
           <img src="<?php echo $empresas_imagen ?>" alt="<?php esc_attr__('Logotip del projecte','caritaspress'); ?>">
           <h2 class="small-12 titulo"><?php echo $empresas_titulo ?></h2>
           <p class="texto-destacado"><?php echo $empresas_descripcion ?></p>
-          <a href="javascript:void(0)" class="large button boton-iconizado" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?> <i class="fa fa-heart"></i></a>
+          <a href="javascript:void(0)" class="large button boton-iconizado" data-toggle="infoEmpresas" title="<?php _e('Posa-hi cor al teu negoci','caritaspress'); ?>"><?php _e('Posa-hi cor al teu negoci','caritaspress'); ?> <i class="fa fa-heart show-for-medium"></i></a>
         </div>
     <?php } ?>
   </div>

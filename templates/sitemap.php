@@ -9,19 +9,22 @@
       <h3 class="titulo">Mapa del web</h3>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="small-12 medium-3 columns">
+      <hr class="hide-for-medium">
       <h4>Págines</h4>
       <?php wp_list_pages(); ?>
     </div>
     <div class="small-12 medium-3 columns">
+      <hr class="hide-for-medium">
       <h4>Categories</h4>
       <?php wp_list_categories(); ?>
     </div>
-    <div class="small-12 medium-6 columns">
+    <div class="small-12 medium-6 columns sitemap-articulos">
+      <hr class="hide-for-medium">
       <h4>Articles</h4>
-      <?php wp_get_archives('type=postbypost&limit=50'); ?>  
+      <?php wp_get_archives('type=postbypost&limit=50'); ?>
     </div>
   </div>
 

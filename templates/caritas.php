@@ -26,6 +26,7 @@
         </div>
       <?php endwhile; ?>
     </div>
+    <hr class="hide-for-small">
   </div>
 </div>
 
@@ -46,22 +47,25 @@
     <div class="small-12 medium-3 columns">
       <h4 class="titulo"><?php echo $programa_uno_titulo ?></h4>
       <p><?php echo $programa_uno_descripcion ?></p>
-      <a href="<?php echo $programa_uno_enlace ?>" class="small button">Continua llegint</a>
+      <a href="<?php echo $programa_uno_enlace ?>" class="small button">Projectes</a>
+      <hr class="hide-for-medium">
     </div>
     <div class="small-12 medium-3 columns">
       <h4 class="titulo"><?php echo $programa_dos_titulo ?></h4>
       <p><?php echo $programa_dos_descripcion ?></p>
-      <a href="<?php echo $programa_dos_enlace ?>" class="small button">Continua llegint</a>
+      <a href="<?php echo $programa_dos_enlace ?>" class="small button">Projectes</a>
+      <hr class="hide-for-medium">
     </div>
     <div class="small-12 medium-3 columns">
       <h4 class="titulo"><?php echo $programa_tres_titulo ?></h4>
       <p><?php echo $programa_tres_descripcion ?></p>
-      <a href="<?php echo $programa_tres_enlace ?>" class="small button">Continua llegint</a>
+      <a href="<?php echo $programa_tres_enlace ?>" class="small button">Projectes</a>
+      <hr class="hide-for-medium">
     </div>
     <div class="small-12 medium-3 columns">
       <h4 class="titulo"><?php echo $programa_cuatro_titulo ?></h4>
       <p><?php echo $programa_cuatro_descripcion ?></p>
-      <a href="<?php echo $programa_cuatro_enlace ?>" class="small button">Continua llegint</a>
+      <a href="<?php echo $programa_cuatro_enlace ?>" class="small button">Projectes</a>
     </div>
   </div>
 </div>
@@ -102,43 +106,46 @@
 
 <div class="franja fondo-gris--claro texto-centrado">
   <div class="row sin-margen--abajo">
-    <h2 class="small-12 titulo">Qui som</h2>
-    <p class="texto-destacado"><?php echo $quien_subtitulo ?></p>
-    <p class="texto-destacado--peque"><?php echo $quien_descripcion ?></p>
+    <div class="small-12 columns">
+      <h2 class="titulo">Qui som</h2>
+      <p class="texto-destacado"><?php echo $quien_subtitulo ?></p>
+      <hr>
+      <p class="texto-destacado--peque sin-margen--abajo"><?php echo $quien_descripcion ?></p>
+    </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row sin-margen--abajo">
   <div class="item small-12 medium-4 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <img class="articulo-imagen" src="<?php bloginfo('template_directory'); ?>/images/identitat.png" alt="">
+        <img class="articulo-imagen .icono" src="<?php bloginfo('template_directory'); ?>/images/identitat.png">
       </div>
       <div class="articulo-seccion articulo-seccion--vertical">
         <h3 class="articulo-titulo"><?php echo $valores_uno_titulo ?></h3>
-        <p class="articulo-extracto texto-destacado--peque"><?php echo $valores_uno_descripcion ?></p>
+        <p class="articulo-extracto texto-destacado--peque sin-margen--abajo"><?php echo $valores_uno_descripcion ?></p>
       </div>
     </div>
   </div>
   <div class="item small-12 medium-4 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <img class="articulo-imagen" src="<?php bloginfo('template_directory'); ?>/images/missio.png" alt="">
+        <img class="articulo-imagen .icono" src="<?php bloginfo('template_directory'); ?>/images/missio.png">
       </div>
       <div class="articulo-seccion articulo-seccion--vertical">
         <h3 class="articulo-titulo"><?php echo $valores_dos_titulo ?></h3>
-        <p class="articulo-extracto texto-destacado--peque"><?php echo $valores_dos_descripcion ?></p>
+        <p class="articulo-extracto texto-destacado--peque sin-margen--abajo"><?php echo $valores_dos_descripcion ?></p>
       </div>
     </div>
   </div>
   <div class="item small-12 medium-4 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <img class="articulo-imagen" src="<?php bloginfo('template_directory'); ?>/images/visio.png" alt="">
+        <img class="articulo-imagen .icono" src="<?php bloginfo('template_directory'); ?>/images/visio.png">
       </div>
       <div class="articulo-seccion articulo-seccion--vertical">
         <h3 class="articulo-titulo"><?php echo $valores_tres_titulo ?></h3>
-        <p class="articulo-extracto texto-destacado--peque"><?php echo $valores_tres_descripcion ?></p>
+        <p class="articulo-extracto texto-destacado--peque sin-margen--abajo"><?php echo $valores_tres_descripcion ?></p>
       </div>
     </div>
   </div>
@@ -148,8 +155,8 @@
 
 <div class="row sin-margen-abajo">
   <div class="small-12 columns">
-    <h3 class="titulo texto-centrado">Organització</h3>
-    <p class="texto-destacado texto-centrado"><?php echo $organizacion_descripcion ?></p>
+    <h2 class="titulo texto-centrado">Organització</h2>
+    <p class="texto-destacado texto-centrado sin-margen--abajo"><?php echo $organizacion_descripcion ?></p>
   </div>
 </div>
 
@@ -164,8 +171,8 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="large callout texto-centrado">
-      <h3>Contacta amb Càrites Diocesana de Menorca</h3>
-      <p><a href="<?php echo site_url(); ?>/contacte" class="button" title="<?php _e('Contacta','caritaspress'); ?>"><?php _e('Contacta','caritaspress'); ?></a></p>
+      <h3>Contacta amb Càritas Diocesana de Menorca</h3>
+      <p><a href="<?php echo site_url(); ?>/contacte" class="button sin-margen--abajo" title="<?php _e('Contacta','caritaspress'); ?>"><?php _e('Contacta','caritaspress'); ?></a></p>
     </div>
   </div>
 </div>
@@ -214,7 +221,7 @@
           <?php $publicacion_fecha = get_post_meta( get_the_id(), 'publicacion_fecha', true ); ?>
           <li class="coleccion-elemento">
             <div class="coleccion-titulo">
-              <a href="<?php echo $audio_enlace ?>" target="_blank">
+              <a href="<?php echo $publicacion_enlace ?>" target="_blank">
                 <?php the_title(); ?>
               </a>
             </div>
@@ -235,6 +242,7 @@
 </div>
 
 <!-- AUDIOS -->
+
 <div class="row">
   <div class="small-12 columns texto-centrado">
     <h3 class="titulo">Audios</h3>
@@ -300,7 +308,7 @@
         </div>
       <?php endwhile; ?>
     <?php } ?>
-</div>
+  </div>
 
   <div class="small-12 columns texto-centrado">
     <p><a class="boton-secundario" href="https://www.youtube.com/channel/UCzcLy0ubLrH_QOmelsHbqcQ" title="<?php _e('Canal de YouTube de Càritas Menorca','caritaspress'); ?>"><?php _e('Canal de Youtube de Càritas Menorca','caritaspress'); ?> »</a></p>
